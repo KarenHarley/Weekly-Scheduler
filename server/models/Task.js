@@ -6,13 +6,16 @@ const tasksSchema = new Schema({
     required: true,
     unique: true,
   },
+  notes: {
+    type: Text,
+  },
   startingTime: {
-    type: Int,
+    type: Number,
     required: true,
     unique: true,
   },
   endingTime: {
-    type: Int,
+    type: Number,
     required: true,
     unique: true,
   },
