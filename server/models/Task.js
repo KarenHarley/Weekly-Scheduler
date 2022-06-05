@@ -7,17 +7,15 @@ const tasksSchema = new Schema({
     unique: true,
   },
   notes: {
-    type: Text,
+    type: String,
   },
   startingTime: {
     type: Number,
     required: true,
-    unique: true,
   },
   endingTime: {
     type: Number,
     required: true,
-    unique: true,
   },
   user: [
     {
