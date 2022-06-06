@@ -1,9 +1,9 @@
-const { Tech, Matchup } = require('../models');
+const { Task, User } = require('../models');
 
 const resolvers = {
   Query: {
-    tech: async () => {
-      return Tech.find({});
+    tasks: async () => {
+      return Task.find();
     },
     matchups: async (parent, { _id }) => {
       const params = _id ? { _id } : {};
