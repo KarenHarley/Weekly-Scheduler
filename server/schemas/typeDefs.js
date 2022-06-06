@@ -13,7 +13,7 @@ const typeDefs = gql`
     notes: String
     startingTime!
     endingTime!
-    user
+    user: User!
   }
 
   type User {
@@ -35,7 +35,7 @@ const typeDefs = gql`
       endingTime: String!
       user: ID!
     ): Task
-    
+
     login(email: String!, password: String!): Auth
   }
 `;
