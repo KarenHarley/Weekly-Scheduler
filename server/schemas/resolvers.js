@@ -1,13 +1,12 @@
-const { Task, User } = require('../models');
+const { Task, User } = require("../models");
 
 const resolvers = {
   Query: {
     tasks: async () => {
       return Task.find();
     },
-    matchups: async (parent, { _id }) => {
-      const params = _id ? { _id } : {};
-      return Matchup.find(params);
+    user: async (parent, { userId }) => {
+      return User.findOne({ _id: userId });
     },
   },
   Mutation: {
