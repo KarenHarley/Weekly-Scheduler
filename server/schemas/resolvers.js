@@ -10,9 +10,9 @@ const resolvers = {
     },
   },
   Mutation: {
-    createMatchup: async (parent, args) => {
-      const matchup = await Matchup.create(args);
-      return matchup;
+    addTask: async (parent, args) => {
+      const task = await Task.create(args);
+      return task;
     },
     createVote: async (parent, { _id, techNum }) => {
       const vote = await Matchup.findOneAndUpdate(
