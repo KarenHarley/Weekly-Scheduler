@@ -2,8 +2,8 @@ const { Task, User } = require("../models");
 
 const resolvers = {
   Query: {
-    tasks: async () => {
-      return Task.find();
+    tasks: async (parent,{userId}) => {
+      return Task.find({ user: userId}).populate('user');
     },
     user: async (parent, { userId }) => {
       return User.findOne({ _id: userId }).populate('tasks');
