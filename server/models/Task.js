@@ -4,7 +4,6 @@ const tasksSchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
   },
   notes: {
     type: String,
@@ -17,12 +16,10 @@ const tasksSchema = new Schema({
     type: Number,
     required: true,
   },
-  user: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 const Task = model("Task", tasksSchema);
