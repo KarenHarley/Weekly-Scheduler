@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type Task { 
@@ -7,6 +7,7 @@ const typeDefs = gql`
     notes: String
     startingTime!
     endingTime!
+    user
   }
 
 
@@ -15,7 +16,13 @@ const typeDefs = gql`
   }
 
   type Mutation {
-
+    addTask(
+      name: String!
+      notes: String
+      startingTime: String!
+      endingTime: String!
+      user: ID!
+    ): Task
   }
 `;
 
