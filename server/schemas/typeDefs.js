@@ -23,6 +23,7 @@ const typeDefs = gql`
       endingTime: String!
       user: ID!
     ): Task
+    login(email: String!, password: String!): Auth
   }
 `;
 
