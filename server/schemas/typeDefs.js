@@ -9,7 +9,12 @@ const typeDefs = gql`
     endingTime!
     user
   }
-
+  type User {
+    _id: ID
+    username: String
+    password: String
+    tasks: [Task]
+  }
 
   type Query {
     tasks: [Task]
