@@ -14,13 +14,9 @@ const resolvers = {
       const task = await Task.create(args);
       return task;
     },
-    createVote: async (parent, { _id, techNum }) => {
-      const vote = await Matchup.findOneAndUpdate(
-        { _id },
-        { $inc: { [`tech${techNum}_votes`]: 1 } },
-        { new: true }
-      );
-      return vote;
+    updateTask: async (parent, args) => {
+      const updatedTask = await Task.findOneAndUpdate({ args }, { new: true });
+      return updatedTask;
     },
   },
 };
