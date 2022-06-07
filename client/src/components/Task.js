@@ -4,7 +4,7 @@ const Task = () => {
   return (
     <div className="task-wrapper">
       <div className="task-heading">
-        <h1>This is a single task</h1>
+        <p>This is a single task</p>
       </div>
     </div>
   );
