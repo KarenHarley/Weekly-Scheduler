@@ -5,6 +5,7 @@ const Tasks = () => {
     <div className="tasks-wrapper">
       <div className="task-heading">
         <h1>Welcome to the Tasks Page</h1>
+        
       </div>
     </div>
   );
