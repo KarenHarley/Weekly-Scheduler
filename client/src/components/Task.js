@@ -6,9 +6,10 @@ const Task = ({ data }) => {
     <div className="task-wrapper">
       <div className="task-heading">
         <p>This is a single task</p>
+        <p>
+          {data.startingTime}-{data.endingTime}
+        </p>
         <p>Name: {data.name}</p>
-        <p>Starting Time: {data.startingTime}</p>
-        <p>Ends: {data.endingTime}</p>
         <p>User: {data.user.username}</p>
       </div>
     </div>
