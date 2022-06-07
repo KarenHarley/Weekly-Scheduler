@@ -41,7 +41,7 @@ const typeDefs = gql`
       notes: String
       startingTime: String
       endingTime: String
-      user: ID!
+      _id: String!
     ): Task
 
     login(email: String!, password: String!): Auth
