@@ -13,9 +13,9 @@ const EditTask = () => {
   });
   console.log(data);
   return (
-    <div className="task-wrapper">
-      <div className="task-heading">
-        <h1>One task</h1>
+    <div className="edit-task-wrapper">
+      <div className="edit-task-heading">
+        <h1>Edit task</h1>
         {loading ? (
           <div>Loading...</div>
         ) : (
