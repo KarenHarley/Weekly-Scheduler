@@ -25,8 +25,11 @@ const EditTask = () => {
             </p>
             <p>Name: {data.task.name}</p>
             <p>Notes: {data.task.notes}</p>
-            <Link to={`edit/${data._id}`}>Edit</Link>
+            <Link to={`/task/${data.task._id}`}>Back to Task</Link>
+
           </div>
+
+          
         )}
       </div>
     </div>
