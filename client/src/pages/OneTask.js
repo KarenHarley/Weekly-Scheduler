@@ -25,6 +25,7 @@ const OneTask = () => {
             </p>
             <p>Name: {data.task.name}</p>
             <p>Notes: {data.task.notes}</p>
+            <Link to={`edit/${data._id}`}>Edit</Link>
           </div>
         )}
       </div>
