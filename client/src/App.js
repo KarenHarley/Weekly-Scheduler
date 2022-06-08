@@ -1,16 +1,16 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import Home from './pages/Homepage';
-import Tasks from './pages/Tasks';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import Home from "./pages/Homepage";
+import Tasks from "./pages/Tasks";
 import "./App.css";
-import OneTask from './pages/OneTask';
+import OneTask from "./pages/OneTask";
+import EditTask from "./pages/EditTask";
 // import Matchup from './pages/Matchup';
 // import Vote from './pages/Vote';
 
-
 const client = new ApolloClient({
-  uri: '/graphql',
+  uri: "/graphql",
   cache: new InMemoryCache(),
 });
 
@@ -28,7 +28,7 @@ function App() {
             </Route>
             <Route exact path="/task/:id">
               <OneTask />
-            </Route> 
+            </Route>
             <Route exact path="/edit/:id">
               <EditTask />
             </Route>
