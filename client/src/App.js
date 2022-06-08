@@ -6,6 +6,7 @@ import Tasks from "./pages/Tasks";
 import "./App.css";
 import OneTask from "./pages/OneTask";
 import EditTask from "./pages/EditTask";
+
 // import Matchup from './pages/Matchup';
 // import Vote from './pages/Vote';
 
@@ -29,7 +30,7 @@ function App() {
             <Route exact path="/task/:id">
               <OneTask />
             </Route>
-            <Route exact path="/edit/:id">
+            <Route exact path="/task/edit/:id">
               <EditTask />
             </Route>
           </Switch>
