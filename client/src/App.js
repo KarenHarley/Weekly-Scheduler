@@ -29,6 +29,9 @@ function App() {
             <Route exact path="/task/:id">
               <OneTask />
             </Route> 
+            <Route exact path="/edit/:id">
+              <EditTask />
+            </Route>
           </Switch>
         </div>
       </Router>
