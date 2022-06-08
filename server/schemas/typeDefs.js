@@ -23,8 +23,9 @@ const typeDefs = gql`
   }
 
   type Query {
-    tasks (userId: ID!): [Task]
+    tasks(userId: ID!): [Task]
     user(userId: ID!): User
+    task(userId: ID!, taskId: String!): Task
   }
 
   type Mutation {
