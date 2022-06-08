@@ -14,3 +14,15 @@ export const QUERY_TASKS = gql`
     }
   }
 `;
+export const QUERY_TASK = gql`
+query task($taskId: String!) {
+    task(taskId: $taskId) {
+      _id
+      name
+      notes
+      startingTime
+      endingTime
+      
+    }
+  }
+  `;
