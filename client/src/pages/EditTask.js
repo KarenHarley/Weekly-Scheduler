@@ -2,15 +2,18 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_TASK } from "../utils/queries";
 import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 const EditTask = () => {
   const params = useParams();
-  console.log(params.id);
+ 
 
   const { loading, data } = useQuery(QUERY_TASK, {
     variables: {
       taskId: params.id,
     },
   });
+
+  const [taskName, setTaskName] = useState(data.task.name);
   console.log(data);
   return (
     <div className="edit-task-wrapper">
@@ -27,9 +30,14 @@ const EditTask = () => {
             <p>Notes: {data.task.notes}</p>
             <Link to={`/task/${data.task._id}`}>Back to Task</Link>
 
+            <form>
+              <label>
+                Name:
+                <input type="text" name="name" value={taskName}/>
+              </label>
+              <input type="submit" value="Submit" />
+            </form>
           </div>
-
-          
         )}
       </div>
     </div>
