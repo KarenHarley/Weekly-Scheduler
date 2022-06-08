@@ -25,7 +25,7 @@ const typeDefs = gql`
   type Query {
     tasks(userId: ID!): [Task]
     user(userId: ID!): User
-    task(userId: ID!, taskId: String!): Task
+    task(taskId: String!): Task
   }
 
   type Mutation {

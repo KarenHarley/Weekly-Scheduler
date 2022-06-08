@@ -8,6 +8,10 @@ const resolvers = {
     user: async (parent, { userId }) => {
       return User.findOne({ _id: userId }).populate("tasks");
     },
+    task: async (parent, { taskId }) => {
+      console.log(taskId)
+      return Task.findOne({ _id: taskId }).populate("user");
+    },
   },
   Mutation: {
     addTask: async (parent, args) => {
