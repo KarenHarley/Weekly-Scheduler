@@ -4,6 +4,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Home from './pages/Homepage';
 import Tasks from './pages/Tasks';
 import "./App.css";
+import OneTask from './pages/OneTask';
 // import Matchup from './pages/Matchup';
 // import Vote from './pages/Vote';
 
@@ -25,10 +26,9 @@ function App() {
             <Route exact path="/tasks">
               <Tasks />
             </Route>
-            { /*
-            <Route exact path="/matchup/:id">
-              <Vote />
-            </Route> */}
+            <Route exact path="/task/:id">
+              <OneTask />
+            </Route> 
           </Switch>
         </div>
       </Router>
