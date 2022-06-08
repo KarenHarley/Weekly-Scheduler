@@ -10,7 +10,7 @@ const Task = ({ data }) => {
           {data.startingTime}-{data.endingTime}
         </p>
         <p>Name: {data.name}</p>
-        <p>User: {data.user.username}</p>
+        <Link to={`task/${data._id}`}>See More</Link>
       </div>
     </div>
   );
