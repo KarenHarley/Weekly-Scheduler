@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 const EditTask = () => {
   const params = useParams();
- 
 
   const { loading, data } = useQuery(QUERY_TASK, {
     variables: {
@@ -14,6 +13,7 @@ const EditTask = () => {
   });
 
   const [taskName, setTaskName] = useState(data.task.name);
+  const [taskNotes, setTaskNotes] = useState(data.task.notes);
   console.log(data);
   return (
     <div className="edit-task-wrapper">
@@ -33,7 +33,11 @@ const EditTask = () => {
             <form>
               <label>
                 Name:
-                <input type="text" name="name" value={taskName}/>
+                <input type="text" name="name" value={taskName} />
+              </label>
+              <label>
+                Notes:
+                <input type="text" name="notes" value={taskNotes} />
               </label>
               <input type="submit" value="Submit" />
             </form>
