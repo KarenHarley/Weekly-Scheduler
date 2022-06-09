@@ -11,11 +11,11 @@ const EditTask = () => {
       taskId: params.id,
     },
   });
-
-  const [taskName, setTaskName] = useState(data.task.name);
-  const [taskNotes, setTaskNotes] = useState(data.task.notes);
-  const [taskStart, setTaskStart] = useState(data.task.startingTime);
-  const [taskEnd, setTaskEnd] = useState(data.task.endingTime);
+  console.log(data);
+  const [taskName, setTaskName] = useState("");
+  const [taskNotes, setTaskNotes] = useState("");
+  const [taskStart, setTaskStart] = useState("");
+  const [taskEnd, setTaskEnd] = useState("");
 
   const times = [
     "1:00 am",
@@ -69,6 +69,16 @@ const EditTask = () => {
       </option>
     );
   };
+
+  useEffect(() => {
+    if (data) {
+      setTaskName(data.task.name);
+      setTaskNotes(data.task.notes);
+      setTaskStart(data.task.startingTime);
+      setTaskEnd(data.task.endingTime);
+    }
+  }, [data]);
+
   return (
     <div className="edit-task-wrapper">
       <div className="edit-task-heading">
