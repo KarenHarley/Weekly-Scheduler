@@ -77,13 +77,6 @@ const EditTask = () => {
           <div>Loading...</div>
         ) : (
           <div>
-            <p>
-              {data.task.startingTime}-{data.task.endingTime}
-            </p>
-            <p>Name: {data.task.name}</p>
-            <p>Notes: {data.task.notes}</p>
-            <Link to={`/task/${data.task._id}`}>Back to Task</Link>
-
             <form>
               <label>
                 Select Starting Time
@@ -111,6 +104,7 @@ const EditTask = () => {
               </label>
               <input type="submit" value="Submit" />
             </form>
+            <Link to={`/task/${data.task._id}`}>Back to Task</Link>
           </div>
         )}
       </div>
