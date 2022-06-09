@@ -46,9 +46,10 @@ const EditTask = () => {
   ];
 
   const timeChange = (e) => {
-    console.log(e);
-    // console.log(e.target.value);
-    // setTaskStart(e.target.value);
+    if (e.target.id === "start") {
+      setTaskStart(e.target.value);
+    }
+    setTaskEnd(e.target.value);
   };
   return (
     <div className="edit-task-wrapper">
@@ -68,7 +69,7 @@ const EditTask = () => {
             <form>
               <label>
                 Select Starting Time
-                <select value={taskStart} onChange={timeChange}>
+                <select id="start" value={taskStart} onChange={timeChange}>
                   {times.map((time) => {
                     //set value to 1 in "1:00 am"
                     let optionValue = time.split(":")[0];
@@ -89,7 +90,7 @@ const EditTask = () => {
               </label>
               <label>
                 Select Ending Time
-                <select value={taskEnd} onChange={timeChange}>
+                <select id="end" value={taskEnd} onChange={timeChange}>
                   {times.map((time) => {
                     //set value to 1 in "1:00 am"
                     let optionValue = time.split(":")[0];
