@@ -16,7 +16,6 @@ const EditTask = () => {
   const [taskNotes, setTaskNotes] = useState(data.task.notes);
   const [taskStart, setTaskStart] = useState(data.task.startingTime);
   const [taskEnd, setTaskEnd] = useState(data.task.endingTime);
-  console.log(data);
 
   const times = [
     "1:00 am",
@@ -46,10 +45,29 @@ const EditTask = () => {
   ];
 
   const timeChange = (e) => {
+    console.log(e.target);
     if (e.target.id === "start") {
       setTaskStart(e.target.value);
+    } else {
+      setTaskEnd(e.target.value);
     }
-    setTaskEnd(e.target.value);
+  };
+
+  const createOptions = (time) => {
+    //set value to 1 in "1:00 am"
+    let optionValue = time.split(":")[0];
+    let optionKey = time.split(":")[0];
+    //if the string has "pm" set value to 13 in  "1 pm"
+    if (time.split(" ")[1] === "pm") {
+      optionValue = Number(time.split(":")[0]) + 12;
+      optionKey = Number(time.split(":")[0]) + 12;
+    }
+
+    return (
+      <option value={optionValue} key={optionKey}>
+        {time}
+      </option>
+    );
   };
   return (
     <div className="edit-task-wrapper">
@@ -71,20 +89,7 @@ const EditTask = () => {
                 Select Starting Time
                 <select id="start" value={taskStart} onChange={timeChange}>
                   {times.map((time) => {
-                    //set value to 1 in "1:00 am"
-                    let optionValue = time.split(":")[0];
-                    let optionKey = time.split(":")[0];
-                    //if the string has "pm" set value to 13 in  "1 pm"
-                    if (time.split(" ")[1] === "pm") {
-                      optionValue = Number(time.split(":")[0]) + 12;
-                      optionKey = Number(time.split(":")[0]) + 12;
-                    }
-
-                    return (
-                      <option value={optionValue} key={optionKey}>
-                        {time}
-                      </option>
-                    );
+                    return createOptions(time);
                   })}
                 </select>
               </label>
@@ -92,20 +97,7 @@ const EditTask = () => {
                 Select Ending Time
                 <select id="end" value={taskEnd} onChange={timeChange}>
                   {times.map((time) => {
-                    //set value to 1 in "1:00 am"
-                    let optionValue = time.split(":")[0];
-                    let optionKey = time.split(":")[0];
-                    //if the string has "pm" set value to 13 in  "1 pm"
-                    if (time.split(" ")[1] === "pm") {
-                      optionValue = Number(time.split(":")[0]) + 12;
-                      optionKey = Number(time.split(":")[0]) + 12;
-                    }
-
-                    return (
-                      <option value={optionValue} key={optionKey}>
-                        {time}
-                      </option>
-                    );
+                    return createOptions(time);
                   })}
                 </select>
               </label>

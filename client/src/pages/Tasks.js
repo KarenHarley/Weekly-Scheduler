@@ -24,8 +24,8 @@ const Tasks = () => {
           <div>Loading...</div>
         ) : (
           <div>
-            {tasks.map((task) => {
-              return <Task data={task} />;
+            {tasks.map((task, i) => {
+              return <Task data={task} key={i} />;
             })}
           </div>
         )}
