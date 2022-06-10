@@ -4,6 +4,7 @@ import { QUERY_TASK } from "../utils/queries";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 const EditTask = () => {
+  
   const params = useParams();
 
   const { loading, data } = useQuery(QUERY_TASK, {
@@ -44,12 +45,20 @@ const EditTask = () => {
     "12:00 pm",
   ];
 
-  const timeChange = (e) => {
+  const onChange = (e) => {
     console.log(e.target);
-    if (e.target.id === "start") {
-      setTaskStart(e.target.value);
-    } else {
-      setTaskEnd(e.target.value);
+    switch (e.target.id) {
+      case "start":
+        setTaskStart(e.target.value);
+        break;
+      case "end":
+        setTaskEnd(e.target.value);
+        break;
+      case "name":
+        setTaskName(e.target.value);
+        break;
+      default:
+        setTaskNotes(e.target.value);
     }
   };
 
@@ -90,7 +99,7 @@ const EditTask = () => {
             <form>
               <label>
                 Select Starting Time
-                <select id="start" value={taskStart} onChange={timeChange}>
+                <select id="start" value={taskStart} onChange={onChange}>
                   {times.map((time) => {
                     return createOptions(time);
                   })}
@@ -98,7 +107,7 @@ const EditTask = () => {
               </label>
               <label>
                 Select Ending Time
-                <select id="end" value={taskEnd} onChange={timeChange}>
+                <select id="end" value={taskEnd} onChange={onChange}>
                   {times.map((time) => {
                     return createOptions(time);
                   })}
@@ -106,11 +115,23 @@ const EditTask = () => {
               </label>
               <label>
                 Name:
-                <input type="text" name="name" value={taskName} />
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  value={taskName}
+                  onChange={onChange}
+                />
               </label>
               <label>
                 Notes:
-                <input type="text" name="notes" value={taskNotes} />
+                <input
+                  id="notes"
+                  type="text"
+                  name="notes"
+                  value={taskNotes}
+                  onChange={onChange}
+                />
               </label>
               <input type="submit" value="Submit" />
             </form>
