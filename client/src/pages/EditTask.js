@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_TASK } from "../utils/queries";
+import { UPDATE_TASK } from "../utils/mutations";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { times } from "../utils/times";
@@ -13,28 +14,41 @@ const EditTask = () => {
     },
   });
   console.log(data);
-  const [taskName, setTaskName] = useState("");
-  const [taskNotes, setTaskNotes] = useState("");
-  const [taskStart, setTaskStart] = useState("");
-  const [taskEnd, setTaskEnd] = useState("");
+  // const [taskName, setTaskName] = useState("");
+  // const [taskNotes, setTaskNotes] = useState("");
+  // const [taskStart, setTaskStart] = useState("");
+  // const [taskEnd, setTaskEnd] = useState("");
 
+  const [formState, setFormState] = useState({
+    name: "",
+    notes: "",
+    startingTime: "",
+    endingTime: "",
+  });
 
+  const [updateTask, { error, updateData }] = useMutation(UPDATE_TASK);
 
   const onChange = (e) => {
     console.log(e.target);
-    switch (e.target.id) {
-      case "start":
-        setTaskStart(e.target.value);
-        break;
-      case "end":
-        setTaskEnd(e.target.value);
-        break;
-      case "name":
-        setTaskName(e.target.value);
-        break;
-      default:
-        setTaskNotes(e.target.value);
-    }
+    // switch (e.target.id) {
+    //   case "start":
+    //     setTaskStart(e.target.value);
+    //     break;
+    //   case "end":
+    //     setTaskEnd(e.target.value);
+    //     break;
+    //   case "name":
+    //     setTaskName(e.target.value);
+    //     break;
+    //   default:
+    //     setTaskNotes(e.target.value);
+    // }
+    const { name, value } = e.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
 
   const createOptions = (time) => {
@@ -67,13 +81,34 @@ const EditTask = () => {
       </option>
     );
   };
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
 
+    try {
+      const { updateData } = await updateTask({
+        variables: { ...formState, _id: data.task._id },
+      });
+      console.log(updateData);
+      // window.location.replace("/gracias");
+    } catch (e) {
+      console.error(e);
+    }
+  };
   useEffect(() => {
     if (data) {
-      setTaskName(data.task.name);
-      setTaskNotes(data.task.notes);
-      setTaskStart(data.task.startingTime);
-      setTaskEnd(data.task.endingTime);
+      // setTaskName(data.task.name);
+      // setTaskNotes(data.task.notes);
+      // setTaskStart(data.task.startingTime);
+      // setTaskEnd(data.task.endingTime);
+
+      setFormState({
+        name: data.task.name,
+        notes: data.task.notes,
+        startingTime: data.task.startingTime,
+        endingTime: data.task.endingTime,
+      });
     }
   }, [data]);
 
@@ -85,10 +120,15 @@ const EditTask = () => {
           <div>Loading...</div>
         ) : (
           <div>
-            <form>
+            <form onSubmit={handleFormSubmit}>
               <label>
                 Select Starting Time
-                <select id="start" value={taskStart} onChange={onChange}>
+                <select
+                  id="start"
+                  name="startingTime"
+                  value={formState.startingTime}
+                  onChange={onChange}
+                >
                   {times.map((time) => {
                     return createOptions(time);
                   })}
@@ -96,7 +136,12 @@ const EditTask = () => {
               </label>
               <label>
                 Select Ending Time
-                <select id="end" value={taskEnd} onChange={onChange}>
+                <select
+                  id="end"
+                  name="endingTime"
+                  value={formState.endingTime}
+                  onChange={onChange}
+                >
                   {times.map((time) => {
                     return createOptions(time);
                   })}
@@ -108,7 +153,7 @@ const EditTask = () => {
                   id="name"
                   type="text"
                   name="name"
-                  value={taskName}
+                  value={formState.name}
                   onChange={onChange}
                 />
               </label>
@@ -118,7 +163,7 @@ const EditTask = () => {
                   id="notes"
                   type="text"
                   name="notes"
-                  value={taskNotes}
+                  value={formState.notes}
                   onChange={onChange}
                 />
               </label>
