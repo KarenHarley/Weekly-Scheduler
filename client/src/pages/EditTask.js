@@ -99,11 +99,13 @@ const EditTask = () => {
       time.split(" ")[1] === "am"
     ) {
       optionValue = Number(time.split(":")[0]) + 0.5;
+      optionKey = Number(time.split(":")[0]) + 0.5;
     } else if (
       time.split(" ")[0].split(":")[1] === "30" &&
       time.split(" ")[1] === "pm"
     ) {
       optionValue = Number(time.split(":")[0]) + 12.5;
+      optionKey = Number(time.split(":")[0]) + 12.5;
     }
     return (
       <option value={optionValue} key={optionKey}>
