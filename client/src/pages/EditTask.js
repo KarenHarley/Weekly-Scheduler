@@ -14,10 +14,7 @@ const EditTask = () => {
     },
   });
   console.log(data);
-  // const [taskName, setTaskName] = useState("");
-  // const [taskNotes, setTaskNotes] = useState("");
-  // const [taskStart, setTaskStart] = useState("");
-  // const [taskEnd, setTaskEnd] = useState("");
+
 
   const [formState, setFormState] = useState({
     name: "",
@@ -30,19 +27,6 @@ const EditTask = () => {
 
   const onChange = (e) => {
     console.log(e.target);
-    // switch (e.target.id) {
-    //   case "start":
-    //     setTaskStart(e.target.value);
-    //     break;
-    //   case "end":
-    //     setTaskEnd(e.target.value);
-    //     break;
-    //   case "name":
-    //     setTaskName(e.target.value);
-    //     break;
-    //   default:
-    //     setTaskNotes(e.target.value);
-    // }
     const { name, value } = e.target;
 
     setFormState({
@@ -98,11 +82,6 @@ const EditTask = () => {
   };
   useEffect(() => {
     if (data) {
-      // setTaskName(data.task.name);
-      // setTaskNotes(data.task.notes);
-      // setTaskStart(data.task.startingTime);
-      // setTaskEnd(data.task.endingTime);
-
       setFormState({
         name: data.task.name,
         notes: data.task.notes,
