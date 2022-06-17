@@ -1,53 +1,67 @@
 import { gql } from "@apollo/client";
 
 export const UPDATE_TASK = gql`
-mutation updateTask(
+  mutation updateTask(
     $name: String!
-     $notes: String
-     $startingTime: String!
-     $endingTime: String!
+    $notes: String
+    $startingTime: String!
+    $endingTime: String!
     $_id: String!
- ) {
-   updateTask(
-    name: $name
-     notes: $notes
-     startingTime: $startingTime
-     endingTime: $endingTime
-     _id: $_id
-   ) {
-     name,
-     notes,
-     startingTime,
-     endingTime,
-     user {
-           _id
-     }
-   }
- }
- `;
+  ) {
+    updateTask(
+      name: $name
+      notes: $notes
+      startingTime: $startingTime
+      endingTime: $endingTime
+      _id: $_id
+    ) {
+      name
+      notes
+      startingTime
+      endingTime
+      user {
+        _id
+      }
+    }
+  }
+`;
 
 export const CREATE_TASK = gql`
- mutation addTask(
+  mutation addTask(
     $name: String!
-     $notes: String
-     $startingTime: String!
-     $endingTime: String!
+    $notes: String
+    $startingTime: String!
+    $endingTime: String!
     $user: ID!
- ) {
-   addTask(
-    name: $name
-     notes: $notes
-     startingTime: $startingTime
-     endingTime: $endingTime
-     user: $user
-   ) {
-     name,
-     notes,
-     startingTime,
-     endingTime,
-     user {
-           _id
-     }
-   }
- }
- `;
+  ) {
+    addTask(
+      name: $name
+      notes: $notes
+      startingTime: $startingTime
+      endingTime: $endingTime
+      user: $user
+    ) {
+      name
+      notes
+      startingTime
+      endingTime
+      user {
+        _id
+      }
+    }
+  }
+`;
+
+export const LOGIN_USER = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      admin {
+        _id
+        email
+        password
+        username
+      }
+    }
+  }
+`;
