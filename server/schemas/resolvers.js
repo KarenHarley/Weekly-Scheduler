@@ -1,5 +1,5 @@
 const { Task, User } = require("../models");
-const { signToken } = require("../utils/auth");
+const { signToken } = require("../../client/src/utils/auth");
 const resolvers = {
   Query: {
     tasks: async (parent, { userId }) => {
