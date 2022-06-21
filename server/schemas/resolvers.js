@@ -1,5 +1,5 @@
 const { Task, User } = require("../models");
-const { signToken } = require("../../client/src/utils/auth");
+//const { signToken } = require("../../client/src/utils/auth");
 const resolvers = {
   Query: {
     tasks: async (parent, { userId }) => {
@@ -35,25 +35,25 @@ const resolvers = {
       );
       return updatedTask;
     },
-    login: async (parent, { email, password }) => {
-      const admin = await User.findOne({ email });
-      console.log(admin);
+    // login: async (parent, { email, password }) => {
+    //   const admin = await User.findOne({ email });
+    //   console.log(admin);
 
-      if (!admin) {
-        throw new AuthenticationError("No user found with this email address");
-      }
+    //   if (!admin) {
+    //     throw new AuthenticationError("No user found with this email address");
+    //   }
 
-      // const correctPw = await admin.isCorrectPassword(password);
+    //   // const correctPw = await admin.isCorrectPassword(password);
 
-      // if (!correctPw) {
-      //   throw new AuthenticationError("Incorrect credentials");
-      // }
+    //   // if (!correctPw) {
+    //   //   throw new AuthenticationError("Incorrect credentials");
+    //   // }
 
-      const token = signToken(admin);
-      console.log(token);
-      console.log(admin);
-      return { token, admin };
-    },
+    //   const token = signToken(admin);
+    //   console.log(token);
+    //   console.log(admin);
+    //   return { token, admin };
+    // },
   },
 };
 
