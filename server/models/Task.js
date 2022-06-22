@@ -8,6 +8,10 @@ const tasksSchema = new Schema({
   notes: {
     type: String,
   },
+  day: {
+    type: String,
+    required: true,
+  },
   startingTime: {
     type: Number,
     required: true,
