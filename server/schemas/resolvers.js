@@ -1,5 +1,5 @@
 const { Task, User } = require("../models");
-const { signToken } = require('../utils/auth');
+const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     tasks: async (parent, { userId }) => {
@@ -35,31 +35,29 @@ const resolvers = {
       );
       return updatedTask;
     },
-    // login: async (parent, { email, password }) => {
-    //   const admin = await User.findOne({ email });
-    //   console.log(admin);
+    addUser: async (parent, { username, email, password }) => {
+      //when user is created a token is created
+      const profile = await User.create({ username, email, password }); //c in crud returning an instance
+      const token = signToken(profile);
 
-    //   if (!admin) {
-    //     throw new AuthenticationError("No user found with this email address");
-    //   }
+      return { token, profile }; //returning the info back to the client
+    },
+    login: async (parent, { email, password }) => {
+      const profile = await User.findOne({ email });
 
-    //   // const correctPw = await admin.isCorrectPassword(password);
+      if (!profile) {
+        throw new AuthenticationError("No profile with this email found!");
+      }
 
-    //   // if (!correctPw) {
-    //   //   throw new AuthenticationError("Incorrect credentials");
-    //   // }
+      const correctPw = await profile.isCorrectPassword(password); //checking the pass with bcryt (see user model)
 
-    //   const token = signToken(admin);
-    //   console.log(token);
-    //   console.log(admin);
-    //   return { token, admin };
-    // },
-  },
-  addUser: async (parent, { username, email, password }) => {//when user is created a token is created
-    const profile = await User.create({ username, email, password });//c in crud returning an instance
-    const token = signToken(profile);
+      if (!correctPw) {
+        throw new AuthenticationError("Incorrect password!");
+      }
 
-    return { token, profile };//returning the info back to the client
+      const token = signToken(profile); //authorizing
+      return { token, profile };
+    },
   },
 };
 
