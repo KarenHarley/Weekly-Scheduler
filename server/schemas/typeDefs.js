@@ -19,6 +19,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     password: String
+    email: String
     tasks: [Task]
   }
 
