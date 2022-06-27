@@ -1,6 +1,7 @@
 const { Task, User } = require("../models");
-const { AuthenticationError } = require('apollo-server-express');
+const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
+
 const resolvers = {
   Query: {
     tasks: async (parent, { userId }) => {
@@ -10,7 +11,6 @@ const resolvers = {
       return User.findOne({ _id: userId }).populate("tasks");
     },
     task: async (parent, { taskId }) => {
-      console.log(taskId);
       return Task.findOne({ _id: taskId }).populate("user");
     },
   },
@@ -41,6 +41,7 @@ const resolvers = {
       const user = await User.create({ username, email, password }); //c in crud returning an instance
       const token = signToken(user);
 
+
       return { token, user }; //returning the info back to the client
     },
     login: async (parent, { email, password }) => {
@@ -56,8 +57,8 @@ const resolvers = {
         throw new AuthenticationError("Incorrect password!");
       }
 
-      const token = signToken(profile); //authorizing
-      return { token, profile };
+      const token = signToken(user); //authorizing
+      return { token, user };
     },
   },
 };
