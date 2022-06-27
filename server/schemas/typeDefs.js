@@ -10,6 +10,7 @@ const typeDefs = gql`
     _id: ID!
     name: String!
     notes: String
+    day: String!
     startingTime: String!
     endingTime: String!
     user: User
@@ -33,6 +34,7 @@ const typeDefs = gql`
     addTask(
       name: String!
       notes: String
+      day: String!
       startingTime: String!
       endingTime: String!
       user: ID!
