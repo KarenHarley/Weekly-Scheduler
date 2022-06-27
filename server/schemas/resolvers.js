@@ -1,5 +1,5 @@
 const { Task, User } = require("../models");
-//const { signToken } = require("../../client/src/utils/auth");
+const { signToken } = require('../utils/auth');
 const resolvers = {
   Query: {
     tasks: async (parent, { userId }) => {
@@ -54,6 +54,12 @@ const resolvers = {
     //   console.log(admin);
     //   return { token, admin };
     // },
+  },
+  addUser: async (parent, { username, email, password }) => {//when user is created a token is created
+    const profile = await User.create({ username, email, password });//c in crud returning an instance
+    const token = signToken(profile);
+
+    return { token, profile };//returning the info back to the client
   },
 };
 
