@@ -38,15 +38,15 @@ const resolvers = {
     },
     addUser: async (parent, { username, email, password }) => {
       //when user is created a token is created
-      const profile = await User.create({ username, email, password }); //c in crud returning an instance
-      const token = signToken(profile);
+      const user = await User.create({ username, email, password }); //c in crud returning an instance
+      const token = signToken(user);
 
-      return { token, profile }; //returning the info back to the client
+      return { token, user }; //returning the info back to the client
     },
     login: async (parent, { email, password }) => {
-      const profile = await User.findOne({ email });
+      const user = await User.findOne({ email });
 
-      if (!profile) {
+      if (!user) {
         throw new AuthenticationError("No profile with this email found!");
       }
 
