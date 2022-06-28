@@ -7,8 +7,6 @@ import "./App.css";
 import OneTask from "./pages/OneTask";
 import EditTask from "./pages/EditTask";
 
-// import Matchup from './pages/Matchup';
-// import Vote from './pages/Vote';
 
 const client = new ApolloClient({
   uri: "/graphql",
