@@ -51,7 +51,7 @@ const resolvers = {
         throw new AuthenticationError("No profile with this email found!");
       }
 
-      const correctPw = await profile.isCorrectPassword(password); //checking the pass with bcryt (see user model)
+      const correctPw = await user.isCorrectPassword(password); //checking the pass with bcryt (see user model)
 
       if (!correctPw) {
         throw new AuthenticationError("Incorrect password!");
