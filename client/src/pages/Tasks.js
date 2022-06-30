@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+
 import { useQuery } from "@apollo/client";
 import { QUERY_TASKS } from "../utils/queries";
-
+import { useParams,Link } from "react-router-dom";
 import Task from "../components/Task";
 const Tasks = () => {
   const params = useParams();
