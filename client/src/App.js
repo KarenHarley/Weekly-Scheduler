@@ -32,6 +32,7 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
+
 //The setContext function accepts a function that returns either an object or a promise, which then returns an object to set the new context of a request. It receives two arguments: the GraphQL request being executed, and the previous context. This link makes it easy to perform the asynchronous lookup of things like authentication tokens and more.
 
 const client = new ApolloClient({
@@ -39,7 +40,7 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink), //sending our token in the requests graphql automatcally
   cache: new InMemoryCache(),
 });
-
+console.log(httpLink)
 function App() {
   return (
     <ApolloProvider client={client}>
