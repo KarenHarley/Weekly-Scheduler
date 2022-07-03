@@ -46,6 +46,7 @@ const Login = (props) => {
           placeholder="Email"
           id="username-email"
           value={formState.email}
+          onChange={handleChange}
           required
         />
         <input
@@ -54,6 +55,7 @@ const Login = (props) => {
           placeholder="Password"
           id="password-login"
           value={formState.password}
+          onChange={handleChange}
           required
         />
         <input type="submit" onClick={handleFormSubmit} />

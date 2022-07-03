@@ -51,7 +51,7 @@ const Signup = (props) => {
           placeholder="Username"
           id="username-username"
           value={formState.username}
-          onChange={handleInputChange}
+          onChange={handleChange}
           required
         />
         <input
@@ -60,7 +60,7 @@ const Signup = (props) => {
           placeholder="Email"
           id="username-email"
           value={formState.email}
-          onChange={handleInputChange}
+          onChange={handleChange}
           required
         />
         <input
@@ -69,7 +69,7 @@ const Signup = (props) => {
           placeholder="Password"
           id="password-login"
           value={formState.password}
-          onChange={handleInputChange}
+          onChange={handleChange}
           required
         />
         <input type="submit" onClick={handleFormSubmit} />
