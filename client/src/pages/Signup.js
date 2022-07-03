@@ -42,65 +42,41 @@ const Signup = (props) => {
     });
   };
   return (
-    <div>
-      <NavBar />
-      <div className="div-form">
-      <form className="form" onSubmit={handleFormSubmit}>
-        <Grid container align="center">
-          <Grid item xs={12}>
-            <TextField
-              id="userName"
-              label="Correo electrónico"
-              variant="outlined"
-              size="small"
-              className={classes.formSyle}
-              name="email"
-              type="email"
-              value={formState.email}
-              onChange={handleChange}
-              required
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              id="userEmail"
-              name="password"
-              type="password"
-              value={formState.password}
-              onChange={handleChange}
-              label="Contraseña"
-              variant="outlined"
-              size="small"
-              className={classes.formSyle}
-              required
-            />
-            <Grid item xs={12}>
-            <TextField
-              id="password"
-              label="Password"
-              variant="outlined"
-              size="small"
-              className="password-field"
-              name="password"
-              type="password"
-              value={formState.password}
-              onChange={handleChange}
-              required
-            />
-          </Grid>
-          </Grid>
-          <Grid item xs={12}>
-            <Button
-              type="submit"
-              variant="outlined"
-              className={classes.buttonStyle}
-            >
-              Ingresar
-            </Button>
-          </Grid>
-        </Grid>
+    <div class="user-form">
+      <h1>Sign Up</h1>
+      <form>
+      <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          id="username-username"
+          value={formState.username}
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          id="username-email"
+          value={formState.email}
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          id="password-login"
+          value={formState.password}
+          onChange={handleInputChange}
+          required
+        />
+        <input type="submit" onClick={handleFormSubmit} />
+        <p>
+          Have have an account? <a href="/login">Login</a>
+        </p>
       </form>
-      </div>
     </div>
   );
 };
