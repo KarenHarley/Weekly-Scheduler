@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 import {Link } from "react-router-dom";
 //import Task from "../components/Task";
 
-const Tasks = () => {
+const CreateTask = () => {
   return (
     <div className="create-task-wrapper">
       <div className="create-task-heading">
@@ -14,4 +14,4 @@ const Tasks = () => {
   );
 };
 
-export default Tasks;
+export default CreateTask;
