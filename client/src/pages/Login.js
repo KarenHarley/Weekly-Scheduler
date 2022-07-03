@@ -37,51 +37,29 @@ const Login = (props) => {
       });
     };
     return (
-      <div className={classes.root}>
-        <NavBar />
-        <div className={classes.separatorStyle}></div>
-        <form onSubmit={handleFormSubmit}>
-          <Grid container align="center">
-            <Grid item xs={12}>
-              <TextField
-                id="userName"
-                label="Correo electrónico"
-                variant="outlined"
-                size="small"
-                className={classes.formSyle}
-                name="email"
-                type="email"
-                value={formState.email}
-                onChange={handleChange}
-                required
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                id="userEmail"
-                name="password"
-                type="password"
-                value={formState.password}
-                onChange={handleChange}
-                label="Contraseña"
-                variant="outlined"
-                size="small"
-                className={classes.formSyle}
-                required
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Button
-                type="submit"
-                variant="outlined"
-                className={classes.buttonStyle}
-              >
-                Ingresar
-              </Button>
-            </Grid>
-          </Grid>
-        </form>
-      </div>
+      <div class="login-form">
+      <h1>Login</h1>
+      <form>
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          id="username-email"
+          value={formState.email}
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          id="password-login"
+          value={formState.password}
+          required
+        />
+        <input type="submit" />
+        <p>Don't have an account? <a href="/signUp">Sign up</a></p>
+      </form>
+    </div>
     );
   };
   export default Login;
