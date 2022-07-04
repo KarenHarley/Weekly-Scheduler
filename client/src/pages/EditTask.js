@@ -5,6 +5,9 @@ import { UPDATE_TASK } from "../utils/mutations";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { times } from "../utils/times";
+
+import Auth from "../utils/auth";
+
 const EditTask = () => {
   const params = useParams();
 
@@ -14,7 +17,6 @@ const EditTask = () => {
     },
   });
   console.log(data);
-
 
   const [formState, setFormState] = useState({
     name: "",
@@ -92,66 +94,73 @@ const EditTask = () => {
   }, [data]);
 
   return (
-    <div className="edit-task-wrapper">
-      <div className="edit-task-heading">
-        <h1>Edit task</h1>
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          <div>
-            <form onSubmit={handleFormSubmit}>
-              <label>
-                Select Starting Time
-                <select
-                  id="start"
-                  name="startingTime"
-                  value={formState.startingTime}
-                  onChange={onChange}
-                >
-                  {times.map((time) => {
-                    return createOptions(time);
-                  })}
-                </select>
-              </label>
-              <label>
-                Select Ending Time
-                <select
-                  id="end"
-                  name="endingTime"
-                  value={formState.endingTime}
-                  onChange={onChange}
-                >
-                  {times.map((time) => {
-                    return createOptions(time);
-                  })}
-                </select>
-              </label>
-              <label>
-                Name:
-                <input
-                  id="name"
-                  type="text"
-                  name="name"
-                  value={formState.name}
-                  onChange={onChange}
-                />
-              </label>
-              <label>
-                Notes:
-                <input
-                  id="notes"
-                  type="text"
-                  name="notes"
-                  value={formState.notes}
-                  onChange={onChange}
-                />
-              </label>
-              <input type="submit" value="Submit" />
-            </form>
-            <Link to={`/task/${data.task._id}`}>Back to Task</Link>
-          </div>
-        )}
-      </div>
+    <div>
+      <h1>Edit task</h1>
+      {Auth.loggedIn() ? (
+        <div className="edit-task-wrapper">
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <div>
+              <form onSubmit={handleFormSubmit}>
+                <label>
+                  Select Starting Time
+                  <select
+                    id="start"
+                    name="startingTime"
+                    value={formState.startingTime}
+                    onChange={onChange}
+                  >
+                    {times.map((time) => {
+                      return createOptions(time);
+                    })}
+                  </select>
+                </label>
+                <label>
+                  Select Ending Time
+                  <select
+                    id="end"
+                    name="endingTime"
+                    value={formState.endingTime}
+                    onChange={onChange}
+                  >
+                    {times.map((time) => {
+                      return createOptions(time);
+                    })}
+                  </select>
+                </label>
+                <label>
+                  Name:
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    value={formState.name}
+                    onChange={onChange}
+                  />
+                </label>
+                <label>
+                  Notes:
+                  <input
+                    id="notes"
+                    type="text"
+                    name="notes"
+                    value={formState.notes}
+                    onChange={onChange}
+                  />
+                </label>
+                <input type="submit" value="Submit" />
+              </form>
+              <Link to={`/task/${data.task._id}`}>Back to Task</Link>
+            </div>
+          )}
+        </div>
+      ) : (
+        <p>
+          You need to be logged in to see your Tasks. Please{" "}
+          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+        </p>
+      )}
     </div>
   );
 };

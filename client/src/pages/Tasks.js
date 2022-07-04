@@ -6,13 +6,8 @@ import Auth from "../utils/auth";
 import { useState, useEffect } from "react";
 
 const Tasks = () => {
-  const [id, setId] = useState("");
+  const [id, setId] = useState();
 
-  //const id = Auth.getProfile().data._id;
-
-  if (Auth.loggedIn()) {
-    setId(Auth.getProfile().data._id);
-  }
   const { loading, data } = useQuery(QUERY_TASKS, {
     variables: {
       userId: id,
@@ -20,9 +15,13 @@ const Tasks = () => {
   });
 
   console.log(data);
-
   const tasks = data?.tasks || [];
 
+  useEffect(() => {
+    if (Auth.loggedIn()) {
+      setId(Auth.getProfile().data._id);
+    }
+  }, []);
   return (
     <div className="tasks-wrapper">
       <h1>Welcome to the Tasks Page</h1>
