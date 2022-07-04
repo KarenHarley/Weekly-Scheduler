@@ -98,6 +98,7 @@ const EditTask = () => {
       <h1>Edit task</h1>
       {Auth.loggedIn() ? (
         <div className="edit-task-wrapper">
+          
           {loading ? (
             <div>Loading...</div>
           ) : (
@@ -157,7 +158,7 @@ const EditTask = () => {
         </div>
       ) : (
         <p>
-          You need to be logged in to see your Tasks. Please{" "}
+          You need to be logged in to see this Task. Please{" "}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
