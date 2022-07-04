@@ -1,8 +1,8 @@
-import { useQuery } from "@apollo/client";
-import { CREATE_TASK } from "../utils/queries";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
+import { CREATE_TASK } from "../utils/mutations";
 
 const CreateForm = () => {
   const [formState, setFormState] = useState({
