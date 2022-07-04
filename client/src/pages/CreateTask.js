@@ -11,6 +11,17 @@ const CreateTask = () => {
     endingTime: "",
     user: "",
   });
+
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+  
   return (
     <div className="create-task-wrapper">
       <div className="create-task-heading">
