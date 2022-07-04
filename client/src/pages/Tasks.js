@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Task from "../components/Task";
 import Auth from "../utils/auth";
 import { useState, useEffect } from "react";
-
+import CreateForm from "../components/CreateForm";
 const Tasks = () => {
   const [id, setId] = useState();
 
@@ -36,6 +36,10 @@ const Tasks = () => {
               })}
             </div>
           )}
+          <div className="create-form-div">
+            <h1>Create form</h1>
+            <CreateForm />
+          </div>
         </div>
       ) : (
         <p>

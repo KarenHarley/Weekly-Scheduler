@@ -2,7 +2,6 @@ import { useQuery } from "@apollo/client";
 import { CREATE_TASK } from "../utils/queries";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-//import Task from "../components/Task";
 import Auth from "../utils/auth";
 
 const CreateTask = () => {
