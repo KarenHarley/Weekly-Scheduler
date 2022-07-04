@@ -1,15 +1,18 @@
-
 import { useQuery } from "@apollo/client";
 import { QUERY_TASKS } from "../utils/queries";
 import { Link } from "react-router-dom";
 import Task from "../components/Task";
-import Auth from '../utils/auth';
-const Tasks = () => {
-//  const params = useParams();
-  //let id = "629e57ed0abac12714b8d215";
-  // local storage???
+import Auth from "../utils/auth";
+import { useState, useEffect } from "react";
 
-  const id = Auth.getProfile().data._id;
+const Tasks = () => {
+  const [id, setId] = useState("");
+
+  //const id = Auth.getProfile().data._id;
+
+  if (Auth.loggedIn()) {
+    setId(Auth.getProfile().data._id);
+  }
   const { loading, data } = useQuery(QUERY_TASKS, {
     variables: {
       userId: id,
@@ -22,26 +25,25 @@ const Tasks = () => {
 
   return (
     <div className="tasks-wrapper">
-      
-          {Auth.loggedIn() ? (
-      <div className="task-heading">
-        <h1>Welcome to the Tasks Page</h1>
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          <div>
-            {tasks.map((task, i) => {
-              return <Task data={task} key={i} />;
-            })}
-          </div>
-        )}
-      </div>
-        ) : (
-          <p>
-            You need to be logged in to see you Tasks. Please{' '}
-            <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
-          </p>
-        )}
+      <h1>Welcome to the Tasks Page</h1>
+      {Auth.loggedIn() ? (
+        <div className="all-tasks-wrapper">
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <div>
+              {tasks.map((task, i) => {
+                return <Task data={task} key={i} />;
+              })}
+            </div>
+          )}
+        </div>
+      ) : (
+        <p>
+          You need to be logged in to see your Tasks. Please{" "}
+          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+        </p>
+      )}
     </div>
   );
 };
