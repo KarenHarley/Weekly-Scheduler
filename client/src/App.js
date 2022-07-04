@@ -13,6 +13,8 @@ import Tasks from "./pages/Tasks";
 import "./App.css";
 import OneTask from "./pages/OneTask";
 import EditTask from "./pages/EditTask";
+import Login from "./pages/Login";
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -58,6 +60,9 @@ function App() {
             </Route>
             <Route exact path="/task/edit/:id">
               <EditTask />
+            </Route>
+            <Route exact path="/login">
+              <Login/>
             </Route>
           </Switch>
         </div>
