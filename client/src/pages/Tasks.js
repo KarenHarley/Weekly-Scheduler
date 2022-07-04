@@ -38,7 +38,7 @@ const Tasks = () => {
           )}
           <div className="create-form-div">
             <h1>Create form</h1>
-            <CreateForm />
+            <CreateForm data={id} />
           </div>
         </div>
       ) : (
