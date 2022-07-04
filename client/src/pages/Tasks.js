@@ -16,7 +16,7 @@ const Tasks = () => {
 
   console.log(data);
   const tasks = data?.tasks || [];
-
+  console.log(tasks);
   useEffect(() => {
     if (Auth.loggedIn()) {
       setId(Auth.getProfile().data._id);
@@ -31,9 +31,15 @@ const Tasks = () => {
             <div>Loading...</div>
           ) : (
             <div>
-              {tasks.map((task, i) => {
-                return <Task data={task} key={i} />;
-              })}
+              {tasks.length >= 1 ? (
+                <div>
+                  {tasks.map((task, i) => {
+                    return <Task data={task} key={i} />;
+                  })}
+                </div>
+              ) : (
+                <p>No Tasks</p>
+              )}
             </div>
           )}
           <div className="create-form-div">
