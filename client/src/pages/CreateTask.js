@@ -1,7 +1,9 @@
 import { useQuery } from "@apollo/client";
-//import { QUERY_TASKS } from "../utils/queries";
+import { CREATE_TASK } from "../utils/queries";
 import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
 //import Task from "../components/Task";
+import Auth from "../utils/auth";
 
 const CreateTask = () => {
   const [formState, setFormState] = useState({
@@ -12,6 +14,7 @@ const CreateTask = () => {
     user: "",
   });
 
+  const [createTask, { error, data }] = useMutation(CREATE_TASK);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,7 +24,27 @@ const CreateTask = () => {
       [name]: value,
     });
   };
-  
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formState);
+
+    try {
+      const { data } = await createTask({
+        variables: { ...formState, _id: Auth.getProfile().data._id },
+      });
+
+      console.log(Auth.getProfile());
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({
+      email: "",
+      password: "",
+    });
+  };
   return (
     <div className="create-task-wrapper">
       <div className="create-task-heading">
