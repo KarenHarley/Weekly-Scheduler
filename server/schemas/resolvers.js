@@ -5,7 +5,9 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     tasks: async (parent, { userId }) => {
-      return Task.find({ user: userId }).sort({startingTime: 1}).populate("user");
+      return Task.find({ user: userId })
+        .sort({ startingTime: 1 })
+        .populate("user");
     },
     user: async (parent, { userId }) => {
       return User.findOne({ _id: userId }).populate("tasks");
@@ -15,14 +17,21 @@ const resolvers = {
     },
   },
   Mutation: {
-    addTask: async (parent, args) => {
-      const task = await Task.create(args);
-      // push the id to user task
-      const user = await User.findOneAndUpdate(
-        { _id: args.user },
-        { $push: { tasks: task._id } }
-      );
-      return task;
+    // By adding context to our query, we can retrieve the logged in user without specifically searching for them
+    addTask: async (parent, args, context) => {
+      if (context.user) {
+        //see line 23 of auth.js
+
+        const task = await Task.create(args);
+        // push the id to user task
+        const user = await User.findOneAndUpdate(
+          { _id: args.user },
+          { $push: { tasks: task._id } }
+        );
+        return task;
+      }
+      // If user attempts to execute this mutation and isn't logged in, throw an error
+      throw new AuthenticationError("You need to be logged in!");
     },
     updateTask: async (
       parent,
@@ -40,7 +49,6 @@ const resolvers = {
       //when user is created a token is created
       const user = await User.create({ username, email, password }); //c in crud returning an instance
       const token = signToken(user);
-
 
       return { token, user }; //returning the info back to the client
     },
