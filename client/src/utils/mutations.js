@@ -53,15 +53,13 @@ export const CREATE_TASK = gql`
 `;
 
 export const LOGIN_USER = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
-      admin {
-        _id
-        email
-        password
-        username
-      }
+mutation login($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    user {
+      _id
+      email
     }
-  }
+    token
+  } 
+}
 `;
