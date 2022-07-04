@@ -1,7 +1,7 @@
 
 import { useQuery } from "@apollo/client";
 import { QUERY_TASKS } from "../utils/queries";
-//import { useParams,Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Task from "../components/Task";
 import Auth from '../utils/auth';
 const Tasks = () => {
@@ -22,6 +22,8 @@ const Tasks = () => {
 
   return (
     <div className="tasks-wrapper">
+      
+          {Auth.loggedIn() ? (
       <div className="task-heading">
         <h1>Welcome to the Tasks Page</h1>
         {loading ? (
@@ -34,6 +36,12 @@ const Tasks = () => {
           </div>
         )}
       </div>
+        ) : (
+          <p>
+            You need to be logged in to see you Tasks. Please{' '}
+            <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          </p>
+        )}
     </div>
   );
 };
