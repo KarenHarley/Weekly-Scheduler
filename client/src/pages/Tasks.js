@@ -1,15 +1,18 @@
 
 import { useQuery } from "@apollo/client";
 import { QUERY_TASKS } from "../utils/queries";
-import { useParams,Link } from "react-router-dom";
+//import { useParams,Link } from "react-router-dom";
 import Task from "../components/Task";
+import Auth from '../utils/auth';
 const Tasks = () => {
-  const params = useParams();
+//  const params = useParams();
   //let id = "629e57ed0abac12714b8d215";
   // local storage???
+
+  const id = Auth.getProfile().data.id;
   const { loading, data } = useQuery(QUERY_TASKS, {
     variables: {
-      userId: params.id,
+      userId: id,
     },
   });
 

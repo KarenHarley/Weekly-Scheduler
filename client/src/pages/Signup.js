@@ -29,7 +29,7 @@ const Signup = (props) => {
       });
 
       Auth.login(data.signup.token);
-      window.location.replace(`/tasks/${id}`); //get id from data
+      window.location.replace("/tasks");
     } catch (e) {
       console.error(e);
     }

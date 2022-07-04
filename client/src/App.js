@@ -50,7 +50,7 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/tasks/:id">
+            <Route exact path="/tasks">
               <Tasks />
             </Route>
             <Route exact path="/task/:id">
