@@ -9,7 +9,7 @@ const Tasks = () => {
   //let id = "629e57ed0abac12714b8d215";
   // local storage???
 
-  const id = Auth.getProfile().data.id;
+  const id = Auth.getProfile().data._id;
   const { loading, data } = useQuery(QUERY_TASKS, {
     variables: {
       userId: id,
