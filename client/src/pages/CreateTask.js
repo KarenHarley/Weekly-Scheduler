@@ -1,10 +1,16 @@
-
 import { useQuery } from "@apollo/client";
 //import { QUERY_TASKS } from "../utils/queries";
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 //import Task from "../components/Task";
 
 const CreateTask = () => {
+  const [formState, setFormState] = useState({
+    name: "",
+    notes: "",
+    startingTime: "",
+    endingTime: "",
+    user: "",
+  });
   return (
     <div className="create-task-wrapper">
       <div className="create-task-heading">

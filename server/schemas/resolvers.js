@@ -19,12 +19,14 @@ const resolvers = {
   Mutation: {
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     addTask: async (parent, args, context) => {
+      console.log(args);
+      console.log(context.user);
       if (context.user) {
         //see line 23 of auth.js
 
         const task = await Task.create(args);
         // push the id to user task
-        const user = await User.findOneAndUpdate(
+        const thisUser = await User.findOneAndUpdate(
           { _id: args.user },
           { $push: { tasks: task._id } }
         );

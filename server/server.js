@@ -7,13 +7,14 @@ const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   // Add context to our server so data from the `authMiddleware()` function can pass data to our resolver functions
   context: authMiddleware, //need to call it context...now we can access preces of info from authMiddleware in resolvers (see resolvers)
-  //is a lot like middleware in Express. This will allow us to intercept any request to the server and check if there's a valid JWT before the request gets to the resolver.
 });
+ //context is a lot like middleware in Express. This will allow us to intercept any request to the server and check if there's a valid JWT before the request gets to the resolver.
 
 server.applyMiddleware({ app });
 
