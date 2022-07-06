@@ -19,15 +19,28 @@ const resolvers = {
     task: async (parent, { taskId }) => {
       return Task.findOne({ _id: taskId }).populate("user");
     },
+    duplicate: async (parent, args) => {
+      //use context for id
+      console.log(args);
+      const duplicate = await Task.findOne({
+        user: "62c3551cb89afb227cfc7329",
+        startingTime: args.startingTime,
+        endingTime: args.endingTime,
+      }).populate("user");
+      console.log(duplicate);
+
+      if (duplicate) {
+        console.log("Duplicate");
+        return true;
+      }
+      return false;
+    },
   },
   Mutation: {
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     addTask: async (parent, args, context) => {
-      console.log(args);
-      console.log(context.user);
       if (context.user) {
         //see line 23 of auth.js
-
         const task = await Task.create(args);
         // push the id to user task
         const thisUser = await User.findOneAndUpdate(
