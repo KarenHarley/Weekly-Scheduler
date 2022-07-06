@@ -40,8 +40,11 @@ const CreateForm = ({ data }) => {
 
     // clear form values
     setFormState({
-      email: "",
-      password: "",
+      name: "",
+      notes: "",
+      startingTime: "",
+      endingTime: "",
+      day: "",
     });
   };
   return (
