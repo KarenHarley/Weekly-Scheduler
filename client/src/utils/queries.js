@@ -25,3 +25,16 @@ export const QUERY_TASK = gql`
     }
   }
 `;
+export const QUERY_DUPLICATE = gql`
+query duplicate($startingTime: String!,$endingTime: String!) {
+  duplicate(startingTime: $startingTime, endingTime: $endingTime ) {
+   name,
+   notes,
+  startingTime,
+  endingTime,
+  user{
+    username
+  }
+  }
+}
+`;
