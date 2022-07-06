@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-//import { SIGNUP_USER } from "../../../utils/mutations";
+import { ADD_USER } from "../../../utils/mutations";
 
 const Signup = (props) => {
-  const classes = useStyles();
   const [formState, setFormState] = useState({
     email: "",
     password: "",
     username: "",
   });
-  const [signup, { error, data }] = useMutation(LOGIN_USER);
+  const [signup, { error, data }] = useMutation(ADD_USER);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,7 +44,7 @@ const Signup = (props) => {
     <div class="user-form">
       <h1>Sign Up</h1>
       <form>
-      <input
+        <input
           type="text"
           name="username"
           placeholder="Username"
