@@ -41,7 +41,14 @@ const resolvers = {
     addTask: async (parent, args, context) => {
       if (context.user) {
         //see line 23 of auth.js
-        const task = await Task.create(args);
+        const task = await Task.create({
+          name: args.name,
+          notes: args.notes,
+          day: args.day,
+          startingTime: args.startingTime,
+          endingTime: args.endingTime,
+          user: context.user._id,
+        });
         // push the id to user task
         const thisUser = await User.findOneAndUpdate(
           { _id: context.user._id },
