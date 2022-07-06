@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_TASK } from "../utils/queries";
 import { useParams } from "react-router-dom";
+
 const OneTask = () => {
   const params = useParams();
   console.log(params.id);

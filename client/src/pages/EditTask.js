@@ -47,7 +47,7 @@ const EditTask = () => {
         variables: { ...formState, _id: data.task._id },
       });
       console.log(updateData);
-      // window.location.replace("/gracias");
+      window.location.replace(`/task/${data.task._id}`);
     } catch (e) {
       console.error(e);
     }
