@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import CreateForm from "../components/CreateForm";
 const Tasks = () => {
   const [id, setId] = useState(0);
+  const [day, setDay] = useState("Monday");
 
   const { loading, data } = useQuery(QUERY_TASKS, {
     variables: {
@@ -26,6 +27,18 @@ const Tasks = () => {
   return (
     <div className="tasks-wrapper">
       <h1>Welcome to the Tasks Page</h1>
+
+      <div className="select-day-div">
+        <ul>
+          <li>Monday</li>
+          <li>Tuesday</li>
+          <li>Wensday</li>
+          <li>Thursday</li>
+          <li>Friday</li>
+          <li>Saturday</li>
+          <li>Sunday</li>
+        </ul>
+      </div>
       {Auth.loggedIn() ? (
         <div className="all-tasks-wrapper">
           {loading ? (

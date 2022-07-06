@@ -6,6 +6,7 @@ const resolvers = {
   Query: {
     tasks: async (parent, { userId }, context) => {
       if (context.user) {
+        console.log(context.user)
         return Task.find({ user: userId })
           .sort({ startingTime: 1 })
           .populate("user");
