@@ -1,3 +1,35 @@
+export const createOptions = (time) => {
+  //set value to 1 in "1:00 am"
+  let optionValue = time.split(":")[0];
+  let optionKey = time.split(":")[0];
+  //if the string has "pm" set value to 13 in  "1 pm"
+  if (time.split(" ")[1] === "pm") {
+    optionValue = Number(time.split(":")[0]) + 12;
+    optionKey = Number(time.split(":")[0]) + 12;
+  }
+  // if the string has "30" set the value and key to 1.5 in "1 am"
+  if (
+    time.split(" ")[0].split(":")[1] === "30" &&
+    time.split(" ")[1] === "am"
+  ) {
+    optionValue = Number(time.split(":")[0]) + 0.5;
+    optionKey = Number(time.split(":")[0]) + 0.5;
+  } else if (
+    // if the string has "30" set the value and key to 13.5 in "1 pm"
+    time.split(" ")[0].split(":")[1] === "30" &&
+    time.split(" ")[1] === "pm"
+  ) {
+    optionValue = Number(time.split(":")[0]) + 12.5;
+    optionKey = Number(time.split(":")[0]) + 12.5;
+  }
+  return (
+    <option value={optionValue} key={optionKey}>
+      {time}
+    </option>
+  );
+};
+
+
 export const times = [
   "1:00 am",
   "1:30 am",

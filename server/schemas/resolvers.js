@@ -69,6 +69,7 @@ const resolvers = {
         // Return the newly updated object instead of the original
         { new: true }
       );
+      console.log(updatedTask);
       return updatedTask;
     },
     addUser: async (parent, { username, email, password }) => {
