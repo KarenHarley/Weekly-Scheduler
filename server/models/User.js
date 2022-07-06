@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
-var uniqueValidator = require('mongoose-unique-validator');
-const bcrypt = require('bcrypt');
+var uniqueValidator = require("mongoose-unique-validator");
+const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
   username: {
@@ -27,10 +27,10 @@ const userSchema = new Schema({
   ],
 });
 
-
 // set up pre-save middleware to create password
-userSchema.pre('save', async function (next) {
-  if (this.isNew || this.isModified('password')) {//if a password is created or modified
+userSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
+    //if a password is created or modified
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
@@ -43,7 +43,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-userSchema.plugin(uniqueValidator);
+userSchema.plugin(uniqueValidator, { message: "{PATH} must be unique" });
 const User = model("User", userSchema);
 
 module.exports = User;

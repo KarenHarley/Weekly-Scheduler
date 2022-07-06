@@ -12,6 +12,7 @@ const CreateForm = ({ data }) => {
     startingTime: "",
     endingTime: "",
     user: "",
+    day: "",
   });
 
   const [createTask, { error, taskData }] = useMutation(CREATE_TASK);
@@ -67,6 +68,15 @@ const CreateForm = ({ data }) => {
           placeholder="Notes"
           id="task-notes"
           value={formState.notes}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="day"
+          placeholder="Day of the Week"
+          id="task-day"
+          value={formState.day}
           onChange={handleChange}
           required
         />

@@ -31,7 +31,7 @@ const Signup = (props) => {
       window.location.replace("/tasks");
     } catch (e) {
       console.error(e);
-      alert("This email was already found in the database");
+        alert("This email was already found in the database");
     }
 
     // clear form values
