@@ -7,7 +7,7 @@ const resolvers = {
     tasks: async (parent, { selectedDay }, context) => {
       if (context.user) {
         console.log(context.user);
-        return Task.find({ user: context.user.id, day: selectedDay })
+        return Task.find({ user: context.user._id, day: selectedDay })
           .sort({ startingTime: 1 })
           .populate("user");
       }

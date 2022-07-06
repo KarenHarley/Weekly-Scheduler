@@ -11,7 +11,7 @@ const Tasks = () => {
 
   const { loading, data } = useQuery(QUERY_TASKS, {
     variables: {
-      userId: id,
+      selectedDay: day,
     },
   });
 

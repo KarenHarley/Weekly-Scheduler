@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_TASKS = gql`
-  query tasks($userId: ID!) {
-    tasks(userId: $userId) {
+  query tasks($selectedDay: String!) {
+    tasks(selectedDay: $selectedDay) {
       _id
       name
       notes
@@ -15,14 +15,13 @@ export const QUERY_TASKS = gql`
   }
 `;
 export const QUERY_TASK = gql`
-query task($taskId: String!) {
+  query task($taskId: String!) {
     task(taskId: $taskId) {
       _id
       name
       notes
       startingTime
       endingTime
-      
     }
   }
-  `;
+`;
