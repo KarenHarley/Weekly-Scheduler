@@ -4,10 +4,10 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    tasks: async (parent, { userId }, context) => {
+    tasks: async (parent, { selectedDay }, context) => {
       if (context.user) {
-        console.log(context.user)
-        return Task.find({ user: userId })
+        console.log(context.user);
+        return Task.find({ user: context.user.id, day: selectedDay })
           .sort({ startingTime: 1 })
           .populate("user");
       }
