@@ -18,7 +18,11 @@ const Tasks = () => {
   console.log(data);
   const tasks = data?.tasks || [];
   console.log(tasks);
-
+  console.log(day);
+  const selectDay = (e) => {
+    console.log(e.target.id);
+    setDay(e.target.id);
+  };
   useEffect(() => {
     if (Auth.loggedIn()) {
       setId(Auth.getProfile().data._id);
@@ -29,14 +33,14 @@ const Tasks = () => {
       <h1>Welcome to the Tasks Page</h1>
 
       <div className="select-day-div">
-        <ul>
-          <li>Monday</li>
-          <li>Tuesday</li>
-          <li>Wensday</li>
-          <li>Thursday</li>
-          <li>Friday</li>
-          <li>Saturday</li>
-          <li>Sunday</li>
+        <ul onClick={selectDay}>
+          <li id="Monday">Monday</li>
+          <li id="Tuesday">Tuesday</li>
+          <li id="Wensday">Wensday</li>
+          <li id="Thursday">Thursday</li>
+          <li id="Friday">Friday</li>
+          <li id="Saturday">Saturday</li>
+          <li id="Sunday">Sunday</li>
         </ul>
       </div>
       {Auth.loggedIn() ? (
