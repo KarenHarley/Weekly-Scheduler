@@ -5,6 +5,7 @@ import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { CREATE_TASK } from "../utils/mutations";
 import { times, createOptions } from "../utils/times";
+import { QUERY_TASKS } from "../utils/queries";
 
 const CreateForm = ({ data }) => {
   const [formState, setFormState] = useState({
@@ -15,7 +16,26 @@ const CreateForm = ({ data }) => {
     day: "",
   });
 
-  const [createTask, { error, taskData }] = useMutation(CREATE_TASK);
+  const [createTask, { error }] = useMutation(CREATE_TASK, {
+    update(cache, { data: { createTask } }) {
+      //cache gives us access to our cache
+      try {
+        // First we retrieve existing profile data that is stored in the cache under the `QUERY_PROFILES` query
+        // Could potentially not exist yet, so wrap in a try/catch
+        const { tasks } = cache.readQuery({ query: QUERY_TASKS }); //this is accessing our local cache
+        // profiles is an array of obj
+
+        // Then we update the cache by combining existing profile data with the newly created data returned from the mutation
+        cache.writeQuery({
+          query: QUERY_TASKS,
+          // If we want new data to show up before or after existing data, adjust the order of this array
+          data: { tasks: [...tasks, createTask] }, //first get existing profiles (...profiles) then give me the new profile (addProfile)
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -110,6 +130,7 @@ const CreateForm = ({ data }) => {
         </label>
         <input type="submit" onClick={handleFormSubmit} />
       </form>
+      {error && <div className="error">Something went wrong...</div>}
     </div>
   );
 };
