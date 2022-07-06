@@ -26,8 +26,8 @@ const Signup = (props) => {
       const { data } = await signup({
         variables: { ...formState },
       });
-
-      Auth.login(data.signup.token);
+      console.log(data);
+      Auth.login(data.addUser.token);
       window.location.replace("/tasks");
     } catch (e) {
       console.error(e);
