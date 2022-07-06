@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { CREATE_TASK } from "../utils/mutations";
-//import { times, createOptions } from "../utils/times";
+import { times, createOptions } from "../utils/times";
 
 const CreateForm = ({ data }) => {
   const [formState, setFormState] = useState({
@@ -82,28 +82,32 @@ const CreateForm = ({ data }) => {
           onChange={handleChange}
           required
         />
-        {/* <label>
+        <label>
           Select Starting Time
           <select
             id="start"
             name="startingTime"
             value={formState.startingTime}
-            onChange={onChange}
+            onChange={handleChange}
           >
             {times.map((time) => {
               return createOptions(time);
             })}
           </select>
-        </label> */}
-        <input
-          type="text"
-          name="endingTime"
-          placeholder="End"
-          id="task-endingTime"
-          value={formState.endingTime}
-          onChange={handleChange}
-          required
-        />
+        </label>
+        <label>
+          Select Ending Time
+          <select
+            id="end"
+            name="endingTime"
+            value={formState.endingTime}
+            onChange={handleChange}
+          >
+            {times.map((time) => {
+              return createOptions(time);
+            })}
+          </select>
+        </label>
         <input type="submit" onClick={handleFormSubmit} />
       </form>
     </div>
