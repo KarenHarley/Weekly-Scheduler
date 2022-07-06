@@ -26,11 +26,12 @@ const Signup = (props) => {
       const { data } = await signup({
         variables: { ...formState },
       });
-     console.log(data)
+      console.log(data);
       Auth.login(data.addUser.token);
       window.location.replace("/tasks");
     } catch (e) {
       console.error(e);
+      alert("This email was already found in the database");
     }
 
     // clear form values
