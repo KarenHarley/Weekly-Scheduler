@@ -31,7 +31,7 @@ const CreateForm = ({ data }) => {
 
     try {
       const { taskData } = await createTask({
-        variables: { ...formState, _id: data.id },
+        variables: { ...formState },
       });
       console.log(taskData);
     } catch (e) {

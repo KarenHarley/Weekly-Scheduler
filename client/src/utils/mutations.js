@@ -32,12 +32,14 @@ export const CREATE_TASK = gql`
     $notes: String
     $startingTime: String!
     $endingTime: String!
+    $day: String!
   ) {
     addTask(
       name: $name
       notes: $notes
       startingTime: $startingTime
       endingTime: $endingTime
+      day: $day
     ) {
       name
       notes
