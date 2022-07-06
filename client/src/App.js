@@ -6,7 +6,7 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
-import { setContext } from '@apollo/client/link/context';
+import { setContext } from "@apollo/client/link/context";
 
 import Home from "./pages/Homepage";
 import Tasks from "./pages/Tasks";
@@ -14,7 +14,7 @@ import "./App.css";
 import OneTask from "./pages/OneTask";
 import EditTask from "./pages/EditTask";
 import Login from "./pages/Login";
-
+import Signup from "./pages/Signup";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -42,7 +42,7 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink), //sending our token in the requests graphql automatcally
   cache: new InMemoryCache(),
 });
-console.log(httpLink)
+console.log(httpLink);
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -62,7 +62,10 @@ function App() {
               <EditTask />
             </Route>
             <Route exact path="/login">
-              <Login/>
+              <Login />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
             </Route>
           </Switch>
         </div>
