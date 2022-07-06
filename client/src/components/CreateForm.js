@@ -11,7 +11,6 @@ const CreateForm = ({ data }) => {
     notes: "",
     startingTime: "",
     endingTime: "",
-    user: "",
     day: "",
   });
 
@@ -34,8 +33,7 @@ const CreateForm = ({ data }) => {
       const { taskData } = await createTask({
         variables: { ...formState, _id: data.id },
       });
-
-      console.log(Auth.getProfile());
+      console.log(taskData);
     } catch (e) {
       console.error(e);
     }

@@ -32,22 +32,17 @@ export const CREATE_TASK = gql`
     $notes: String
     $startingTime: String!
     $endingTime: String!
-    $user: ID!
   ) {
     addTask(
       name: $name
       notes: $notes
       startingTime: $startingTime
       endingTime: $endingTime
-      user: $user
     ) {
       name
       notes
       startingTime
       endingTime
-      user {
-        _id
-      }
     }
   }
 `;

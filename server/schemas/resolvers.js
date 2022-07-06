@@ -44,7 +44,7 @@ const resolvers = {
         const task = await Task.create(args);
         // push the id to user task
         const thisUser = await User.findOneAndUpdate(
-          { _id: args.user },
+          { _id: context.user._id },
           { $push: { tasks: task._id } }
         );
         return task;

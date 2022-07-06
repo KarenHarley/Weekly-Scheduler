@@ -38,7 +38,6 @@ const typeDefs = gql`
       day: String!
       startingTime: String!
       endingTime: String!
-      user: ID!
     ): Task
 
     updateTask(
