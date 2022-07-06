@@ -6,7 +6,7 @@ import Auth from "../utils/auth";
 import { useState, useEffect } from "react";
 import CreateForm from "../components/CreateForm";
 const Tasks = () => {
-  const [id, setId] = useState();
+  const [id, setId] = useState(0);
 
   const { loading, data } = useQuery(QUERY_TASKS, {
     variables: {
@@ -17,6 +17,7 @@ const Tasks = () => {
   console.log(data);
   const tasks = data?.tasks || [];
   console.log(tasks);
+
   useEffect(() => {
     if (Auth.loggedIn()) {
       setId(Auth.getProfile().data._id);
