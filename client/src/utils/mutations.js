@@ -45,6 +45,9 @@ export const CREATE_TASK = gql`
       notes
       startingTime
       endingTime
+      user {
+        _id
+      }
     }
   }
 `;

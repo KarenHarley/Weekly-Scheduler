@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useQuery } from "@apollo/client";
+import { selectHttpOptionsAndBody, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
@@ -7,7 +7,7 @@ import { CREATE_TASK } from "../utils/mutations";
 import { times, createOptions } from "../utils/times";
 import { QUERY_TASKS } from "../utils/queries";
 
-const CreateForm = ({ data }) => {
+const CreateForm = ({ setDay, day }) => {
   const [formState, setFormState] = useState({
     name: "",
     notes: "",
@@ -17,24 +17,12 @@ const CreateForm = ({ data }) => {
   });
 
   const [createTask, { error }] = useMutation(CREATE_TASK, {
-    update(cache, { data: { createTask } }) {
-      //cache gives us access to our cache
-      try {
-        // First we retrieve existing profile data that is stored in the cache under the `QUERY_PROFILES` query
-        // Could potentially not exist yet, so wrap in a try/catch
-        const { tasks } = cache.readQuery({ query: QUERY_TASKS }); //this is accessing our local cache
-        // profiles is an array of obj
-
-        // Then we update the cache by combining existing profile data with the newly created data returned from the mutation
-        cache.writeQuery({
-          query: QUERY_TASKS,
-          // If we want new data to show up before or after existing data, adjust the order of this array
-          data: { tasks: [...tasks, createTask] }, //first get existing profiles (...profiles) then give me the new profile (addProfile)
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    },
+    refetchQueries: [
+      {
+        query: QUERY_TASKS,
+        variables: { selectedDay: day },
+      },
+    ],
   });
 
   const handleChange = (e) => {
@@ -51,22 +39,21 @@ const CreateForm = ({ data }) => {
     console.log(formState);
 
     try {
-      const { taskData } = await createTask({
+      const taskData = await createTask({
         variables: { ...formState },
       });
-      console.log(taskData);
+      setDay(formState.day);
+      // clear form values
+      setFormState({
+        name: "",
+        notes: "",
+        startingTime: "",
+        endingTime: "",
+        day: "",
+      });
     } catch (e) {
       console.error(e);
     }
-
-    // clear form values
-    setFormState({
-      name: "",
-      notes: "",
-      startingTime: "",
-      endingTime: "",
-      day: "",
-    });
   };
   return (
     <div className="create-task-wrapper">

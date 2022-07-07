@@ -41,18 +41,24 @@ const resolvers = {
     addTask: async (parent, args, context) => {
       if (context.user) {
         //see line 23 of auth.js
-        const task = await Task.create({
-          name: args.name,
-          notes: args.notes,
-          day: args.day,
-          startingTime: args.startingTime,
-          endingTime: args.endingTime,
-          user: context.user._id,
-        });
+        const task = await Task.create(
+          {
+            name: args.name,
+            notes: args.notes,
+            day: args.day,
+            startingTime: args.startingTime,
+            endingTime: args.endingTime,
+            user: context.user._id,
+          }
+        );
         // push the id to user task
         const thisUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $push: { tasks: task._id } }
+          { $push: { tasks: task._id } },
+          {
+            new: true,
+            runValidators: true,
+          }
         );
         return task;
       }
