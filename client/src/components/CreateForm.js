@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { CREATE_TASK } from "../utils/mutations";
-import { times, createOptions } from "../utils/times";
+import { times, createOptions, days } from "../utils/times";
 import { QUERY_TASKS } from "../utils/queries";
 
 const CreateForm = ({ setDay, day }) => {
@@ -80,7 +80,7 @@ const CreateForm = ({ setDay, day }) => {
           onChange={handleChange}
           required
         />
-        <input
+        {/* <input
           type="text"
           name="day"
           placeholder="Day of the Week"
@@ -88,7 +88,24 @@ const CreateForm = ({ setDay, day }) => {
           value={formState.day}
           onChange={handleChange}
           required
-        />
+        /> */}
+        <label>
+          Select Day
+          <select
+            id="day"
+            name="day"
+            value={formState.day}
+            onChange={handleChange}
+          >
+            {days.map((day) => {
+              return (
+                <option value={day} key={day}>
+                  {day}
+                </option>
+              );
+            })}
+          </select>
+        </label>
         <label>
           Select Starting Time
           <select
