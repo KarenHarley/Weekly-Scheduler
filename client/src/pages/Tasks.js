@@ -8,7 +8,15 @@ import CreateForm from "../components/CreateForm";
 const Tasks = () => {
   const [id, setId] = useState(0);
   const [day, setDay] = useState("Monday");
-
+  const days = [
+    "Monday",
+    "Tuesday",
+    "Wensday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
   const { loading, data } = useQuery(QUERY_TASKS, {
     variables: {
       selectedDay: day,
@@ -34,13 +42,16 @@ const Tasks = () => {
 
       <div className="select-day-div">
         <ul onClick={selectDay}>
-          <li id="Monday">Monday</li>
-          <li id="Tuesday">Tuesday</li>
-          <li id="Wensday">Wensday</li>
-          <li id="Thursday">Thursday</li>
-          <li id="Friday">Friday</li>
-          <li id="Saturday">Saturday</li>
-          <li id="Sunday">Sunday</li>
+          {days.map((loopingDay, i) => {
+            return (
+              <li
+                id={loopingDay}
+                className={day === loopingDay ? "selected" : "nav-link"}
+              >
+                {loopingDay}
+              </li>
+            );
+          })}
         </ul>
       </div>
       {Auth.loggedIn() ? (
