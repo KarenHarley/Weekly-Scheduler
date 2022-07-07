@@ -5,18 +5,11 @@ import Task from "../components/Task";
 import Auth from "../utils/auth";
 import { useState, useEffect } from "react";
 import CreateForm from "../components/CreateForm";
+import { days } from "../utils/times";
 const Tasks = () => {
   const [id, setId] = useState(0);
   const [day, setDay] = useState("Monday");
-  const days = [
-    "Monday",
-    "Tuesday",
-    "Wensday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
+
   const { loading, data } = useQuery(QUERY_TASKS, {
     variables: {
       selectedDay: day,

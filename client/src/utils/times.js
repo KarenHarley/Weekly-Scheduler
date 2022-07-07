@@ -47,6 +47,15 @@ export const formatTime = (time) => {
   }
 };
 
+export const days = [
+  "Monday",
+  "Tuesday",
+  "Wensday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
 export const times = [
   "1:00 am",
   "1:30 am",
