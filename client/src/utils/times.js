@@ -30,7 +30,6 @@ export const createOptions = (time) => {
 };
 
 export const formatTime = (time) => {
-  console.log(parseInt(time) - 12);
   if (time.indexOf(".") == -1 && parseInt(time) <= 12) {
     return `${time}:00 am`;
   }

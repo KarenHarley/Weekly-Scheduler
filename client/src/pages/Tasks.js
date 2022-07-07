@@ -28,8 +28,10 @@ const Tasks = () => {
   console.log(tasks);
   console.log(day);
   const selectDay = (e) => {
-    console.log(e.target.id);
-    setDay(e.target.id);
+    if (e.target.type === "li") {
+      console.log(e.target.id);
+      setDay(e.target.id);
+    }
   };
   useEffect(() => {
     if (Auth.loggedIn()) {
@@ -45,7 +47,9 @@ const Tasks = () => {
           {days.map((loopingDay, i) => {
             return (
               <li
+                type="li"
                 id={loopingDay}
+                key={loopingDay}
                 className={day === loopingDay ? "selected" : "nav-link"}
               >
                 {loopingDay}
