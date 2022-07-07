@@ -92,11 +92,15 @@ const CreateForm = ({ setDay, day }) => {
         <label>
           Select Day
           <select
+            required
             id="day"
             name="day"
             value={formState.day}
             onChange={handleChange}
           >
+            <option value="disabled" isDisabled={true} selected>
+              Select Day
+            </option>
             {days.map((day) => {
               return (
                 <option value={day} key={day}>
