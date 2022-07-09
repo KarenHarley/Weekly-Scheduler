@@ -30,18 +30,18 @@ export const createOptions = (time) => {
 };
 
 export const formatTime = (time) => {
-  if (time.indexOf(".") == -1 && parseInt(time) <= 12) {
+  if (time.indexOf(".") === -1 && parseInt(time) <= 12) {
     return `${time}:00 am`;
   }
-  if (time.split(".")[1] == "5" && parseInt(time) <= 12) {
+  if (time.split(".")[1] === "5" && parseInt(time) <= 12) {
     return `${time.split(".")[0]}:30 am`;
   }
 
-  if (time.indexOf(".") == -1 && parseInt(time) > 12) {
+  if (time.indexOf(".") === -1 && parseInt(time) > 12) {
     return `${parseInt(time) - 12}:00 pm`;
   }
 
-  if (time.split(".")[1] == 5 && time > 12) {
+  if (time.split(".")[1] === 5 && time > 12) {
     let splitString = time.split(".")[0];
     return `${parseInt(splitString) - 12}:30 pm`;
   }

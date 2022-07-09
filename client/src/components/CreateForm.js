@@ -80,15 +80,6 @@ const CreateForm = ({ setDay, day }) => {
           onChange={handleChange}
           required
         />
-        {/* <input
-          type="text"
-          name="day"
-          placeholder="Day of the Week"
-          id="task-day"
-          value={formState.day}
-          onChange={handleChange}
-          required
-        /> */}
         <label>
           Select Day
           <select
