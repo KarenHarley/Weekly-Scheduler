@@ -22,26 +22,17 @@ const resolvers = {
     duplicate: async (parent, args, context) => {
       //use context for id
       if (context.user) {
-        console.log(args);
-        console.log(context.user);
         const duplicate = await Task.findOne({
           user: context.user._id,
           startingTime: args.startingTime,
-          endingTime: args.endingTime,
           day: args.day,
         }).populate("user");
-        console.log(duplicate);
 
         if (duplicate) {
           console.log("Duplicate");
         }
 
-        //if (
-        //   duplicate.startingTime === args.startingTime &&
-        //   duplicate.endingTime !== args.endingTime
-        // ) {
-        //   return duplicate;
-        // }
+        //add some sort of message to tell if it is a full duplicate (exact times) or a half (same starting time)
         return duplicate;
       }
       throw new AuthenticationError("You need to be logged in!");

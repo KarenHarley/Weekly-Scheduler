@@ -70,6 +70,7 @@ const CreateForm = ({ setDay, day }) => {
     }
   };
   useEffect(() => {
+    console.log("Use effect");
     refetch();
   }, [formState]);
   return (
