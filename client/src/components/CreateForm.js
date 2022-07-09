@@ -5,7 +5,7 @@ import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { CREATE_TASK } from "../utils/mutations";
 import { times, createOptions, days } from "../utils/times";
-import { QUERY_TASKS } from "../utils/queries";
+import { QUERY_TASKS, QUERY_DUPLICATE } from "../utils/queries";
 
 const CreateForm = ({ setDay, day }) => {
   const [formState, setFormState] = useState({
@@ -14,6 +14,14 @@ const CreateForm = ({ setDay, day }) => {
     startingTime: "",
     endingTime: "",
     day: "",
+  });
+
+  const { loading, data } = useQuery(QUERY_DUPLICATE, {
+    variables: {
+      startingTime: formState.startingTime,
+      endingTime: formState.endingTime,
+      day: formState.day,
+    },
   });
 
   const [createTask, { error }] = useMutation(CREATE_TASK, {
@@ -37,7 +45,10 @@ const CreateForm = ({ setDay, day }) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     console.log(formState);
-
+    if (data) {
+      alert("This time already has a task");
+      return
+    }
     try {
       const taskData = await createTask({
         variables: { ...formState },

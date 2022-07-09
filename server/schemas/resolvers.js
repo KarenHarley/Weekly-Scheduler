@@ -26,14 +26,14 @@ const resolvers = {
         user: "62c3551cb89afb227cfc7329",
         startingTime: args.startingTime,
         endingTime: args.endingTime,
+        day: args.day,
       }).populate("user");
       console.log(duplicate);
 
       if (duplicate) {
         console.log("Duplicate");
-        return true;
       }
-      return false;
+      return duplicate;
     },
   },
   Mutation: {
@@ -41,16 +41,14 @@ const resolvers = {
     addTask: async (parent, args, context) => {
       if (context.user) {
         //see line 23 of auth.js
-        const task = await Task.create(
-          {
-            name: args.name,
-            notes: args.notes,
-            day: args.day,
-            startingTime: args.startingTime,
-            endingTime: args.endingTime,
-            user: context.user._id,
-          }
-        );
+        const task = await Task.create({
+          name: args.name,
+          notes: args.notes,
+          day: args.day,
+          startingTime: args.startingTime,
+          endingTime: args.endingTime,
+          user: context.user._id,
+        });
         // push the id to user task
         const thisUser = await User.findOneAndUpdate(
           { _id: context.user._id },

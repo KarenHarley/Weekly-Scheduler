@@ -28,7 +28,7 @@ const typeDefs = gql`
     tasks(selectedDay: String!): [Task]
     user(userId: ID!): User
     task(taskId: String!): Task
-    duplicate(startingTime: String!, endingTime: String!): Task
+    duplicate(startingTime: String!, endingTime: String!,day: String!): Task
   }
 
   type Mutation {
