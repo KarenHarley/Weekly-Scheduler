@@ -10,6 +10,7 @@ export const QUERY_TASKS = gql`
       endingTime
       user {
         username
+        _id
       }
     }
   }
@@ -26,15 +27,15 @@ export const QUERY_TASK = gql`
   }
 `;
 export const QUERY_DUPLICATE = gql`
-query duplicate($startingTime: String!,$endingTime: String!, $day: String!) {
-  duplicate(startingTime: $startingTime, endingTime: $endingTime,day: $day ) {
-   name,
-   notes,
-  startingTime,
-  endingTime,
-  user{
-    username
+  query duplicate($startingTime: String!, $endingTime: String!, $day: String!) {
+    duplicate(startingTime: $startingTime, endingTime: $endingTime, day: $day) {
+      name
+      notes
+      startingTime
+      endingTime
+      user {
+        username
+      }
+    }
   }
-  }
-}
 `;

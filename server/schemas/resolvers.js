@@ -19,21 +19,32 @@ const resolvers = {
     task: async (parent, { taskId }) => {
       return Task.findOne({ _id: taskId }).populate("user");
     },
-    duplicate: async (parent, args) => {
+    duplicate: async (parent, args, context) => {
       //use context for id
-      console.log(args);
-      const duplicate = await Task.findOne({
-        user: "62c3551cb89afb227cfc7329",
-        startingTime: args.startingTime,
-        endingTime: args.endingTime,
-        day: args.day,
-      }).populate("user");
-      console.log(duplicate);
+      if (context.user) {
+        console.log(args);
+        console.log(context.user);
+        const duplicate = await Task.findOne({
+          user: context.user._id,
+          startingTime: args.startingTime,
+          endingTime: args.endingTime,
+          day: args.day,
+        }).populate("user");
+        console.log(duplicate);
 
-      if (duplicate) {
-        console.log("Duplicate");
+        if (duplicate) {
+          console.log("Duplicate");
+        }
+
+        //if (
+        //   duplicate.startingTime === args.startingTime &&
+        //   duplicate.endingTime !== args.endingTime
+        // ) {
+        //   return duplicate;
+        // }
+        return duplicate;
       }
-      return duplicate;
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
   Mutation: {

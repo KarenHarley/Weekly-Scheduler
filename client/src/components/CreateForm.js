@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { selectHttpOptionsAndBody, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
@@ -15,8 +15,7 @@ const CreateForm = ({ setDay, day }) => {
     endingTime: "",
     day: "",
   });
-
-  const { loading, data } = useQuery(QUERY_DUPLICATE, {
+  const { loading, data, refetch } = useQuery(QUERY_DUPLICATE, {
     variables: {
       startingTime: formState.startingTime,
       endingTime: formState.endingTime,
@@ -40,32 +39,39 @@ const CreateForm = ({ setDay, day }) => {
       ...formState,
       [name]: value,
     });
+    console.log(data);
   };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     console.log(formState);
-    if (data) {
+    console.log("data", data);
+
+    console.log("data2", data.duplicate);
+    if (!data.duplicate) {
+      try {
+        const taskData = await createTask({
+          variables: { ...formState },
+        });
+        setDay(formState.day);
+        // clear form values
+        setFormState({
+          name: "",
+          notes: "",
+          startingTime: "",
+          endingTime: "",
+          day: "",
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    } else {
       alert("This time already has a task");
-      return
-    }
-    try {
-      const taskData = await createTask({
-        variables: { ...formState },
-      });
-      setDay(formState.day);
-      // clear form values
-      setFormState({
-        name: "",
-        notes: "",
-        startingTime: "",
-        endingTime: "",
-        day: "",
-      });
-    } catch (e) {
-      console.error(e);
     }
   };
+  useEffect(() => {
+    refetch();
+  }, [formState]);
   return (
     <div className="create-task-wrapper">
       <div className="create-task-heading">
