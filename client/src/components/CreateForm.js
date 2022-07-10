@@ -84,6 +84,7 @@ const CreateForm = ({ setDay, day }) => {
       </div>
 
       <form>
+        <div className="name-notes-div">
         <input
           type="text"
           name="name"
@@ -102,6 +103,7 @@ const CreateForm = ({ setDay, day }) => {
           onChange={handleChange}
           required
         />
+        </div>
         <label>
           Select Day
           <select
