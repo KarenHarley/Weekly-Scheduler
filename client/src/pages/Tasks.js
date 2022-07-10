@@ -69,7 +69,6 @@ const Tasks = () => {
             </div>
           )}
           <div className="create-form-div">
-            <h1>Create form</h1>
             <CreateForm setDay={setDay} day={day} />
           </div>
         </div>
