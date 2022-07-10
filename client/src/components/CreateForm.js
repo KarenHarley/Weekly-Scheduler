@@ -48,6 +48,10 @@ const CreateForm = ({ setDay, day }) => {
       alert("Same start and ending time");
       return;
     }
+    if (formState.startingTime > formState.endingTime) {
+      alert("Starting Time can not be later than the ending time");
+      return;
+    }
     if (!data.duplicate) {
       try {
         const taskData = await createTask({
