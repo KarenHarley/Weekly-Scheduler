@@ -132,7 +132,7 @@ const CreateForm = ({ setDay, day }) => {
             onChange={handleChange}
           >
             <option value="disabled" isDisabled={true} selected>
-              Select Staring Time
+              Select Starting Time
             </option>
             {times.map((time) => {
               return createOptions(time);
