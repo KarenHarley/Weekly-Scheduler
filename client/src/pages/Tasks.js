@@ -56,9 +56,9 @@ const Tasks = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <div>
+            <>
               {tasks.length >= 1 ? (
-                <div>
+                <div className="all-tasks">
                   {tasks.map((task, i) => {
                     return <Task data={task} key={i} />;
                   })}
@@ -66,7 +66,7 @@ const Tasks = () => {
               ) : (
                 <p>No Tasks</p>
               )}
-            </div>
+            </>
           )}
           <div className="create-form-div">
             <CreateForm setDay={setDay} day={day} />

@@ -50,4 +50,17 @@
   .select-day-div li:hover {
     color: purple;
   }
+  .all-tasks-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .all-tasks {
+    width: 60%;
+  }
+  .create-form-div {
+    width: 40%;
+  }
+  .container {
+    width: 95%;
+  }
 }
