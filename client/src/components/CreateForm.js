@@ -83,7 +83,7 @@ const CreateForm = ({ setDay, day }) => {
         <h1>Create Form</h1>
       </div>
 
-      <form>
+      <form className="create-form">
         <div className="name-notes-div">
         <input
           type="text"

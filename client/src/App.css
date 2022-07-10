@@ -27,9 +27,15 @@
   border-radius: 5px;
   width: 100%;
 }
+
+/* ALL tasks */
 .select-day-div {
 }
-
+.create-task-heading,
+.tasks-wrapper h3 {
+  display: flex;
+  justify-content: center;
+}
 .selected {
   background-color: #3f51b5;
 }
@@ -50,6 +56,7 @@
   .select-day-div li:hover {
     color: purple;
   }
+
   .all-tasks-wrapper {
     display: flex;
     justify-content: space-evenly;
@@ -63,7 +70,15 @@
   .container {
     width: 95%;
   }
-  .name-notes-div{
+  .name-notes-div {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .create-form label {
+    width: 100%;
+  }
+  .create-form input {
+    width: 45%;
   }
 }
