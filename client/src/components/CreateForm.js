@@ -44,10 +44,10 @@ const CreateForm = ({ setDay, day }) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log(formState);
-    console.log("data", data);
-
-    console.log("data2", data.duplicate);
+    if (formState.startingTime == formState.endingTime) {
+      alert("Same start and ending time");
+      return;
+    }
     if (!data.duplicate) {
       try {
         const taskData = await createTask({

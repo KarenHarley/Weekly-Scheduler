@@ -21,6 +21,7 @@ const resolvers = {
     },
     duplicate: async (parent, args, context) => {
       //use context for id
+      let message;
       if (context.user) {
         const duplicate = await Task.findOne({
           user: context.user._id,
@@ -31,7 +32,6 @@ const resolvers = {
         if (duplicate) {
           console.log("Duplicate");
         }
-
         //add some sort of message to tell if it is a full duplicate (exact times) or a half (same starting time)
         return duplicate;
       }
