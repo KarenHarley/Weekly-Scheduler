@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_TASK } from "../utils/queries";
 import { useParams } from "react-router-dom";
+import { formatTime } from "../utils/times";
 
 const OneTask = () => {
   const params = useParams();
@@ -22,7 +23,8 @@ const OneTask = () => {
         ) : (
           <div>
             <p>
-              {data.task.startingTime}-{data.task.endingTime}
+              {formatTime(data.task.startingTime)}-
+              {formatTime(data.task.endingTime)}
             </p>
             <p>Name: {data.task.name}</p>
             <p>Notes: {data.task.notes}</p>
