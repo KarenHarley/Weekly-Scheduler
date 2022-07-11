@@ -4,16 +4,18 @@ const Task = ({ data }) => {
   console.log(data);
   return (
     <div className="task-wrapper">
-      <div className="task-heading">
-        <p>This is a single task</p>
-        <p>
-          {data.startingTime}-{data.endingTime}
-          <br></br>
+      <p>
+        <span>
+          {" "}
           {formatTime(data.startingTime)}-{formatTime(data.endingTime)}
-        </p>
-        <p>Name: {data.name}</p>
-        <Link to={`task/${data._id}`}>See More</Link>
-      </div>
+        </span>{" "}
+        <span> Name: {data.name}</span>
+        {/* {data.startingTime}-{data.endingTime}
+          <br></br> */}
+        <span>
+          <Link to={`task/${data._id}`}>See More</Link>
+        </span>
+      </p>
     </div>
   );
 };

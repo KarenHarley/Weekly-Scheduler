@@ -1,6 +1,7 @@
 .task-wrapper {
   background-color: aqua;
-  margin: 10px;
+  margin: 5px;
+  padding: 5px;
 }
 
 /* Edit Task */
@@ -66,6 +67,13 @@
   width: 100%;
   margin-top: 15px;
 }
+.task-wrapper p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
 .create-form {
   padding: 20px;
 }
