@@ -62,9 +62,10 @@ const Tasks = () => {
                   {tasks.map((task, i) => {
                     return <Task data={task} key={i} />;
                   })}
-                </div>
+                 </div>
               ) : (
                 <p className="no-tasks">No Tasks</p>
+               
               )}
             </>
           )}

@@ -62,6 +62,7 @@
 .no-tasks {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .create-form input[type="submit"] {
   width: 100%;
@@ -98,7 +99,8 @@
     display: flex;
     justify-content: space-evenly;
   }
-  .all-tasks {
+  .all-tasks,
+  .no-tasks {
     width: 60%;
   }
   .create-form-div {
