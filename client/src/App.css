@@ -64,6 +64,10 @@
   align-items: center;
   justify-content: center;
 }
+.navbar-wrapper {
+  background-color: black;
+  color: white;
+}
 .create-form input[type="submit"] {
   width: 100%;
   margin-top: 15px;

@@ -15,6 +15,7 @@ import OneTask from "./pages/OneTask";
 import EditTask from "./pages/EditTask";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Navbar from "./components/Navbar";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -48,6 +49,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="container">
+          <Navbar />
           <Switch>
             <Route exact path="/">
               <Home />
