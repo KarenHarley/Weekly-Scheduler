@@ -81,4 +81,8 @@
   .create-form input {
     width: 45%;
   }
+  .all-tasks-wrapper {
+    display: flex;
+    align-items: center;
+  }
 }

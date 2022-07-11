@@ -65,6 +65,7 @@ const Login = (props) => {
           Don't have an account? <a href="/signup">Sign up</a>
         </p>
       </form>
+      {error && <div className="error">{error.message}</div>}
     </div>
   );
 };
