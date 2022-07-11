@@ -1,4 +1,3 @@
-
 .task-wrapper {
   background-color: aqua;
   margin: 5px;
@@ -82,6 +81,21 @@
 
 .create-form {
   padding: 20px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.navbar-ul {
+  display: flex;
+  align-items: center;
+  margin: 0px;
+}
+.navbar-ul li {
+  margin: 5px;
+  list-style: none;
 }
 @media (min-width: 700px) {
   .select-day-div {

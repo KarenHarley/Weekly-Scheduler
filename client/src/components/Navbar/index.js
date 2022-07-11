@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="navbar">
         <h4>Welcome to Weekly Shedular</h4>
 
-        <ul>
+        <ul className="navbar-ul">
           <li>
             {" "}
             <Link to="/tasks">See All Tasks</Link>
