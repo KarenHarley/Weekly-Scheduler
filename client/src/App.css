@@ -39,7 +39,36 @@
 .selected {
   background-color: #3f51b5;
 }
-
+.name-notes-div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.create-form label {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+.create-form input {
+  width: 45%;
+}
+.create-form select {
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.no-tasks {
+  display: flex;
+  align-items: center;
+}
+.create-form input[type="submit"] {
+  width: 100%;
+  margin-top: 15px;
+}
+.create-form {
+  padding: 20px;
+}
 @media (min-width: 700px) {
   .select-day-div {
     display: flex;
@@ -69,20 +98,5 @@
   }
   .container {
     width: 95%;
-  }
-  .name-notes-div {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  .create-form label {
-    width: 100%;
-  }
-  .create-form input {
-    width: 45%;
-  }
-  .all-tasks-wrapper {
-    display: flex;
-    align-items: center;
   }
 }

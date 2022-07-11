@@ -85,78 +85,69 @@ const CreateForm = ({ setDay, day }) => {
 
       <form className="create-form">
         <div className="name-notes-div">
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          id="task-name"
-          value={formState.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="notes"
-          placeholder="Notes"
-          id="task-notes"
-          value={formState.notes}
-          onChange={handleChange}
-          required
-        />
-        </div>
-        <label>
-          Select Day
-          <select
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            id="task-name"
+            value={formState.name}
+            onChange={handleChange}
             required
-            id="day"
-            name="day"
-            value={formState.day}
+          />
+          <input
+            type="text"
+            name="notes"
+            placeholder="Notes"
+            id="task-notes"
+            value={formState.notes}
             onChange={handleChange}
-          >
-            <option value="disabled" isDisabled={true} selected>
-              Select Day
-            </option>
-            {days.map((day) => {
-              return (
-                <option value={day} key={day}>
-                  {day}
-                </option>
-              );
-            })}
-          </select>
-        </label>
-        <label>
-          Select Starting Time
-          <select
-            id="start"
-            name="startingTime"
-            value={formState.startingTime}
-            onChange={handleChange}
-          >
-            <option value="disabled" isDisabled={true} selected>
-              Select Starting Time
-            </option>
-            {times.map((time) => {
-              return createOptions(time);
-            })}
-          </select>
-        </label>
-        <label>
-          Select Ending Time
-          <select
-            id="end"
-            name="endingTime"
-            value={formState.endingTime}
-            onChange={handleChange}
-          >
-            <option value="disabled" isDisabled={true} selected>
-              Select Ending Time
-            </option>
-            {times.map((time) => {
-              return createOptions(time);
-            })}
-          </select>
-        </label>
+            required
+          />
+        </div>
+        <select
+          required
+          id="day"
+          name="day"
+          value={formState.day}
+          onChange={handleChange}
+        >
+          <option value="disabled" isDisabled={true} selected>
+            Select Day
+          </option>
+          {days.map((day) => {
+            return (
+              <option value={day} key={day}>
+                {day}
+              </option>
+            );
+          })}
+        </select>
+        <select
+          id="start"
+          name="startingTime"
+          value={formState.startingTime}
+          onChange={handleChange}
+        >
+          <option value="disabled" isDisabled={true} selected>
+            Select Starting Time
+          </option>
+          {times.map((time) => {
+            return createOptions(time);
+          })}
+        </select>
+        <select
+          id="end"
+          name="endingTime"
+          value={formState.endingTime}
+          onChange={handleChange}
+        >
+          <option value="disabled" isDisabled={true} selected>
+            Select Ending Time
+          </option>
+          {times.map((time) => {
+            return createOptions(time);
+          })}
+        </select>
         <input type="submit" onClick={handleFormSubmit} />
       </form>
       {error && <div className="error">Something went wrong...</div>}

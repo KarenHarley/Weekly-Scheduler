@@ -64,7 +64,7 @@ const Tasks = () => {
                   })}
                 </div>
               ) : (
-                <p>No Tasks</p>
+                <p className="no-tasks">No Tasks</p>
               )}
             </>
           )}
