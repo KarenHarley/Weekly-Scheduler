@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { selectHttpOptionsAndBody, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import Auth from "../utils/auth";
-import { CREATE_TASK } from "../utils/mutations";
-import { times, createOptions, days } from "../utils/times";
-import { QUERY_TASKS, QUERY_DUPLICATE } from "../utils/queries";
+import Auth from "../../utils/auth";
+import { CREATE_TASK } from "../../utils/mutations";
+import { times, createOptions, days } from "../../utils/times";
+import { QUERY_TASKS, QUERY_DUPLICATE } from "../../utils/queries";
 
 const CreateForm = ({ setDay, day }) => {
   const [formState, setFormState] = useState({
