@@ -111,7 +111,7 @@ const CreateForm = ({ setDay, day }) => {
           value={formState.day}
           onChange={handleChange}
         >
-          <option value="disabled" isDisabled={true} selected>
+          <option value="disabled" disabled={true} defaultValue>
             Select Day
           </option>
           {days.map((day) => {
@@ -128,7 +128,7 @@ const CreateForm = ({ setDay, day }) => {
           value={formState.startingTime}
           onChange={handleChange}
         >
-          <option value="disabled" isDisabled={true} selected>
+          <option value="disabled" disabled={true} defaultValue>
             Select Starting Time
           </option>
           {times.map((time) => {
@@ -141,7 +141,7 @@ const CreateForm = ({ setDay, day }) => {
           value={formState.endingTime}
           onChange={handleChange}
         >
-          <option value="disabled" isDisabled={true} selected>
+          <option value="disabled" disabled={true} defaultValue>
             Select Ending Time
           </option>
           {times.map((time) => {

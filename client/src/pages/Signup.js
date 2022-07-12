@@ -42,7 +42,7 @@ const Signup = (props) => {
     });
   };
   return (
-    <div class="signup-form-div">
+    <div className="signup-form-div">
       <form className="signup-form">
         <h4 className="signup-heading">Sign Up</h4>
         <input
