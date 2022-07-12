@@ -34,7 +34,9 @@ const Navbar = () => {
                   Account
                 </Link>
               </li>
-              <button onClick={logout}>Logout</button>
+              <li>
+                <button onClick={logout}>Logout</button>
+              </li>
             </>
           ) : (
             <>
