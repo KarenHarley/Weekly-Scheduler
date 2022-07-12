@@ -34,7 +34,8 @@
 }
 .create-task-heading,
 .tasks-wrapper h3,
-.login-heading {
+.login-heading,
+.signup-heading {
   display: flex;
   justify-content: center;
 }
@@ -115,15 +116,18 @@
   list-style: none;
 }
 /* Login Form */
-.login-form-div {
+.login-form-div,
+.signup-form-div {
   display: flex;
   justify-content: center;
   margin: 20px;
 }
-.login-form {
+.login-form,
+.signup-form {
   width: 80%;
 }
-.login-form input {
+.login-form input,
+.signup-form input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;

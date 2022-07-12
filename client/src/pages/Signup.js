@@ -42,9 +42,9 @@ const Signup = (props) => {
     });
   };
   return (
-    <div class="user-form">
-      <h1>Sign Up</h1>
-      <form>
+    <div class="signup-form-div">
+      <form className="signup-form">
+        <h4 className="signup-heading">Sign Up</h4>
         <input
           type="text"
           name="username"
