@@ -118,13 +118,16 @@
 .login-form-div {
   display: flex;
   justify-content: center;
+  margin: 20px;
 }
 .login-form {
-  width: 50%;
+  width: 80%;
 }
 .login-form input {
   width: 100%;
+  margin-bottom: 20px;
 }
+
 @media (min-width: 700px) {
   .select-day-div {
     display: flex;
