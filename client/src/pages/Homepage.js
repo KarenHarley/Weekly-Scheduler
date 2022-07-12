@@ -2,10 +2,6 @@ import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 
 const Homepage = () => {
-  const logOut = () => {
-    console.log("Hi");
-    Auth.logout();
-  };
 
   return (
     <div className="homepage-wrapper">
