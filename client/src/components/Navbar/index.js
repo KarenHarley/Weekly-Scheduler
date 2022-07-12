@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className="navbar-wrapper">
       <div className="navbar">
-        <h4>Welcome to Weekly Shedular</h4>
+        <h4>Weekly Shedular</h4>
 
         <ul className="navbar-ul">
           <li>
