@@ -39,9 +39,9 @@ const Login = (props) => {
     });
   };
   return (
-    <div className="user-form">
-      <h1>Login</h1>
-      <form>
+    <div className="login-form-div">
+      <form className="login-form">
+        <h4 className="login-heading">Login</h4>
         <input
           type="text"
           name="email"

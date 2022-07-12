@@ -80,7 +80,7 @@ const CreateForm = ({ setDay, day }) => {
   return (
     <div className="create-task-wrapper">
       <div className="create-task-heading">
-        <h1>Create Form</h1>
+        <h4>Create Form</h4>
       </div>
 
       <form className="create-form">
