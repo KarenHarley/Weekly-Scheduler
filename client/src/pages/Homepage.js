@@ -11,13 +11,6 @@ const Homepage = () => {
     <div className="homepage-wrapper">
       <div className="homepage-heading">
         <h1>Welcome to Weekly Shedular</h1>
-        {Auth.loggedIn() ? (
-          <button onClick={logOut}>Log Out</button>
-        ) : (
-          <p>
-            Please<Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
-          </p>
-        )}
       </div>
     </div>
   );
