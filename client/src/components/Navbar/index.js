@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
 
 const Navbar = () => {
-  const logOut = () => {
+  const logout = () => {
     console.log("Hi");
     Auth.logout();
   };
@@ -15,22 +15,46 @@ const Navbar = () => {
         <ul className="navbar-ul">
           <li>
             {" "}
-            <Link to="/tasks">See All Tasks</Link>
+            <Link
+              to="/tasks"
+              className="link"
+              style={{ textDecoration: "none" }}
+            >
+              See All Tasks
+            </Link>
           </li>
           {Auth.loggedIn() ? (
             <>
               <li>
-                <Link to="/account">Account</Link>
+                <Link
+                  to="/account"
+                  className="link"
+                  style={{ textDecoration: "none" }}
+                >
+                  Account
+                </Link>
               </li>
-              <button onClick={logOut}>Log Out</button>
+              <button onClick={logout}>Logout</button>
             </>
           ) : (
             <>
               <li>
-                <Link to="/login">login</Link>
+                <Link
+                  to="/login"
+                  className="link"
+                  style={{ textDecoration: "none" }}
+                >
+                  Login
+                </Link>
               </li>
               <li>
-                <Link to="/signup">Sign up</Link>
+                <Link
+                  to="/signup"
+                  className="link"
+                  style={{ textDecoration: "none" }}
+                >
+                  Sign up
+                </Link>
               </li>
             </>
           )}

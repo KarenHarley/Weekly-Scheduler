@@ -87,23 +87,28 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  color: white;
 }
-.navbar button{
+.navbar button {
   background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
+.navbar .link {
+  color: #fff;
+}
+
 .navbar-ul {
   display: flex;
   align-items: center;
   margin: 0px;
 }
 .navbar-ul li {
-  margin: 5px;
+  margin: 10px;
   list-style: none;
 }
 @media (min-width: 700px) {
