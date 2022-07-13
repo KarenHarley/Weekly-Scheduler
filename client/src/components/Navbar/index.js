@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import Auth from "../../utils/auth";
 import { useState, useEffect } from "react";
 const Navbar = () => {
+  const location = useLocation();
   const [navLink, setNavLink] = useState("");
+  console.log(useLocation());
   const logout = () => {
     setNavLink("");
     Auth.logout();
@@ -12,7 +14,27 @@ const Navbar = () => {
       setNavLink(e.target.id);
     }
   };
+  useEffect(() => {
+    // If navbar is not used to change page (like if a link is used)
+    //state will still be updated
 
+    switch (location.pathname) {
+      case "/tasks":
+        setNavLink("See All Tasks");
+        return;
+      case "/login":
+        setNavLink("Login");
+        return;
+      case "/signup":
+        setNavLink("Signup");
+        return;
+      case "/":
+        setNavLink("");
+      case "/account":
+        setNavLink("Account");
+        return;
+    }
+  }, [location]);
   return (
     <div className="navbar-wrapper">
       <div className="navbar">
@@ -44,7 +66,9 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <button onClick={logout}>Logout</button>
+                <button className="link" onClick={logout}>
+                  Logout
+                </button>
               </li>
             </>
           ) : (
