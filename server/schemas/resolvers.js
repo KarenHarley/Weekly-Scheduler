@@ -105,6 +105,19 @@ const resolvers = {
       const token = signToken(user); //authorizing
       return { token, user };
     },
+    updateUser: async (parent, args, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: _id },
+          { args },
+          // Return the newly updated object instead of the original
+          { new: true }
+        );
+        console.log(updatedUser);
+        return updatedUser;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 
