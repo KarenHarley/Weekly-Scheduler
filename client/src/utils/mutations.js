@@ -75,3 +75,15 @@ export const ADD_USER = gql`
     }
   }
 `;
+export const UPDATE_USER = gql`
+  mutation updateTask($username: String, $email: String, $password: String) {
+    updateTask(username: $username, email: $email, password: $password) {
+      user {
+        _id
+        email
+        username
+        password
+      }
+    }
+  }
+`;
