@@ -3,9 +3,8 @@ import Auth from "../../utils/auth";
 import { useState, useEffect } from "react";
 const Navbar = () => {
   const [navLink, setNavLink] = useState("");
-  console.log("navlink", navLink);
   const logout = () => {
-    setNavLink(" ");
+    setNavLink("");
     Auth.logout();
   };
   const selectPage = (e) => {
@@ -17,7 +16,9 @@ const Navbar = () => {
   return (
     <div className="navbar-wrapper">
       <div className="navbar">
-        <Link to="/">Weekly Shedular</Link>
+        <Link className="link" to="/">
+          Weekly Shedular
+        </Link>
 
         <ul className="navbar-ul" onClick={selectPage}>
           <li className={navLink === "See All Tasks" ? "selected" : "nav-link"}>

@@ -106,6 +106,10 @@
   color: #fff;
 }
 
+.link:hover {
+  color: aqua;
+}
+
 .navbar-ul {
   display: flex;
   align-items: center;

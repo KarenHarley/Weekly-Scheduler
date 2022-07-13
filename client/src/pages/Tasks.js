@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 import CreateForm from "../components/CreateForm";
 import { days } from "../utils/times";
 const Tasks = () => {
-  const [id, setId] = useState(0);
   const [day, setDay] = useState("Monday");
 
   const { loading, data } = useQuery(QUERY_TASKS, {
@@ -16,21 +15,13 @@ const Tasks = () => {
     },
   });
 
-  console.log(data);
   const tasks = data?.tasks || [];
-  console.log(tasks);
-  console.log(day);
   const selectDay = (e) => {
     if (e.target.type === "li") {
       console.log(e.target.id);
       setDay(e.target.id);
     }
   };
-  useEffect(() => {
-    if (Auth.loggedIn()) {
-      setId(Auth.getProfile().data._id);
-    }
-  }, []);
   return (
     <div className="tasks-wrapper">
       <h3>Tasks Page</h3>
@@ -62,10 +53,9 @@ const Tasks = () => {
                   {tasks.map((task, i) => {
                     return <Task data={task} key={i} />;
                   })}
-                 </div>
+                </div>
               ) : (
                 <p className="no-tasks">No Tasks</p>
-               
               )}
             </>
           )}
