@@ -13,7 +13,7 @@ const Account = () => {
   const { loading, data } = useQuery(QUERY_USER);
   console.log(data);
 
-  // const [update, { error, updateData }] = useMutation(UPDATE_USER);
+  const [update, { error, updateData }] = useMutation(UPDATE_USER);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,15 +27,15 @@ const Account = () => {
     e.preventDefault();
     console.log(formState);
 
-    // try {
-    //   const { data } = await update({
-    //     variables: { ...formState },
-    //   });
-    //   // window.location.replace("/tasks");
-    // } catch (e) {
-    //   console.error(e);
-    //   alert("Error Updating Account");
-    // }
+    try {
+      const { data } = await update({
+        variables: { ...formState },
+      });
+      // window.location.replace("/tasks");
+    } catch (e) {
+      console.error(e);
+      alert("Error Updating Account");
+    }
 
     // clear form values
     setFormState({

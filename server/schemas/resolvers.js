@@ -106,10 +106,11 @@ const resolvers = {
       return { token, user };
     },
     updateUser: async (parent, args, context) => {
+      console.log("Hi");
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
-          { _id: _id },
-          { args },
+          { _id: context.user._id },
+          args,
           // Return the newly updated object instead of the original
           { new: true }
         );
