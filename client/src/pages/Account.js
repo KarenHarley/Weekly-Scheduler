@@ -10,10 +10,16 @@ const Account = () => {
     username: " ",
   });
 
-  const { loading, data } = useQuery(QUERY_USER);
+  const { loading, data, refetch } = useQuery(QUERY_USER);
   console.log(data);
 
-  const [update, { error, updateData }] = useMutation(UPDATE_USER);
+  const [update, { error, updateData }] = useMutation(UPDATE_USER, {
+    refetchQueries: [
+      {
+        query: QUERY_USER,
+      },
+    ],
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,6 +38,7 @@ const Account = () => {
         variables: { ...formState },
       });
       // window.location.replace("/tasks");
+      refetch();
     } catch (e) {
       console.error(e);
       alert("Error Updating Account");
@@ -52,7 +59,7 @@ const Account = () => {
         email: data.user.email,
       });
     }
-  }, [data]); //add update data
+  }, [data, updateData]); //add update data
   return (
     <div className="signup-form-div">
       {loading ? (
