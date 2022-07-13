@@ -65,7 +65,7 @@ const Account = () => {
             name="username"
             placeholder="Username"
             id="username-username"
-            value={formState.username}
+            value={formState.username || ""}
             onChange={handleChange}
             required
           />
@@ -74,7 +74,7 @@ const Account = () => {
             name="email"
             placeholder="Email"
             id="username-email"
-            value={formState.email}
+            value={formState.email || ""}
             onChange={handleChange}
             required
           />
@@ -83,7 +83,7 @@ const Account = () => {
             name="password"
             placeholder="Password"
             id="password-login"
-            value={formState.password}
+            value={formState.password || ""}
             onChange={handleChange}
             required
           />
