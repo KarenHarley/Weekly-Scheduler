@@ -2,18 +2,14 @@ import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
 import { useState, useEffect } from "react";
 const Navbar = () => {
-  const [navLink, setNavLink] = useState("See All Tasks");
+  const [navLink, setNavLink] = useState("");
   console.log("navlink", navLink);
   const logout = () => {
-    console.log("Hi");
+    setNavLink(" ");
     Auth.logout();
   };
   const selectPage = (e) => {
-    console.log(e);
-    console.log(e.target.className);
     if (e.target.className === "link") {
-      console.log("HI");
-      console.log(e.target.id);
       setNavLink(e.target.id);
     }
   };
