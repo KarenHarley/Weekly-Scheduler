@@ -28,6 +28,7 @@ const Navbar = () => {
         return;
       case "/":
         setNavLink("");
+        return;
       case "/account":
         setNavLink("Account");
         return;

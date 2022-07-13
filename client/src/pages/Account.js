@@ -5,9 +5,9 @@ import { UPDATE_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 const Account = () => {
   const [formState, setFormState] = useState({
-    email: "",
+    email: " ",
     password: "",
-    username: "",
+    username: " ",
   });
 
   const { loading, data } = useQuery(QUERY_USER);
