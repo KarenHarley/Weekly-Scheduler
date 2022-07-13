@@ -10,8 +10,9 @@ const Navbar = () => {
   };
   const selectPage = (e) => {
     console.log(e);
-    console.log(e.target.type);
-    if (e.target.type === "li") {
+    console.log(e.target.className);
+    if (e.target.className === "link") {
+      console.log("HI");
       console.log(e.target.id);
       setNavLink(e.target.id);
     }
@@ -23,23 +24,21 @@ const Navbar = () => {
         <h4>Weekly Shedular</h4>
 
         <ul className="navbar-ul" onClick={selectPage}>
-          <li id="See All Tasks" type="li">
+          <li className={navLink === "See All Tasks" ? "selected" : "nav-link"}>
             <Link
+              id="See All Tasks"
               to="/tasks"
-              className={navLink === "See All Tasks" ? "selected" : "nav-link"}
               style={{ textDecoration: "none" }}
+              className="link"
             >
               See All Tasks
             </Link>
           </li>
           {Auth.loggedIn() ? (
             <>
-              <li
-                id="Account"
-                type="li"
-                className={navLink === "Account" ? "selected" : "nav-link"}
-              >
+              <li className={navLink === "Account" ? "selected" : "nav-link"}>
                 <Link
+                  id="Account"
                   to="/account"
                   style={{ textDecoration: "none" }}
                   className="link"
@@ -47,22 +46,15 @@ const Navbar = () => {
                   Account
                 </Link>
               </li>
-              <li
-                id="Logout"
-                type="li"
-                className={navLink === "Logout" ? "selected" : "nav-link"}
-              >
+              <li>
                 <button onClick={logout}>Logout</button>
               </li>
             </>
           ) : (
             <>
-              <li
-                id="Login"
-                type="li"
-                className={navLink === "Login" ? "selected" : "nav-link"}
-              >
+              <li className={navLink === "Login" ? "selected" : "nav-link"}>
                 <Link
+                  id="Login"
                   to="/login"
                   className="link"
                   style={{ textDecoration: "none" }}
@@ -70,12 +62,9 @@ const Navbar = () => {
                   Login
                 </Link>
               </li>
-              <li
-                id="Signup"
-                type="li"
-                className={navLink === "Signup" ? "selected" : "nav-link"}
-              >
+              <li className={navLink === "Signup" ? "selected" : "nav-link"}>
                 <Link
+                  id="Signup"
                   to="/signup"
                   className="link"
                   style={{ textDecoration: "none" }}
