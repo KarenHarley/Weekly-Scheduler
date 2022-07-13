@@ -13,8 +13,11 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    user: async (parent, { userId }) => {
-      return User.findOne({ _id: userId }).populate("tasks");
+    user: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id }).populate("tasks");
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
     task: async (parent, { taskId }) => {
       return Task.findOne({ _id: taskId }).populate("user");
