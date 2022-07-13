@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 const Navbar = () => {
   const location = useLocation();
   const [navLink, setNavLink] = useState("");
-  console.log(useLocation());
   const logout = () => {
     setNavLink("");
     Auth.logout();
@@ -17,7 +16,6 @@ const Navbar = () => {
   useEffect(() => {
     // If navbar is not used to change page (like if a link is used)
     //state will still be updated
-
     switch (location.pathname) {
       case "/tasks":
         setNavLink("See All Tasks");
