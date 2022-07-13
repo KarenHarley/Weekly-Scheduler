@@ -16,6 +16,7 @@ import EditTask from "./pages/EditTask";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar";
+import Account from "./pages/Account";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -68,6 +69,9 @@ function App() {
             </Route>
             <Route exact path="/signup">
               <Signup />
+            </Route>
+            <Route exact path="/account">
+              <Account />
             </Route>
           </Switch>
         </div>

@@ -52,43 +52,47 @@ const Account = () => {
         email: data.user.email,
       });
     }
-  }, [data, updateData]);
+  }, [data]); //add update data
   return (
     <div className="signup-form-div">
-      <form className="signup-form">
-        <h4 className="signup-heading">Sign Up</h4>
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          id="username-username"
-          value={formState.username}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="email"
-          placeholder="Email"
-          id="username-email"
-          value={formState.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          id="password-login"
-          value={formState.password}
-          onChange={handleChange}
-          required
-        />
-        <input type="submit" onClick={handleFormSubmit} />
-        <p>
-          <span>Leave Password empty if you would not like it updated</span>
-        </p>
-      </form>
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <form className="signup-form">
+          <h4 className="signup-heading">Sign Up</h4>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            id="username-username"
+            value={formState.username}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"
+            id="username-email"
+            value={formState.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            id="password-login"
+            value={formState.password}
+            onChange={handleChange}
+            required
+          />
+          <input type="submit" onClick={handleFormSubmit} />
+          <p>
+            <span>Leave Password empty if you would not like it updated</span>
+          </p>
+        </form>
+      )}
     </div>
   );
 };

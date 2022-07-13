@@ -42,8 +42,9 @@ export const QUERY_DUPLICATE = gql`
 
 export const QUERY_USER = gql`
   query user {
-    _id
-    username
-    email
+    user {
+      username
+      email
+    }
   }
 `;
