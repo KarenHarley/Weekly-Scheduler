@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <div className="navbar-wrapper">
       <div className="navbar">
-        <h4>Weekly Shedular</h4>
+        <Link to="/">Weekly Shedular</Link>
 
         <ul className="navbar-ul" onClick={selectPage}>
           <li className={navLink === "See All Tasks" ? "selected" : "nav-link"}>
