@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
+import React, { useState, useEffect } from "react";
+import { useQuery, useMutation } from "@apollo/client";
+import { QUERY_USER } from "../utils/queries";
 import { UPDATE_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 const Account = () => {
@@ -8,7 +9,11 @@ const Account = () => {
     password: "",
     username: "",
   });
-  const [update, { error, data }] = useMutation(UPDATE_USER);
+
+  const { loading, data } = useQuery(QUERY_USER);
+  console.log(data);
+
+  // const [update, { error, updateData }] = useMutation(UPDATE_USER);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,15 +27,15 @@ const Account = () => {
     e.preventDefault();
     console.log(formState);
 
-    try {
-      const { data } = await update({
-        variables: { ...formState },
-      });
-     // window.location.replace("/tasks");
-    } catch (e) {
-      console.error(e);
-      alert("Error Updating Account");
-    }
+    // try {
+    //   const { data } = await update({
+    //     variables: { ...formState },
+    //   });
+    //   // window.location.replace("/tasks");
+    // } catch (e) {
+    //   console.error(e);
+    //   alert("Error Updating Account");
+    // }
 
     // clear form values
     setFormState({
@@ -39,6 +44,15 @@ const Account = () => {
       username: "",
     });
   };
+
+  useEffect(() => {
+    if (data) {
+      setFormState({
+        username: data.user.username,
+        email: data.user.email,
+      });
+    }
+  }, [data, updateData]);
   return (
     <div className="signup-form-div">
       <form className="signup-form">
