@@ -78,7 +78,7 @@ const EditTask = () => {
                   <select
                     id="start"
                     name="startingTime"
-                    value={formState.startingTime}
+                    value={formState.startingTime || ""}
                     onChange={onChange}
                   >
                     {times.map((time) => {
@@ -91,7 +91,7 @@ const EditTask = () => {
                   <select
                     id="end"
                     name="endingTime"
-                    value={formState.endingTime}
+                    value={formState.endingTime || ""}
                     onChange={onChange}
                   >
                     {times.map((time) => {
@@ -105,7 +105,7 @@ const EditTask = () => {
                     id="name"
                     type="text"
                     name="name"
-                    value={formState.name}
+                    value={formState.name || ""}
                     onChange={onChange}
                   />
                 </label>
@@ -115,7 +115,7 @@ const EditTask = () => {
                     id="notes"
                     type="text"
                     name="notes"
-                    value={formState.notes}
+                    value={formState.notes || ""}
                     onChange={onChange}
                   />
                 </label>
