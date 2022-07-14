@@ -33,7 +33,10 @@
   border-radius: 5px;
   width: 100%;
 }
-
+.login-please {
+  display: flex;
+  justify-content: center;
+}
 /* ALL tasks */
 .select-day-div {
 }
