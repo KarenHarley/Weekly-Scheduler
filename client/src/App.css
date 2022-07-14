@@ -3,7 +3,10 @@
   margin: 5px;
   padding: 5px;
 }
-
+.error {
+  display: flex;
+  justify-content: center;
+}
 /* Edit Task */
 
 .edit-task-wrapper label {

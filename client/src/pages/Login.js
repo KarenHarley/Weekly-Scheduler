@@ -60,13 +60,13 @@ const Login = (props) => {
           onChange={handleChange}
           required
         />
+        {error && <div className="error">{error.message}</div>}
         <input type="submit" onClick={handleFormSubmit} />
         <p>
           <span> Don't have an account? &nbsp; </span>{" "}
           <a href="/signup"> Sign up</a>
         </p>
       </form>
-      {error && <div className="error">{error.message}</div>}
     </div>
   );
 };
