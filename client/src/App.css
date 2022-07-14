@@ -6,6 +6,8 @@
 .error {
   display: flex;
   justify-content: center;
+  text-align: center;
+  padding: 5px;
 }
 /* Edit Task */
 
