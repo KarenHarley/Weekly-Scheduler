@@ -5,9 +5,9 @@ import { UPDATE_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 const Account = () => {
   const [formState, setFormState] = useState({
-    email: " ",
+    email: "",
     password: "",
-    username: " ",
+    username: "",
   });
 
   const { loading, data, refetch } = useQuery(QUERY_USER);
@@ -38,18 +38,12 @@ const Account = () => {
         variables: { ...formState },
       });
       // window.location.replace("/tasks");
-      refetch();
+      // refetch();
+      alert("Successfully updated account");
     } catch (e) {
       console.error(e);
       alert("Error Updating Account");
     }
-
-    // clear form values
-    setFormState({
-      email: "",
-      password: "",
-      username: "",
-    });
   };
 
   useEffect(() => {
@@ -57,7 +51,12 @@ const Account = () => {
       setFormState({
         username: data.user.username,
         email: data.user.email,
+        password: "",
       });
+
+      if (updateData) {
+        refetch();
+      }
     }
   }, [data, updateData]); //add update data
   return (
