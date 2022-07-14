@@ -6,13 +6,13 @@ const userSchema = new Schema({
   username: {
     type: String,
     required: true,
-    unique: true,
+    unique: [true, "This email address already exists"],
     trim: true,
   },
   email: {
     type: String,
     unique: true,
-    match: [/.+@.+\..+/, "Must match an email address!"],
+    match: [/.+@.+\..+/, "Invaild email adress"],
   },
   password: {
     type: String,
