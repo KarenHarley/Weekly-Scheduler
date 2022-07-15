@@ -11,7 +11,7 @@ const Homepage = () => {
         <div className="banner">
           <img src="./Pics/banner.jpg"></img>
         </div>
-        <div className="banner stack-top">Hello this is the aside div</div>
+        <div className="banner stack-top"></div>
       </div>
       <div className="organize">
         <h4>Organize</h4>
@@ -24,6 +24,15 @@ const Homepage = () => {
       </div>
       <div className="schedule">
         <h4>Schedule</h4>
+        <p>
+          {" "}
+          This appliation helps to organize your weekly schedule Lorem ipsum
+          dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+          euismod tincidunt ut laoreet dolore magna.{" "}
+        </p>
+      </div>
+      <div className="plan">
+        <h4>Strategize</h4>
         <p>
           {" "}
           This appliation helps to organize your weekly schedule Lorem ipsum

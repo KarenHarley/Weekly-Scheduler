@@ -220,10 +220,20 @@
   display: flex;
   justify-content: center;
   /* margin: 21px; */
-  margin-right: 15px;
 }
 .schedule {
   background-color: #b19cd9;
+  color: white;
+  padding: 10px;
+}
+.plan h4 {
+  display: flex;
+  justify-content: end;
+  /* margin: 21px; */
+  margin-right: 20px;
+}
+.plan {
+  background-color: #d2c6f4;
   color: white;
   padding: 10px;
 }
