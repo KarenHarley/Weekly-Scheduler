@@ -22,6 +22,15 @@ const Homepage = () => {
           euismod tincidunt ut laoreet dolore magna.{" "}
         </p>
       </div>
+      <div className="schedule">
+        <h4>Schedule</h4>
+        <p>
+          {" "}
+          This appliation helps to organize your weekly schedule Lorem ipsum
+          dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+          euismod tincidunt ut laoreet dolore magna.{" "}
+        </p>
+      </div>
     </div>
   );
 };

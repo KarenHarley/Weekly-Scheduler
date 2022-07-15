@@ -216,6 +216,17 @@
   display: flex;
   justify-content: center;
 }
+.schedule h4 {
+  display: flex;
+  justify-content: center;
+  /* margin: 21px; */
+  margin-right: 15px;
+}
+.schedule {
+  background-color: #b19cd9;
+  color: white;
+  padding: 10px;
+}
 @media (min-width: 700px) {
   .select-day-div {
     display: flex;
