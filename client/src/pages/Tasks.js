@@ -32,7 +32,7 @@ const Tasks = () => {
                 type="li"
                 id={loopingDay}
                 key={loopingDay}
-                className={day === loopingDay ? "selected" : "nav-link"}
+                className={day === loopingDay ? "selected-day" : "nav-link"}
               >
                 {loopingDay}
               </li>
