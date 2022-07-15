@@ -175,6 +175,10 @@
   display: flex;
   justify-content: center;
 }
+/* Homepage */
+.homepage-wrapper img {
+  width: 100%;
+}
 @media (min-width: 700px) {
   .select-day-div {
     display: flex;
