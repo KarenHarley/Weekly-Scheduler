@@ -178,7 +178,43 @@
 /* Homepage */
 .homepage-wrapper img {
   width: 100%;
+  height: 100%;
 }
+.banner-container {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+.banner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+.stack-top {
+  z-index: 9;
+  background-color: #dcd0ff;
+  width: 40%;
+  height: 100%;
+}
+/* .aside-over-img {
+  background-color: #3f51b5;
+  position: absolute;
+  bottom: 604px;
+  width: 30%;
+  left: 538px;
+  height: 67vw;
+  opacity: 0.5;
+  color: white;
+} */
+
+/* .banner-div {
+  background-color: #3f51b5;
+  width: 100%;
+  opacity: 0.5;
+} */
 @media (min-width: 700px) {
   .select-day-div {
     display: flex;
@@ -207,5 +243,8 @@
   }
   .create-form-div {
     width: 40%;
+  }
+  .banner-container {
+    height: 600px;
   }
 }
