@@ -207,22 +207,15 @@
   /* bottom: 27px; */
   top: 142px;
 }
-/* .aside-over-img {
-  background-color: #3f51b5;
-  position: absolute;
-  bottom: 604px;
-  width: 30%;
-  left: 538px;
-  height: 67vw;
-  opacity: 0.5;
+.organize {
+  background-color: #7466a4;
   color: white;
-} */
-
-/* .banner-div {
-  background-color: #3f51b5;
-  width: 100%;
-  opacity: 0.5;
-} */
+  padding: 10px;
+}
+.organize p {
+  display: flex;
+  justify-content: center;
+}
 @media (min-width: 700px) {
   .select-day-div {
     display: flex;

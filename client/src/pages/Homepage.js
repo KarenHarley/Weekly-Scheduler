@@ -13,6 +13,15 @@ const Homepage = () => {
         </div>
         <div className="banner stack-top">Hello this is the aside div</div>
       </div>
+      <div className="organize">
+        <h4>Organize</h4>
+        <p>
+          {" "}
+          This appliation helps to organize your weekly schedule Lorem ipsum
+          dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+          euismod tincidunt ut laoreet dolore magna.{" "}
+        </p>
+      </div>
     </div>
   );
 };
