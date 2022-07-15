@@ -24,8 +24,6 @@ const Tasks = () => {
   };
   return (
     <div className="tasks-wrapper">
-      <h3>Tasks Page</h3>
-
       <div className="select-day-div">
         <ul onClick={selectDay}>
           {days.map((loopingDay, i) => {

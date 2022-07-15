@@ -39,6 +39,13 @@
 }
 /* ALL tasks */
 .select-day-div {
+  background-color: rgb(80, 79, 79);
+}
+
+.select-day-div li:hover {
+  color: purple;
+}
+.select-day-div {
 }
 .create-task-heading,
 .tasks-wrapper h3,
@@ -166,17 +173,18 @@
   .select-day-div {
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   .select-day-div ul {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
+    padding: 0;
+    margin: 10px;
+    color: white;
   }
   .select-day-div li {
-    margin: 15px;
-  }
-  .select-day-div li:hover {
-    color: purple;
+    margin: 0px 15px;
   }
 
   .all-tasks-wrapper {
