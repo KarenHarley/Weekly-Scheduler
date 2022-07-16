@@ -17,6 +17,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar";
 import Account from "./pages/Account";
+import Footer from "./components/Footer";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -74,6 +75,7 @@ function App() {
               <Account />
             </Route>
           </Switch>
+          <Footer/>
         </div>
       </Router>
     </ApolloProvider>
