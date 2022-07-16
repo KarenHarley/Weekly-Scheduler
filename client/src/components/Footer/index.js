@@ -4,7 +4,39 @@ const Footer = ({ data }) => {
   console.log(data);
   return (
     <div className="footer-wrapper">
-      This is the footer
+      <ul>
+        <li>
+          {" "}
+          <Link
+            id="See All Tasks"
+            to="/tasks"
+            style={{ textDecoration: "none" }}
+            className="footer-link"
+          >
+            See All Tasks
+          </Link>
+        </li>
+        <li>
+          <Link
+            id="Login"
+            to="/login"
+            className="footer-link"
+            style={{ textDecoration: "none" }}
+          >
+            Login
+          </Link>
+        </li>
+        <li>
+          <Link
+            id="Signup"
+            to="/signup"
+            className="footer-link"
+            style={{ textDecoration: "none" }}
+          >
+            Sign up
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 };

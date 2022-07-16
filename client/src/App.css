@@ -237,6 +237,12 @@
   color: white;
   padding: 10px;
 }
+
+/* Footer */
+.footer-wrapper {
+  background-color: #9370db;
+  height: 180px;
+}
 @media (min-width: 700px) {
   .select-day-div {
     display: flex;
