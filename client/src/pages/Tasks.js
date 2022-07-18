@@ -62,14 +62,13 @@ const Tasks = () => {
           </div>
         </div>
       ) : (
-        <p className="login-please">
-          You need to be logged in to see your Tasks. Please{" "}
+        <div className="login-please">
           <span>
-            &nbsp;
+            You need to be logged in to see your Tasks. Please &nbsp;
             <Link to="/login"> login</Link> or &nbsp;
             <Link to="/signup">signup.</Link>
           </span>
-        </p>
+        </div>
       )}
     </div>
   );

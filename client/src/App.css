@@ -37,6 +37,9 @@
   display: flex;
   justify-content: center;
   height: 55rem;
+  align-items: center;
+  margin: 24px;
+  text-align: center;
 }
 /* ALL tasks */
 .select-day-div {
