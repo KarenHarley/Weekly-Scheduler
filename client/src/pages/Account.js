@@ -60,12 +60,12 @@ const Account = () => {
     }
   }, [data, updateData]); //add update data
   return (
-    <div className="signup-form-div">
+    <div className="account-form-div">
       {loading ? (
         <div>Loading...</div>
       ) : (
-        <form className="signup-form">
-          <h4 className="signup-heading">Sign Up</h4>
+        <form className="account-form">
+          <h4 className="acount-heading">Account</h4>
           <input
             type="text"
             name="username"

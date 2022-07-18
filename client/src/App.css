@@ -54,7 +54,8 @@
 .create-task-heading,
 .tasks-wrapper h3,
 .login-heading,
-.signup-heading {
+.signup-heading,
+.acount-heading {
   display: flex;
   justify-content: center;
 }
@@ -150,7 +151,8 @@
 }
 /* Login Form */
 .login-form-div,
-.signup-form-div {
+.signup-form-div,
+.account-form-div {
   display: flex;
   justify-content: center;
   margin: 20px;
@@ -158,18 +160,21 @@
   align-items: center;
 }
 .login-form,
-.signup-form {
+.signup-form,
+.account-form {
   width: 80%;
 }
 .login-form input,
-.signup-form input {
+.signup-form input,
+.account-form input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
 }
 .login-form input[type="submit"],
-.signup-form input[type="submit"] {
+.signup-form input[type="submit"],
+.account-form input[type="submit"] {
   background-color: #3f51b5;
   color: white;
   border: none;
