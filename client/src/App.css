@@ -242,7 +242,11 @@
 .footer-wrapper {
   background-color: #9370db;
   height: 180px;
+  /* position: absolute;
+  bottom: 0;
+  width: 100%; */
 }
+
 @media (min-width: 700px) {
   .select-day-div {
     display: flex;

@@ -17,9 +17,12 @@ const Homepage = () => {
         <h4>Organize</h4>
         <p>
           {" "}
-          This appliation helps to organize your weekly schedule Lorem ipsum
-          dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-          euismod tincidunt ut laoreet dolore magna.{" "}
+          Weekly Shedular helps you prioritize what matters, and helps you
+          allocate your precious time accordingly. People spend an extraordinary
+          amount of time due to lack of organization. Organizing your daily
+          schedule can significantly increase productivity and allow you to get
+          more things done throughout the day. Simply put organization equals
+          productivity!{" "}
         </p>
       </div>
       <div className="schedule">
