@@ -260,6 +260,14 @@
 .footer-wrapper {
   background-color: #9370db;
   height: 180px;
+  display: flex;
+  justify-content: center;
+}
+.footer-wrapper ul {
+  list-style: none;
+}
+.footer-link {
+  color: white;
 }
 .footer-bottom {
   position: absolute;
