@@ -36,6 +36,7 @@
 .login-please {
   display: flex;
   justify-content: center;
+  height: 55rem;
 }
 /* ALL tasks */
 .select-day-div {
