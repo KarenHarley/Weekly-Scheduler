@@ -63,8 +63,10 @@ const Login = (props) => {
         {error && <div className="error">{error.message}</div>}
         <input type="submit" onClick={handleFormSubmit} />
         <p>
-          <span> Don't have an account? &nbsp; </span>{" "}
-          <a href="/signup"> Sign up</a>
+          <span>
+            {" "}
+            Don't have an account?&nbsp;<a href="/signup"> Sign up</a>{" "}
+          </span>
         </p>
       </form>
     </div>

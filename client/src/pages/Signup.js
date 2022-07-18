@@ -75,7 +75,9 @@ const Signup = (props) => {
         {error && <div className="error">{error.message}</div>}
         <input type="submit" onClick={handleFormSubmit} />
         <p>
-          <span>Have have an account? &nbsp; </span> <a href="/login">Login</a>
+          <span>
+            Have have an account? &nbsp;<a href="/login">Login</a>
+          </span>
         </p>
       </form>
     </div>
