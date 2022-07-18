@@ -95,7 +95,7 @@ const Account = () => {
           />
           <input type="submit" onClick={handleFormSubmit} />
           <p>
-            <span>Leave Password empty if you would not like it updated</span>
+            <span>Enter password only if you would like it to be updated.</span>
           </p>
         </form>
       )}
