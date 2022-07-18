@@ -49,6 +49,10 @@ console.log(httpLink);
 function App() {
   return (
     <ApolloProvider client={client}>
+      <link
+        href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+        rel="stylesheet"
+      ></link>
       <Router>
         <div className="app-container">
           <Navbar />
@@ -75,7 +79,7 @@ function App() {
               <Account />
             </Route>
           </Switch>
-          <Footer/>
+          <Footer />
         </div>
       </Router>
     </ApolloProvider>

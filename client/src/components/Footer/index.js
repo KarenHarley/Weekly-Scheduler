@@ -28,6 +28,7 @@ const Footer = ({ data }) => {
   return (
     <div className="footer-wrapper">
       <ul>
+        <p> NAVIGATE</p>
         <li>
           {" "}
           <Link
@@ -36,7 +37,7 @@ const Footer = ({ data }) => {
             style={{ textDecoration: "none" }}
             className="footer-link"
           >
-            See All Tasks
+            See All Tasks<i className="bx bx-chevron-right"></i>
           </Link>
         </li>
         <li>
@@ -46,7 +47,7 @@ const Footer = ({ data }) => {
             className="footer-link"
             style={{ textDecoration: "none" }}
           >
-            Login
+            Login <i className="bx bx-chevron-right"></i>
           </Link>
         </li>
         <li>
@@ -56,7 +57,7 @@ const Footer = ({ data }) => {
             className="footer-link"
             style={{ textDecoration: "none" }}
           >
-            Sign up
+            Sign up<i className="bx bx-chevron-right"></i>
           </Link>
         </li>
       </ul>
