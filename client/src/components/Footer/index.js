@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = ({ data }) => {
   console.log(data);
+  const location = useLocation();
   return (
     <div className="footer-wrapper">
       <ul>
