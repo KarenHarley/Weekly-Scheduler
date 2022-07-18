@@ -256,6 +256,10 @@
   width: 100%;
 }
 @media (min-width: 700px) {
+  .login-form,
+  .signup-form {
+    width: 50%;
+  }
   .select-day-div {
     display: flex;
     justify-content: center;
@@ -296,5 +300,15 @@
   .homepage-heading {
     left: 284px;
     top: 182px;
+  }
+  .login-form,
+  .signup-form {
+    width: 500px;
+  }
+}
+@media (min-width: 2560px) {
+  .login-form,
+  .signup-form {
+    width: 600px;
   }
 }
