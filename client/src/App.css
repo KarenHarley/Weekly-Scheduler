@@ -186,10 +186,12 @@
   cursor: pointer;
 }
 .login-form p,
-.signup-form p {
+.signup-form p,
+.account-form p {
   display: flex;
   justify-content: center;
   font-size: 14px;
+  text-align: center;
 }
 /* Homepage */
 .homepage-wrapper img {
@@ -266,7 +268,8 @@
 }
 @media (min-width: 700px) {
   .login-form,
-  .signup-form {
+  .signup-form,
+  .account-form {
     width: 50%;
   }
   .select-day-div {
@@ -311,7 +314,8 @@
     top: 182px;
   }
   .login-form,
-  .signup-form {
+  .signup-form,
+  .account-form {
     width: 500px;
   }
 }
@@ -324,7 +328,8 @@
 } */
 @media (min-width: 2560px) {
   .login-form,
-  .signup-form {
+  .signup-form,
+  .account-form {
     width: 600px;
   }
   .app-container {
