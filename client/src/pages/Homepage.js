@@ -29,18 +29,15 @@ const Homepage = () => {
         <h4>Schedule</h4>
         <p>
           {" "}
-          This appliation helps to organize your weekly schedule Lorem ipsum
-          dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-          euismod tincidunt ut laoreet dolore magna.{" "}
+          Scheduling which is an aspect of organization takes things up a notch. It helps you get clear on what your purpose and objectives are. Rather than just spinning wheels, having a good schedule ensures that all our goals are identified and will be tackled. Scheduling also fights against for crastination by having a specific time frame to complete a task. 
+         {" "}
         </p>
       </div>
       <div className="plan">
         <h4>Strategize</h4>
         <p>
           {" "}
-          This appliation helps to organize your weekly schedule Lorem ipsum
-          dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-          euismod tincidunt ut laoreet dolore magna.{" "}
+          {" "}
         </p>
       </div>
     </div>
