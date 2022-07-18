@@ -280,3 +280,13 @@
     height: 600px;
   }
 }
+
+@media (min-width: 1440px) {
+  .banner-container {
+    height: 720px;
+  }
+  .homepage-heading {
+    left: 284px;
+    top: 182px;
+}
+}
