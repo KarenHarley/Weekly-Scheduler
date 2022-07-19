@@ -1,33 +1,40 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 const Footer = ({ data }) => {
   console.log(data);
   const location = useLocation();
+  const [navLink, setNavLink] = useState("");
+  //selected-footer-link
 
+  const selectPage = (e) => {
+    if (e.target.className === "link") {
+      setNavLink(e.target.id);
+    }
+  };
   useEffect(() => {
     // If navbar is not used to change page (like if a link is used)
     //state will still be updated
     switch (location.pathname) {
       case "/tasks":
-        console.log(location);
+        setNavLink("See All Tasks");
         return;
       case "/login":
-        console.log(location);
+        setNavLink("Login");
         return;
       case "/signup":
-        console.log(location);
+        setNavLink("Signup");
         return;
       case "/":
-        console.log(location);
+        setNavLink("");
         return;
       case "/account":
-        console.log(location);
+        setNavLink("Account");
         return;
     }
   }, [location]);
   return (
     <div className="footer-wrapper">
-      <ul>
+      <ul onClick={selectPage}>
         <p> NAVIGATE</p>
         <li>
           {" "}

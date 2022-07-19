@@ -60,7 +60,8 @@
   justify-content: center;
 }
 
-.selected {
+.selected,
+.selected-footer-link {
   border-bottom: solid 2px;
   padding: 2px;
   transition: all 0.3s ease-in-out;
@@ -277,7 +278,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
+.footer-link:hover {
+  color: #cec8ef;
+}
+
 .footer-bottom {
   position: absolute;
   bottom: 0;
