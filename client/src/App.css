@@ -60,8 +60,7 @@
   justify-content: center;
 }
 
-.selected,
-.selected-footer-link {
+.selected {
   border-bottom: solid 2px;
   padding: 2px;
   transition: all 0.3s ease-in-out;
@@ -124,7 +123,8 @@
   padding: 10px 20px;
   color: white;
 }
-.navbar button {
+.navbar button,
+.footer-wrapper button {
   background: none;
   color: inherit;
   border: none;
@@ -279,6 +279,11 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+.footer-btn {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
 }
 .footer-link:hover {
   color: #cec8ef;
