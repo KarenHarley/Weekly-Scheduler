@@ -265,6 +265,7 @@
   justify-content: center;
   padding: 10px;
 }
+
 .footer-wrapper ul {
   list-style: none;
   text-align: center;
@@ -288,7 +289,9 @@
 .footer-link:hover {
   color: #cec8ef;
 }
-
+.footer-selected {
+  background-color: #7859b6;
+}
 .footer-bottom {
   position: absolute;
   bottom: 0;

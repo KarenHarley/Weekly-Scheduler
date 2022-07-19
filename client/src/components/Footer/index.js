@@ -11,7 +11,7 @@ const Footer = ({ data }) => {
     Auth.logout();
   };
   const selectPage = (e) => {
-    if (e.target.className === "link") {
+    if (e.target.className === "footer-link") {
       setNavLink(e.target.id);
     }
   };
@@ -40,7 +40,11 @@ const Footer = ({ data }) => {
     <div className="footer-wrapper">
       <ul onClick={selectPage}>
         <p> NAVIGATE</p>
-        <li className={navLink === "See All Tasks" ? "selected" : "nav-link"}>
+        <li
+          className={
+            navLink === "See All Tasks" ? "footer-selected" : "nav-link"
+          }
+        >
           {" "}
           <Link
             id="See All Tasks"
@@ -53,7 +57,9 @@ const Footer = ({ data }) => {
         </li>
         {Auth.loggedIn() ? (
           <>
-            <li className={navLink === "Account" ? "selected" : "nav-link"}>
+            <li
+              className={navLink === "Account" ? "footer-selected" : "nav-link"}
+            >
               <Link
                 id="Account"
                 to="/account"
@@ -71,7 +77,9 @@ const Footer = ({ data }) => {
           </>
         ) : (
           <>
-            <li className={navLink === "Login" ? "selected" : "nav-link"}>
+            <li
+              className={navLink === "Login" ? "footer-selected" : "nav-link"}
+            >
               <Link
                 id="Login"
                 to="/login"
@@ -81,7 +89,9 @@ const Footer = ({ data }) => {
                 Login<i className="bx bx-chevron-right"></i>
               </Link>
             </li>
-            <li className={navLink === "Signup" ? "selected" : "nav-link"}>
+            <li
+              className={navLink === "Signup" ? "footer-selected" : "nav-link"}
+            >
               <Link
                 id="Signup"
                 to="/signup"
