@@ -41,6 +41,9 @@
   margin: 24px;
   text-align: center;
 }
+.login-please a {
+  color: #7466a4;
+}
 /* ALL tasks */
 .select-day-div {
   background-color: #dcd0ff;
