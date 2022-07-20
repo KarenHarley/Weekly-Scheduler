@@ -38,23 +38,14 @@ const Footer = ({ data }) => {
   }, [location]);
   return (
     <div className="footer-wrapper">
-      <div className="child-2">
+      <div className="child-1">
         <p>
           It is known that using Stephen Covey's Time Management Matrix which
           categorizes tasks on the basis of priority increases productivity And
           efficiency.{" "}
         </p>
-
-        <ul>
-          <li>Q1 Important/Urgent</li>
-          <li>Q2 Important/NOT Urgent</li>
-          <li>Q3 NOT Important/Urgent</li>
-          <li>Q4 NOT Important/NOT Urgent</li>
-        </ul>
-
-        <p>Select the correct Quadrant when creating a task!</p>
       </div>
-      <div className="child-1">
+      <div className="child-2">
         <ul onClick={selectPage}>
           <p> NAVIGATE</p>
           <li
@@ -124,6 +115,16 @@ const Footer = ({ data }) => {
               </li>
             </>
           )}
+        </ul>
+      </div>
+
+      <div className="child-3">
+        <p>Select the correct Quadrant when creating a task!</p>
+        <ul>
+          <li>Q1 Important/Urgent</li>
+          <li>Q2 Important/NOT Urgent</li>
+          <li>Q3 NOT Important/Urgent</li>
+          <li>Q4 NOT Important/NOT Urgent</li>
         </ul>
       </div>
     </div>
