@@ -38,72 +38,94 @@ const Footer = ({ data }) => {
   }, [location]);
   return (
     <div className="footer-wrapper">
-      <ul onClick={selectPage}>
-        <p> NAVIGATE</p>
-        <li
-          className={
-            navLink === "See All Tasks" ? "footer-selected" : "nav-link"
-          }
-        >
-          {" "}
-          <Link
-            id="See All Tasks"
-            to="/tasks"
-            style={{ textDecoration: "none" }}
-            className="footer-link"
+      <div className="child-2">
+        <p>
+          It is known that using Stephen Covey's Time Management Matrix which
+          categorizes tasks on the basis of priority increases productivity And
+          efficiency.{" "}
+        </p>
+
+        <ul>
+          <li>Q1 Important/Urgent</li>
+          <li>Q2 Important/NOT Urgent</li>
+          <li>Q3 NOT Important/Urgent</li>
+          <li>Q4 NOT Important/NOT Urgent</li>
+        </ul>
+
+        <p>Select the correct Quadrant when creating a task!</p>
+      </div>
+      <div className="child-1">
+        <ul onClick={selectPage}>
+          <p> NAVIGATE</p>
+          <li
+            className={
+              navLink === "See All Tasks" ? "footer-selected" : "nav-link"
+            }
           >
-            See All Tasks<i className="bx bx-chevron-right"></i>
-          </Link>
-        </li>
-        {Auth.loggedIn() ? (
-          <>
-            <li
-              className={navLink === "Account" ? "footer-selected" : "nav-link"}
+            {" "}
+            <Link
+              id="See All Tasks"
+              to="/tasks"
+              style={{ textDecoration: "none" }}
+              className="footer-link"
             >
-              <Link
-                id="Account"
-                to="/account"
-                style={{ textDecoration: "none" }}
-                className="footer-link"
+              See All Tasks<i className="bx bx-chevron-right"></i>
+            </Link>
+          </li>
+          {Auth.loggedIn() ? (
+            <>
+              <li
+                className={
+                  navLink === "Account" ? "footer-selected" : "nav-link"
+                }
               >
-                Account<i className="bx bx-chevron-right"></i>
-              </Link>
-            </li>
-            <li className="footer-btn">
-              <button className="footer-link" onClick={logout}>
-                Logout<i className="bx bx-chevron-right"></i>
-              </button>
-            </li>
-          </>
-        ) : (
-          <>
-            <li
-              className={navLink === "Login" ? "footer-selected" : "nav-link"}
-            >
-              <Link
-                id="Login"
-                to="/login"
-                className="footer-link"
-                style={{ textDecoration: "none" }}
+                <Link
+                  id="Account"
+                  to="/account"
+                  style={{ textDecoration: "none" }}
+                  className="footer-link"
+                >
+                  Account<i className="bx bx-chevron-right"></i>
+                </Link>
+              </li>
+              <li className="footer-btn">
+                <button className="footer-link" onClick={logout}>
+                  Logout<i className="bx bx-chevron-right"></i>
+                </button>
+              </li>
+            </>
+          ) : (
+            <>
+              <li
+                className={navLink === "Login" ? "footer-selected" : "nav-link"}
               >
-                Login<i className="bx bx-chevron-right"></i>
-              </Link>
-            </li>
-            <li
-              className={navLink === "Signup" ? "footer-selected" : "nav-link"}
-            >
-              <Link
-                id="Signup"
-                to="/signup"
-                className="footer-link"
-                style={{ textDecoration: "none" }}
+                <Link
+                  id="Login"
+                  to="/login"
+                  className="footer-link"
+                  style={{ textDecoration: "none" }}
+                >
+                  Login<i className="bx bx-chevron-right"></i>
+                </Link>
+              </li>
+              <li
+                className={
+                  navLink === "Signup" ? "footer-selected" : "nav-link"
+                }
               >
-                Sign up<i className="bx bx-chevron-right"></i>
-              </Link>
-            </li>
-          </>
-        )}
-      </ul>
+                <Link
+                  id="Signup"
+                  to="/signup"
+                  className="footer-link"
+                  style={{ textDecoration: "none" }}
+                >
+                  Sign up<i className="bx bx-chevron-right"></i>
+                </Link>
+              </li>
+            </>
+          )}
+        </ul>
+      </div>
     </div>
   );
 };
