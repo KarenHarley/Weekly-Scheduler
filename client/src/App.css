@@ -41,7 +41,9 @@
   margin: 24px;
   text-align: center;
 }
-.login-please a {
+.login-please a,
+.login-form-div a,
+.signup-form-div a {
   color: #7466a4;
 }
 /* ALL tasks */

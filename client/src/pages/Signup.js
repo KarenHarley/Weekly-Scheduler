@@ -76,7 +76,7 @@ const Signup = (props) => {
         <input type="submit" onClick={handleFormSubmit} />
         <p>
           <span>
-            Have have an account? &nbsp;<a href="/login">Login</a>
+            Have have an account?&nbsp;<a href="/login">Login</a>
           </span>
         </p>
       </form>

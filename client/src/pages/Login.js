@@ -65,7 +65,7 @@ const Login = (props) => {
         <p>
           <span>
             {" "}
-            Don't have an account?&nbsp;<a href="/signup"> Sign up</a>{" "}
+            Don't have an account?&nbsp;<a href="/signup">Sign up</a>{" "}
           </span>
         </p>
       </form>
