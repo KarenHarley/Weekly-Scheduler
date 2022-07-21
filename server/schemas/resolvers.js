@@ -24,7 +24,6 @@ const resolvers = {
     },
     duplicate: async (parent, args, context) => {
       //use context for id
-      let message;
       if (context.user) {
         const duplicate = await Task.findOne({
           user: context.user._id,
@@ -53,6 +52,7 @@ const resolvers = {
           startingTime: args.startingTime,
           endingTime: args.endingTime,
           user: context.user._id,
+          quadrant: args.quadrant
         });
         // push the id to user task
         const thisUser = await User.findOneAndUpdate(
@@ -70,11 +70,11 @@ const resolvers = {
     },
     updateTask: async (
       parent,
-      { _id, name, notes, startingTime, endingTime }
+      { _id, name, notes, startingTime, endingTime,quadrant }
     ) => {
       const updatedTask = await Task.findOneAndUpdate(
         { _id: _id },
-        { name, notes, startingTime, endingTime },
+        { name, notes, startingTime, endingTime,quadrant },
         // Return the newly updated object instead of the original
         { new: true }
       );
