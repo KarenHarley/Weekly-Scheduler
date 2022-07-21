@@ -8,6 +8,7 @@ export const QUERY_TASKS = gql`
       notes
       startingTime
       endingTime
+      quadrant
       user {
         username
         _id
@@ -23,6 +24,7 @@ export const QUERY_TASK = gql`
       notes
       startingTime
       endingTime
+      quadrant
     }
   }
 `;
@@ -33,6 +35,7 @@ export const QUERY_DUPLICATE = gql`
       notes
       startingTime
       endingTime
+      quadrant
       user {
         username
       }
