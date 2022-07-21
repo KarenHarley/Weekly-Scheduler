@@ -283,6 +283,12 @@
 .child-3 {
   margin: 10px;
 }
+.child-3 p {
+  margin: 0px;
+}
+.child-3 li {
+  margin: 8px;
+}
 .footer-wrapper ul {
   list-style: none;
   text-align: center;
