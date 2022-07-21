@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { formatTime } from "../utils/times";
+import { formatTime } from "../utils/utils";
 const Task = ({ data }) => {
   console.log(data);
   return (

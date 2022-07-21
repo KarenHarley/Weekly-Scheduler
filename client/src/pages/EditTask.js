@@ -4,7 +4,7 @@ import { QUERY_TASK } from "../utils/queries";
 import { UPDATE_TASK } from "../utils/mutations";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { times, createOptions } from "../utils/times";
+import { times, createOptions } from "../utils/utils";
 
 import Auth from "../utils/auth";
 

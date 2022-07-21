@@ -5,7 +5,7 @@ import Task from "../components/Task";
 import Auth from "../utils/auth";
 import { useState, useEffect } from "react";
 import CreateForm from "../components/CreateForm";
-import { days } from "../utils/times";
+import { days } from "../utils/utils";
 const Tasks = () => {
   const [day, setDay] = useState("Monday");
 

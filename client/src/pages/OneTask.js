@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_TASK } from "../utils/queries";
 import { useParams } from "react-router-dom";
-import { formatTime } from "../utils/times";
+import { formatTime } from "../utils/utils";
 import Auth from "../utils/auth";
 
 const OneTask = () => {

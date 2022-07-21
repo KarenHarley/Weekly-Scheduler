@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
 import { CREATE_TASK } from "../../utils/mutations";
-import { times, createOptions, days } from "../../utils/times";
+import { times, createOptions, days } from "../../utils/utils";
 import { QUERY_TASKS, QUERY_DUPLICATE } from "../../utils/queries";
 
 const CreateForm = ({ setDay, day }) => {
@@ -14,6 +14,7 @@ const CreateForm = ({ setDay, day }) => {
     startingTime: "",
     endingTime: "",
     day: "",
+    quadrant: "",
   });
   const { loading, data, refetch } = useQuery(QUERY_DUPLICATE, {
     variables: {
@@ -65,6 +66,7 @@ const CreateForm = ({ setDay, day }) => {
           startingTime: "",
           endingTime: "",
           day: "",
+          quadrant: "",
         });
       } catch (e) {
         console.error(e);
@@ -147,6 +149,19 @@ const CreateForm = ({ setDay, day }) => {
           {times.map((time) => {
             return createOptions(time);
           })}
+        </select>
+        <select
+          id="quadrant"
+          name="quadrant"
+          value={formState.quadrant}
+          onChange={handleChange}
+        >
+          <option value="disabled" disabled={true} defaultValue>
+            Select Starting Time
+          </option>
+          {/* {times.map((time) => {
+            return createOptions(time);
+          })} */}
         </select>
         <input type="submit" onClick={handleFormSubmit} />
       </form>
