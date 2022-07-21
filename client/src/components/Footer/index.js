@@ -44,6 +44,10 @@ const Footer = ({ data }) => {
           categorizes tasks on the basis of priority increases productivity And
           efficiency.{" "}
         </p>
+        <p>
+          This Application uses this Matrix to help you distinguish between
+          importance and urgency.
+        </p>
       </div>
       <div className="child-2">
         <ul onClick={selectPage}>

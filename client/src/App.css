@@ -271,8 +271,17 @@
 .footer-wrapper div {
   width: 33%;
 }
-.child-1 {
-  font-size: 10px;
+.child-2 {
+  padding: 0px 100px;
+}
+.child-1 p,
+.child-3 p {
+  font-size: 15px;
+  color: white;
+}
+.child-1,
+.child-3 {
+  margin: 10px;
 }
 .footer-wrapper ul {
   list-style: none;
