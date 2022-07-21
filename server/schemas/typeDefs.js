@@ -14,6 +14,7 @@ const typeDefs = gql`
     startingTime: String!
     endingTime: String!
     user: User
+    quadrant: String
   }
 
   type User {
