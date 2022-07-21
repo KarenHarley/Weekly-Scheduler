@@ -24,6 +24,9 @@ const tasksSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
+  quadrant: {
+    type: String,
+  },
 });
 
 const Task = model("Task", tasksSchema);
