@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
 import { CREATE_TASK } from "../../utils/mutations";
-import { times, createOptions, days } from "../../utils/utils";
+import {
+  times,
+  createOptions,
+  days,
+  quadrants,
+  createQuadrantOptions,
+} from "../../utils/utils";
 import { QUERY_TASKS, QUERY_DUPLICATE } from "../../utils/queries";
 
 const CreateForm = ({ setDay, day }) => {
@@ -159,9 +165,9 @@ const CreateForm = ({ setDay, day }) => {
           <option value="disabled" disabled={true} defaultValue>
             Select Starting Time
           </option>
-          {/* {times.map((time) => {
-            return createOptions(time);
-          })} */}
+          {quadrants.map((quadrant) => {
+            return createQuadrantOptions(quadrant);
+          })}
         </select>
         <input type="submit" onClick={handleFormSubmit} />
       </form>

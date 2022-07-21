@@ -29,6 +29,18 @@ export const createOptions = (time) => {
   );
 };
 
+export const createQuadrantOptions = (quadrant) => {
+  let optionValue = quadrant.split(":")[0];
+  let optionKey = quadrant.split(":")[0];
+  console.log(quadrant);
+  console.log(optionKey);
+  console.log(optionValue);
+  return (
+    <option value={optionValue} key={optionKey}>
+      {quadrant}
+    </option>
+  );
+};
 export const formatTime = (time) => {
   if (time.indexOf(".") === -1 && parseInt(time) <= 12) {
     return `${time}:00 am`;
@@ -104,4 +116,11 @@ export const times = [
   "11:00 pm",
   "11:30 pm",
   "12:00 pm",
+];
+
+export const quadrants = [
+  "Q1: Important/Urgent",
+  "Q2: Important/NOT Urgent",
+  "Q3: NOT Important/Urgent",
+  "Q4: NOT Important/NOT Urgent",
 ];
