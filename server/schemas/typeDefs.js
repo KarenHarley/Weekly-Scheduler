@@ -39,6 +39,7 @@ const typeDefs = gql`
       day: String!
       startingTime: String!
       endingTime: String!
+      quadrant: String
     ): Task
 
     updateTask(
@@ -47,6 +48,7 @@ const typeDefs = gql`
       startingTime: String
       endingTime: String
       _id: String!
+      quadrant: String
     ): Task
 
     updateUser(username: String, email: String, password: String): User
