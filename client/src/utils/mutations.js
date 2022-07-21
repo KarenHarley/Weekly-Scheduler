@@ -7,6 +7,7 @@ export const UPDATE_TASK = gql`
     $startingTime: String!
     $endingTime: String!
     $_id: String!
+    $quadrant: String
   ) {
     updateTask(
       name: $name
@@ -14,11 +15,13 @@ export const UPDATE_TASK = gql`
       startingTime: $startingTime
       endingTime: $endingTime
       _id: $_id
+      quadrant: $quadrant
     ) {
       name
       notes
       startingTime
       endingTime
+      quadrant
       user {
         _id
       }
@@ -33,6 +36,7 @@ export const CREATE_TASK = gql`
     $startingTime: String!
     $endingTime: String!
     $day: String!
+    $quadrant: String
   ) {
     addTask(
       name: $name
@@ -40,11 +44,13 @@ export const CREATE_TASK = gql`
       startingTime: $startingTime
       endingTime: $endingTime
       day: $day
+      quadrant: $quadrant
     ) {
       name
       notes
       startingTime
       endingTime
+      quadrant
       user {
         _id
       }
