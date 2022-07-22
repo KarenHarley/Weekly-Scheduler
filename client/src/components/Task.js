@@ -3,7 +3,11 @@ import { formatTime } from "../utils/utils";
 const Task = ({ data }) => {
   console.log(data);
   return (
-    <div className="task-wrapper">
+    <div
+      className={
+        data.quadrant ? `${data.quadrant} task-wrapper` : "task-wrapper"
+      }
+    >
       <p>
         {data.quadrant ? <span>{data.quadrant}</span> : <></>}
         <span>
