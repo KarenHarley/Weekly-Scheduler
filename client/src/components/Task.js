@@ -5,13 +5,11 @@ const Task = ({ data }) => {
   return (
     <div className="task-wrapper">
       <p>
+        {data.quadrant ? <span>{data.quadrant}</span> : <></>}
         <span>
-          {" "}
           {formatTime(data.startingTime)}-{formatTime(data.endingTime)}
         </span>{" "}
         <span> Name: {data.name}</span>
-        {/* {data.startingTime}-{data.endingTime}
-          <br></br> */}
         <span>
           <Link to={`task/${data._id}`}>See More</Link>
         </span>
