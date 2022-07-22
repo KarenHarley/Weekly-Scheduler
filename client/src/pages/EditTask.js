@@ -64,7 +64,7 @@ const EditTask = () => {
   }, [data, updateData]);
 
   return (
-    <div>
+    <div className="edit-task-container">
       <h1>Edit task</h1>
       {Auth.loggedIn() ? (
         <div className="edit-task-wrapper">
