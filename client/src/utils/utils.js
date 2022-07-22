@@ -32,9 +32,6 @@ export const createOptions = (time) => {
 export const createQuadrantOptions = (quadrant) => {
   let optionValue = quadrant.split(":")[0];
   let optionKey = quadrant.split(":")[0];
-  console.log(quadrant);
-  console.log(optionKey);
-  console.log(optionValue);
   return (
     <option value={optionValue} key={optionKey}>
       {quadrant}

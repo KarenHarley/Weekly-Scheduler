@@ -43,9 +43,9 @@ userSchema.methods.isCorrectPassword = async function (password) {
 };
 
 userSchema.pre("findOneAndUpdate", async function () {
-
   const userToUpdate = await this.model.findOne(this.getFilter()); //returns the current query filter (returns the current user obj)
-  if (userToUpdate.password !== this._update.password) {//compare,.
+  if (userToUpdate.password !== this._update.password) {
+    //compare,.
     this._update.password = await bcrypt.hash(this._update.password, 10);
   }
 });

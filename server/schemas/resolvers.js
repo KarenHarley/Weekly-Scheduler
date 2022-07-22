@@ -33,6 +33,7 @@ const resolvers = {
 
         if (duplicate) {
           console.log("Duplicate");
+          console.log(duplicate);
         }
         //add some sort of message to tell if it is a full duplicate (exact times) or a half (same starting time)
         return duplicate;
@@ -52,7 +53,7 @@ const resolvers = {
           startingTime: args.startingTime,
           endingTime: args.endingTime,
           user: context.user._id,
-          quadrant: args.quadrant
+          quadrant: args.quadrant,
         });
         // push the id to user task
         const thisUser = await User.findOneAndUpdate(
@@ -70,11 +71,11 @@ const resolvers = {
     },
     updateTask: async (
       parent,
-      { _id, name, notes, startingTime, endingTime,quadrant }
+      { _id, name, notes, startingTime, endingTime, quadrant }
     ) => {
       const updatedTask = await Task.findOneAndUpdate(
         { _id: _id },
-        { name, notes, startingTime, endingTime,quadrant },
+        { name, notes, startingTime, endingTime, quadrant },
         // Return the newly updated object instead of the original
         { new: true }
       );

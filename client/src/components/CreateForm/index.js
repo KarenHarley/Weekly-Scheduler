@@ -161,10 +161,9 @@ const CreateForm = ({ setDay, day }) => {
           name="quadrant"
           value={formState.quadrant}
           onChange={handleChange}
+          defaultValue={"default"}
         >
-          <option value="disabled" disabled={true} defaultValue>
-            Select Starting Time
-          </option>
+          <option value={"default"}>Select Quadrant (optional)</option>
           {quadrants.map((quadrant) => {
             return createQuadrantOptions(quadrant);
           })}
