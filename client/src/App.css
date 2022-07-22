@@ -4,6 +4,9 @@
   padding: 5px;
   color: white;
 }
+.task-wrapper a {
+  color: white;
+}
 .Q1 {
   background-color: #8565c6;
 }
