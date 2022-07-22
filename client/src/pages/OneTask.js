@@ -16,7 +16,7 @@ const OneTask = () => {
   });
   console.log(data);
   return (
-    <div className="task-wrapper">
+    <div className="one-task-wrapper">
       {Auth.loggedIn() ? (
         <div className="task-heading">
           <h1>One task</h1>

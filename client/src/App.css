@@ -26,7 +26,8 @@
   padding: 5px;
 }
 /* Edit Task */
-.edit-task-container {
+.edit-task-container,
+.one-task-wrapper {
   min-height: 55rem;
 }
 .edit-task-wrapper label {
