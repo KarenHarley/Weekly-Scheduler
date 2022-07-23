@@ -65,7 +65,7 @@ const Tasks = () => {
         <div className="login-please">
           <span>
             You need to be logged in to see your Tasks. Please&nbsp;
-            <Link to="/login"> login</Link> or&nbsp;
+            <Link to="/login">login</Link> or&nbsp;
             <Link to="/signup">signup.</Link>
           </span>
         </div>

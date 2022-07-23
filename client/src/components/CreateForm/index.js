@@ -54,6 +54,11 @@ const CreateForm = ({ setDay, day }) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+
+    if (formState.name == ""|| formState.day == ""|| formState.startingTime == ""|| formState.endingTime == ""){
+      alert("Task Day, Name, StartingTime, and EndingTime are required.");
+      return;
+    }
     if (formState.startingTime == formState.endingTime) {
       alert("Same start and ending time");
       return;
@@ -121,7 +126,7 @@ const CreateForm = ({ setDay, day }) => {
           name="day"
           value={formState.day}
           onChange={handleChange}
-          defaultValue={"default"}
+          // defaultValue={"default"}
         >
           <option value={"default"}>Select Day</option>
           {days.map((day) => {
@@ -137,7 +142,7 @@ const CreateForm = ({ setDay, day }) => {
           name="startingTime"
           value={formState.startingTime}
           onChange={handleChange}
-          defaultValue={"default"}
+          // defaultValue={"default"}
         >
           <option value={"default"}>Select Starting Time</option>
           {times.map((time) => {
@@ -149,7 +154,7 @@ const CreateForm = ({ setDay, day }) => {
           name="endingTime"
           value={formState.endingTime}
           onChange={handleChange}
-          defaultValue={"default"}
+          // defaultValue={"default"}
         >
           <option value={"default"}>Select Ending Time</option>
           {times.map((time) => {
@@ -161,7 +166,7 @@ const CreateForm = ({ setDay, day }) => {
           name="quadrant"
           value={formState.quadrant}
           onChange={handleChange}
-          defaultValue={"default"}
+          // defaultValue={"default"}
         >
           <option value={"default"}>Select Quadrant (optional)</option>
           {quadrants.map((quadrant) => {
