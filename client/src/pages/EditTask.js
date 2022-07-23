@@ -65,6 +65,7 @@ const EditTask = () => {
         notes: data.task.notes,
         startingTime: data.task.startingTime,
         endingTime: data.task.endingTime,
+        quadrant: data.task.quadrant,
       });
     }
   }, [data, updateData]);
@@ -128,11 +129,9 @@ const EditTask = () => {
                 <select
                   id="quadrant"
                   name="quadrant"
-                  value={formState.quadrant}
+                  value={formState.quadrant || ""}
                   onChange={onChange}
-                  // defaultValue={"default"}
                 >
-                  <option value={"default"}>Select Quadrant (optional)</option>
                   {quadrants.map((quadrant) => {
                     return createQuadrantOptions(quadrant);
                   })}
