@@ -103,6 +103,10 @@
 .create-form textarea {
   margin-top: 15px;
   width: 100%;
+  padding: 10px;
+}
+.create-form textarea {
+  padding: 15px;
 }
 .create-form select {
   padding-bottom: 15px;
@@ -132,7 +136,7 @@
 }
 
 .create-form {
-  padding: 60px;
+  padding: 40px;
 }
 
 /* Navbar*/

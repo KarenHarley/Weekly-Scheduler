@@ -116,7 +116,7 @@ const CreateForm = ({ setDay, day }) => {
         <textarea
           type="text"
           name="notes"
-          placeholder="Notes"
+          placeholder="Notes (optional)"
           id="task-notes"
           value={formState.notes}
           onChange={handleChange}
