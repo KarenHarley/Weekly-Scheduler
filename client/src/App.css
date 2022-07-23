@@ -99,7 +99,9 @@
   padding: 0px;
   margin: 0px;
 }
-.create-form input {
+.create-form input,
+.create-form textarea {
+  margin-top: 15px;
   width: 100%;
 }
 .create-form select {
@@ -130,7 +132,7 @@
 }
 
 .create-form {
-  padding: 20px;
+  padding: 60px;
 }
 
 /* Navbar*/

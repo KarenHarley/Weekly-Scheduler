@@ -114,7 +114,7 @@ const CreateForm = ({ setDay, day }) => {
           onChange={handleChange}
           required
         />
-        <input
+        <textarea
           type="text"
           name="notes"
           placeholder="Notes"
