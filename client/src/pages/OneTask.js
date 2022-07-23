@@ -24,6 +24,7 @@ const OneTask = () => {
             <div>Loading...</div>
           ) : (
             <div>
+              {data.task.quadrant ? <span>{data.task.quadrant}</span> : <></>}
               <p>
                 {formatTime(data.task.startingTime)}-
                 {formatTime(data.task.endingTime)}
