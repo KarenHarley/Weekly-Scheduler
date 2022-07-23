@@ -387,10 +387,11 @@
   }
   .all-tasks,
   .no-tasks {
-    width: 60%;
+    width: 75%;
+    padding: 20px 10px;
   }
   .create-form-div {
-    width: 40%;
+    width: 35%;
   }
   .banner-container {
     height: 600px;

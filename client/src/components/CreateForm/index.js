@@ -100,11 +100,10 @@ const CreateForm = ({ setDay, day }) => {
   }, [formState]);
   return (
     <div className="create-task-wrapper">
-      <div className="create-task-heading">
-        <h4>Create Form</h4>
-      </div>
-
       <form className="create-form">
+        <div className="create-task-heading">
+          <h4>Create</h4>
+        </div>
         <input
           type="text"
           name="name"
