@@ -297,7 +297,7 @@
 }
 .child-1 p,
 .child-3 p {
-  font-size: 15px;
+  font-size: 18px;
   color: white;
 }
 .child-1,
@@ -306,6 +306,7 @@
 }
 .child-3 p {
   margin: 0px;
+  text-align: center;
 }
 .child-3 li {
   margin: 8px;
@@ -315,6 +316,7 @@
   text-align: center;
   color: white;
   padding: 10px;
+  font-size: 18px;
 }
 
 .footer-link {
@@ -355,6 +357,11 @@
   }
   .child-2 {
     padding: 0px 40px;
+  }
+  .child-1 p,
+  .child-2 p,
+  .child-3 p {
+    font-size: 14px;
   }
   .login-form,
   .signup-form,
@@ -412,7 +419,7 @@
     width: 500px;
   }
   .child-2 {
-    padding: 0px 100px;
+    padding: 1px 140px;
   }
 }
 /* @media (min-width: 1893px) {
@@ -430,5 +437,9 @@
   }
   .app-container {
     font-size: 20px;
+  }
+
+  .child-2 {
+    padding: 1px 305px;
   }
 }

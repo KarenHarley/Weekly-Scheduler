@@ -13,6 +13,9 @@ import {
 } from "../../utils/utils";
 import { QUERY_TASKS, QUERY_DUPLICATE } from "../../utils/queries";
 
+/*
+IMPORTANT!!!!!!!!! FIX SALT ISSUE!!!!!!!
+*/
 const CreateForm = ({ setDay, day }) => {
   const [formState, setFormState] = useState({
     name: "",
