@@ -133,9 +133,9 @@ const EditTask = () => {
                   onChange={onChange}
                 >
                   {!formState.quadrant ? (
-                    <option value={"default"}>Select Starting Time</option>
+                    <option value={"default"}>Select Quadrant</option>
                   ) : (
-                    <></>
+                    <option value={""}>Remove Quadrant</option>
                   )}
                   {quadrants.map((quadrant) => {
                     return createQuadrantOptions(quadrant);
