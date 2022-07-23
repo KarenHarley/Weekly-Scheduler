@@ -18,20 +18,20 @@ const OneTask = () => {
   return (
     <div className="one-task-wrapper">
       {Auth.loggedIn() ? (
-        <div className="task-heading">
+        <div className="one-task">
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <div>
-              {data.task.quadrant ? <span>{data.task.quadrant}</span> : <></>}
+            <>
               <p>
+                {data.task.quadrant ? <span>{data.task.quadrant}</span> : <></>}
                 {formatTime(data.task.startingTime)}-
                 {formatTime(data.task.endingTime)}
               </p>
               <p>Name: {data.task.name}</p>
               <p>Notes: {data.task.notes}</p>
               <Link to={`/task/edit/${data.task._id}`}>Edit</Link>
-            </div>
+            </>
           )}
         </div>
       ) : (

@@ -31,6 +31,16 @@
 .one-task-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.one-task p {
+  display: flex;
+  justify-content: space-between;
+}
+.one-task a {
+  display: flex;
+  justify-content: end;
+  color: #7859b6;
 }
 /* Edit Task */
 .edit-task-container,
