@@ -4,7 +4,12 @@ import { QUERY_TASK } from "../utils/queries";
 import { UPDATE_TASK } from "../utils/mutations";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { times, createOptions } from "../utils/utils";
+import {
+  times,
+  createOptions,
+  createQuadrantOptions,
+  quadrants,
+} from "../utils/utils";
 
 import Auth from "../utils/auth";
 
@@ -23,6 +28,7 @@ const EditTask = () => {
     notes: "",
     startingTime: "",
     endingTime: "",
+    quadrant: "",
   });
 
   const [updateTask, { error, updateData }] = useMutation(UPDATE_TASK);
@@ -119,6 +125,18 @@ const EditTask = () => {
                     onChange={onChange}
                   />
                 </label>
+                <select
+                  id="quadrant"
+                  name="quadrant"
+                  value={formState.quadrant}
+                  onChange={onChange}
+                  // defaultValue={"default"}
+                >
+                  <option value={"default"}>Select Quadrant (optional)</option>
+                  {quadrants.map((quadrant) => {
+                    return createQuadrantOptions(quadrant);
+                  })}
+                </select>
                 <input type="submit" value="Submit" />
               </form>
               <Link to={`/task/${data.task._id}`}>Back to Task</Link>
