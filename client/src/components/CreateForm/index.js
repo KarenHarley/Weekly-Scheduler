@@ -55,7 +55,12 @@ const CreateForm = ({ setDay, day }) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    if (formState.name == ""|| formState.day == ""|| formState.startingTime == ""|| formState.endingTime == ""){
+    if (
+      formState.name == "" ||
+      formState.day == "" ||
+      formState.startingTime == "" ||
+      formState.endingTime == ""
+    ) {
       alert("Task Day, Name, StartingTime, and EndingTime are required.");
       return;
     }
@@ -100,26 +105,24 @@ const CreateForm = ({ setDay, day }) => {
       </div>
 
       <form className="create-form">
-        <div className="name-notes-div">
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            id="task-name"
-            value={formState.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            name="notes"
-            placeholder="Notes"
-            id="task-notes"
-            value={formState.notes}
-            onChange={handleChange}
-            required
-          />
-        </div>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          id="task-name"
+          value={formState.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="notes"
+          placeholder="Notes"
+          id="task-notes"
+          value={formState.notes}
+          onChange={handleChange}
+          required
+        />
         <select
           required
           id="day"

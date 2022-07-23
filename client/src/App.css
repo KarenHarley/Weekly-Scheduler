@@ -93,20 +93,14 @@
 .selected-day {
   color: #9370db;
 }
-.name-notes-div {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 15px;
-  margin-top: 15px;
-}
+
 .create-form label {
   width: 100%;
   padding: 0px;
   margin: 0px;
 }
 .create-form input {
-  width: 45%;
+  width: 100%;
 }
 .create-form select {
   padding-bottom: 15px;
