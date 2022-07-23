@@ -25,6 +25,13 @@
   text-align: center;
   padding: 5px;
 }
+
+/* One Task */
+
+.one-task-wrapper {
+  display: flex;
+  justify-content: center;
+}
 /* Edit Task */
 .edit-task-container,
 .one-task-wrapper {
