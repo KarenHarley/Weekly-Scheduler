@@ -239,17 +239,13 @@
   width: 100%;
   height: 100%;
 }
-/* .signup-form-div, */
 .account-form-div {
-  /*.login-form-div, */
   display: flex;
   justify-content: center;
   margin: 20px;
   height: 65rem;
   align-items: center;
 }
-/* .login-form, */
-/* .signup-form, */
 .account-form {
   width: 80%;
 }
@@ -427,8 +423,7 @@
   .child-3 p {
     font-size: 14px;
   }
-  /* .login-form, */
-  /* .signup-form, */
+
   .account-form {
     width: 50%;
   }
@@ -487,13 +482,7 @@
     padding: 1px 140px;
   }
 }
-/* @media (min-width: 1893px) {
-  .footer-wrapper {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
-} */
+
 @media (min-width: 2560px) {
   .login-form,
   .signup-form,
