@@ -93,7 +93,7 @@
 .login-please a,
 .login-form-div a,
 .signup-form-div a {
-  color: #7466a4;
+  color: #7c55cb;
 }
 /* ALL tasks */
 .select-day-div {
@@ -279,7 +279,7 @@
   background-color: #b19cd9;
   color: white;
   border: none;
-  padding: 15px 32px;
+  padding: 12px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
