@@ -27,7 +27,11 @@
 }
 
 /* One Task */
-
+.one-task {
+  background-color: #cdc0f4;
+  padding: 20px;
+  width: 800px;
+}
 .one-task-wrapper {
   display: flex;
   justify-content: center;
