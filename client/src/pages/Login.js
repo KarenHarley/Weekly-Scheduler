@@ -40,35 +40,42 @@ const Login = (props) => {
   };
   return (
     <div className="login-form-div">
-      <form className="login-form">
-        <h4 className="login-heading">Login</h4>
-        <input
-          type="text"
-          name="email"
-          placeholder="Email"
-          id="username-email"
-          value={formState.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          id="password-login"
-          value={formState.password}
-          onChange={handleChange}
-          required
-        />
-        {error && <div className="error">{error.message}</div>}
-        <input type="submit" onClick={handleFormSubmit} />
-        <p>
-          <span>
-            {" "}
-            Don't have an account?&nbsp;<a href="/signup">Sign up</a>{" "}
-          </span>
-        </p>
-      </form>
+      <div className="login-banner-container">
+        <div className="banner">
+          <img src="./Pics/login-pic.jpg"></img>
+        </div>
+        <div className="banner stack-top">
+          <form className="login-form">
+            <h4 className="login-heading">Login</h4>
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              id="username-email"
+              value={formState.email}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              id="password-login"
+              value={formState.password}
+              onChange={handleChange}
+              required
+            />
+            {error && <div className="error">{error.message}</div>}
+            <input type="submit" onClick={handleFormSubmit} />
+            <p>
+              <span>
+                {" "}
+                Don't have an account?&nbsp;<a href="/signup">Sign up</a>{" "}
+              </span>
+            </p>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
