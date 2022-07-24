@@ -43,43 +43,58 @@ const Signup = (props) => {
   };
   return (
     <div className="signup-form-div">
-      <form className="signup-form">
-        <h4 className="signup-heading">Sign Up</h4>
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          id="username-username"
-          value={formState.username}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="email"
-          placeholder="Email"
-          id="username-email"
-          value={formState.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          id="password-login"
-          value={formState.password}
-          onChange={handleChange}
-          required
-        />
-        {error && <div className="error">{error.message}</div>}
-        <input type="submit" onClick={handleFormSubmit} />
-        <p>
-          <span>
-            Have have an account?&nbsp;<a href="/login">Login</a>
-          </span>
-        </p>
-      </form>
+      <div className="login-banner-container">
+        <div className="banner">
+          <img src="./Pics/login-pic.jpg"></img>
+        </div>
+        <div className="welcome-div">
+          <h1>Welcome</h1>
+          <p>
+            img elements must have an alt prop, either with meaningful text, or
+            an empty string for decorative images
+          </p>
+        </div>
+        <div className="login-banner login-stack-top">
+          {" "}
+          <form className="signup-form">
+            <h4 className="signup-heading">Sign Up</h4>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              id="username-username"
+              value={formState.username}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              id="username-email"
+              value={formState.email}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              id="password-login"
+              value={formState.password}
+              onChange={handleChange}
+              required
+            />
+            {error && <div className="error">{error.message}</div>}
+            <input type="submit" onClick={handleFormSubmit} />
+            <p>
+              <span>
+                Have have an account?&nbsp;<a href="/login">Login</a>
+              </span>
+            </p>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
