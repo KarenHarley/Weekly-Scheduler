@@ -205,6 +205,20 @@
   list-style: none;
 }
 /* Login Form */
+.login-stack-top {
+  padding: 55px;
+  margin: 39px;
+  width: 50%;
+}
+
+.login-banner {
+  position: absolute;
+  /* width: 100%; */
+  height: 100%;
+  top: 0;
+  /* left: 54px; */
+  right: 0;
+}
 .login-banner-container {
   width: 100%;
   height: 800px;

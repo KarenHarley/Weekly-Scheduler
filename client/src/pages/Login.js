@@ -44,7 +44,7 @@ const Login = (props) => {
         <div className="banner">
           <img src="./Pics/login-pic.jpg"></img>
         </div>
-        <div className="banner stack-top">
+        <div className="login-banner login-stack-top">
           <form className="login-form">
             <h4 className="login-heading">Login</h4>
             <input
