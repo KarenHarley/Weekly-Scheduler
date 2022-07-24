@@ -45,7 +45,7 @@ const Signup = (props) => {
     <div className="signup-form-div">
       <div className="login-banner-container">
         <div className="banner">
-          <img src="./Pics/login-pic.jpg"></img>
+          <img src="./Pics/sign-up-pic.jpg"></img>
         </div>
         <div className="welcome-div">
           <h1>Welcome</h1>
