@@ -29,7 +29,10 @@ const OneTask = () => {
                 {formatTime(data.task.endingTime)}
               </p>
               <p>Name: {data.task.name}</p>
-              <p>Notes: {data.task.notes}</p>
+              <div className="notes-div">
+                <h4>Notes:</h4>
+                <p>{data.task.notes}</p>
+              </div>
               <Link to={`/task/edit/${data.task._id}`}>Edit</Link>
             </>
           )}
