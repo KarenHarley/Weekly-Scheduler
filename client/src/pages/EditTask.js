@@ -118,12 +118,13 @@ const EditTask = () => {
                 </label>
                 <label>
                   Notes:
-                  <input
-                    id="notes"
+                  <textarea
                     type="text"
                     name="notes"
+                    id="notes"
                     value={formState.notes || ""}
                     onChange={onChange}
+                    required
                   />
                 </label>
                 <select
