@@ -42,7 +42,7 @@ const OneTask = () => {
           You need to be logged in to see this Task. Please{" "}
           <span>
             &nbsp;
-            <Link to="/login">login</Link> or &nbsp;
+            <Link to="/login">login</Link> or&nbsp;
             <Link to="/signup">signup.</Link>
           </span>
         </p>

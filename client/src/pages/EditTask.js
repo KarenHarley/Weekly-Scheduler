@@ -116,6 +116,7 @@ const EditTask = () => {
                     onChange={onChange}
                   />
                 </label>
+
                 <label>
                   Notes:
                   <textarea
