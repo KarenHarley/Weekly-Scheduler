@@ -210,7 +210,17 @@
   margin: 39px;
   width: 50%;
 }
-
+.welcome-div {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  top: 0;
+  /* left: 54px; */
+  left: 0;
+  padding: 55px;
+  margin: 39px;
+  color: white;
+}
 .login-banner {
   position: absolute;
   /* width: 100%; */

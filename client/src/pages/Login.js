@@ -44,6 +44,13 @@ const Login = (props) => {
         <div className="banner">
           <img src="./Pics/login-pic.jpg"></img>
         </div>
+        <div className="welcome-div">
+          <h1>Welcome Back</h1>
+          <p>
+            img elements must have an alt prop, either with meaningful text, or
+            an empty string for decorative images
+          </p>
+        </div>
         <div className="login-banner login-stack-top">
           <form className="login-form">
             <h4 className="login-heading">Login</h4>
