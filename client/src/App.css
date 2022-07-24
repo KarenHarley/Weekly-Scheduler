@@ -265,6 +265,7 @@
   margin: 8px 0;
   box-sizing: border-box;
   border: none;
+  border-radius: 4px;
 }
 .account-form input {
   width: 100%;
