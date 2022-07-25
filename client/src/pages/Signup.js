@@ -50,8 +50,8 @@ const Signup = (props) => {
         <div className="welcome-div">
           <h1>Welcome</h1>
           <p>
-            img elements must have an alt prop, either with meaningful text, or
-            an empty string for decorative images
+            It's great to have you here. Let's accomplish a lot today!
+            Create the tasks and let us handle the rest, we have your back.
           </p>
         </div>
         <div className="login-banner login-stack-top">
