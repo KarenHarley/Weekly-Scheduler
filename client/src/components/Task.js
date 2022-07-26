@@ -4,18 +4,26 @@ import { useState, useEffect } from "react";
 const Task = ({ data }) => {
   console.log(data);
   const [checked, setChecked] = useState(false);
-
+  console.log(checked);
   const handleChange = () => {
     setChecked(!checked);
   };
+  useEffect(() => {
+    if (data) {
+      setChecked(data.completed);
+    }
+  }, [data]);
   return (
     <div
       className={
         data.quadrant ? `${data.quadrant} task-wrapper` : "task-wrapper"
       }
     >
-      <input type="checkbox" checked={checked} onChange={handleChange} />
       <p>
+        {" "}
+        <span>
+          <input type="checkbox" checked={checked} onChange={handleChange} />
+        </span>
         {data.completed ? <span>{data.quadrant}</span> : <></>}
         {data.quadrant ? <span>{data.quadrant}</span> : <></>}
         <span>
