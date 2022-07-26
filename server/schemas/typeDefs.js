@@ -43,6 +43,10 @@ const typeDefs = gql`
       quadrant: String
     ): Task
 
+    changeCompleted(
+     completed: Boolean!
+    ): Task
+
     updateTask(
       name: String
       notes: String
