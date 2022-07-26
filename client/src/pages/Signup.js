@@ -43,7 +43,7 @@ const Signup = (props) => {
   };
   return (
     <div className="signup-form-div">
-      <div className="login-banner-container">
+      <div className="signup-banner-container login-banner-container">
         <div className="banner">
           <img src="./Pics/sign-up-pic.jpg"></img>
         </div>
@@ -54,7 +54,7 @@ const Signup = (props) => {
             Create the tasks and let us handle the rest, we have your back.
           </p>
         </div>
-        <div className="login-banner login-stack-top">
+        <div className="signup-banner login-banner login-stack-top">
           {" "}
           <form className="signup-form">
             <h4 className="signup-heading">Sign Up</h4>

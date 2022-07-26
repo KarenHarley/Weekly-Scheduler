@@ -230,10 +230,17 @@
   right: 0;
   padding: 10px;
 }
+.signup-banner {
+  top: 170px;
+}
+
 .login-banner-container {
   width: 100%;
   height: 470px;
   position: relative;
+}
+.signup-banner-container {
+  height: 495px;
 }
 .login-form-div img,
 .signup-form-div img {
