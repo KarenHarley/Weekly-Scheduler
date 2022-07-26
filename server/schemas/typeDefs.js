@@ -15,6 +15,7 @@ const typeDefs = gql`
     endingTime: String!
     user: User
     quadrant: String
+    completed: Boolean
   }
 
   type User {
