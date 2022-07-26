@@ -512,4 +512,7 @@
   .child-2 {
     padding: 1px 305px;
   }
+  .banner-container {
+    height: 920px;
+  }
 }
