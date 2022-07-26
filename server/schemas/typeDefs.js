@@ -47,6 +47,10 @@ const typeDefs = gql`
      completed: Boolean!
     ): Task
 
+    resetCompleted(
+      day: String!
+    ): [Task] # change all completed to false for that day using the users id in context
+
     updateTask(
       name: String
       notes: String
