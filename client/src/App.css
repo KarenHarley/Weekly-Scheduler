@@ -498,7 +498,18 @@
     padding: 1px 140px;
   }
 }
-
+@media (min-width: 2000px) {
+  .homepage-heading {
+    left: 662px;
+    top: 208px;
+    /* font-size: 43px; */
+  }
+  .footer-wrapper p,
+  .footer-wrapper a,
+  .footer-wrapper li {
+    font-size: 17px;
+  }
+}
 @media (min-width: 2560px) {
   .login-form,
   .signup-form,
@@ -514,5 +525,10 @@
   }
   .banner-container {
     height: 920px;
+  }
+  .homepage-heading {
+    left: 762px;
+    top: 208px;
+    /* font-size: 43px; */
   }
 }
