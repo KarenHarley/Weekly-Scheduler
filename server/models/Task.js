@@ -20,6 +20,9 @@ const tasksSchema = new Schema({
     type: Number,
     required: true,
   },
+  completed: {
+    type: Boolean,
+  },
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",
