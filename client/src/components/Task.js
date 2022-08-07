@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { formatTime } from "../utils/utils";
 import { useState, useEffect } from "react";
+import { CHANGE_COMPLETED } from "../utils/mutations";
 const Task = ({ data }) => {
   console.log(data);
   const [checked, setChecked] = useState(false);
   console.log(checked);
-  const handleChange = () => {
+  const handleChange = async (e) => {
+    console.log("change", e.target.id);
     setChecked(!checked);
   };
   useEffect(() => {
@@ -22,7 +24,12 @@ const Task = ({ data }) => {
       <p>
         {" "}
         <span>
-          <input type="checkbox" checked={checked} onChange={handleChange} />
+          <input
+            id={data._id}
+            type="checkbox"
+            checked={checked}
+            onChange={handleChange}
+          />
         </span>
         {data.completed ? <span>{data.quadrant}</span> : <></>}
         {data.quadrant ? <span>{data.quadrant}</span> : <></>}
