@@ -45,6 +45,7 @@ const typeDefs = gql`
 
     changeCompleted(
      completed: Boolean!
+     _id: String!
     ): Task
 
     resetCompleted(

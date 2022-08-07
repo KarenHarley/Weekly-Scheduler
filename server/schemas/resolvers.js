@@ -120,6 +120,16 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    changeCompleted: async (parent, { _id, completed }, context) => {
+      const updatedTask = await Task.findOneAndUpdate(
+        { _id: _id },
+        { completed },
+        // Return the newly updated object instead of the original
+        { new: true }
+      );
+      console.log(updatedTask);
+      return updatedTask;
+    },
   },
 };
 
