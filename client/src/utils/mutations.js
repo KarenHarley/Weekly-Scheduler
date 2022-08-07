@@ -90,3 +90,25 @@ export const UPDATE_USER = gql`
     }
   }
 `;
+
+export const CHANGE_COMPLETED = gql`
+  mutation changeCompleted(
+    $completed: Boolean!
+    $_id: String!
+  ) {
+    changeCompleted(
+      _id: $_id
+      completed: $completed
+    ) {
+      name
+      notes
+      startingTime
+      endingTime
+      quadrant
+      completed
+      user {
+        _id
+      }
+    }
+  }
+`;
