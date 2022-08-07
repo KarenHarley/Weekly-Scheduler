@@ -1,15 +1,32 @@
 import { Link } from "react-router-dom";
 import { formatTime } from "../utils/utils";
+import { useMutation } from "@apollo/client";
 import { useState, useEffect } from "react";
 import { CHANGE_COMPLETED } from "../utils/mutations";
 const Task = ({ data }) => {
   console.log(data);
   const [checked, setChecked] = useState(false);
+  const [changeCompleted, { error, changeCompletedData }] =
+    useMutation(CHANGE_COMPLETED);
   console.log(checked);
-  const handleChange = async (e) => {
-    console.log("change", e.target.id);
-    setChecked(!checked);
+
+  const ChangeCompleted = async (TaskId) => {
+    console.log(TaskId);
+    console.log(checked);
+    try {
+      const { updateCompleted } = await changeCompleted({
+        variables: { completed: checked, _id: TaskId },
+      });
+      console.log(updateCompleted);
+    } catch (e) {
+      console.error(e);
+    }
   };
+  const handleChange = (e) => {
+    setChecked(!checked);
+    ChangeCompleted(e.target.id);
+  };
+
   useEffect(() => {
     if (data) {
       setChecked(data.completed);
