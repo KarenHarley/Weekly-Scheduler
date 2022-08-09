@@ -27,11 +27,11 @@ const Task = ({ data }) => {
     ChangeCompleted(e.target.id);
   };
 
-  useEffect(() => {
-    if (data) {
-      setChecked(data.completed);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (data) {
+  //     setChecked(data.completed);
+  //   }
+  // }, [data]);
   return (
     <div
       className={
@@ -45,6 +45,7 @@ const Task = ({ data }) => {
             id={data._id}
             type="checkbox"
             checked={checked}
+            defaultChecked={data.completed}
             onChange={handleChange}
           />
         </span>
