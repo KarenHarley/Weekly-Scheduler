@@ -5,17 +5,14 @@ import { useState, useEffect } from "react";
 import { CHANGE_COMPLETED } from "../utils/mutations";
 const Task = ({ data }) => {
   console.log(data);
-  const [checked, setChecked] = useState(false);
   const [changeCompleted, { error, changeCompletedData }] =
     useMutation(CHANGE_COMPLETED);
-  console.log(checked);
 
-  const ChangeCompleted = async (TaskId) => {
-    console.log(TaskId);
-    console.log(checked);
+  const ChangeCompleted = async (taskId, checked) => {
     try {
+      console.log(checked);
       const { updateCompleted } = await changeCompleted({
-        variables: { completed: checked, _id: TaskId },
+        variables: { completed: checked, _id: taskId },
       });
       console.log(updateCompleted);
     } catch (e) {
@@ -23,8 +20,8 @@ const Task = ({ data }) => {
     }
   };
   const handleChange = (e) => {
-    setChecked(!checked);
-    ChangeCompleted(e.target.id);
+    console.log("checked", e.target.checked);
+    ChangeCompleted(e.target.id, e.target.checked);
   };
 
   // useEffect(() => {
@@ -44,8 +41,7 @@ const Task = ({ data }) => {
           <input
             id={data._id}
             type="checkbox"
-            checked={checked}
-            defaultChecked={data.completed}
+            checked={data.completed}
             onChange={handleChange}
           />
         </span>
