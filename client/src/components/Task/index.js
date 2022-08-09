@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { formatTime } from "../utils/utils";
+import { formatTime } from "../../utils/utils";
 import { useMutation } from "@apollo/client";
 import { useState, useEffect } from "react";
-import { CHANGE_COMPLETED } from "../utils/mutations";
+import { CHANGE_COMPLETED } from "../../utils/mutations";
 const Task = ({ data }) => {
   const [changeCompleted, { error, changeCompletedData }] =
     useMutation(CHANGE_COMPLETED);
