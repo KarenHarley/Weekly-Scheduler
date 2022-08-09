@@ -15,13 +15,16 @@ const Task = ({ data }) => {
         variables: { completed: checked, _id: taskId },
       });
       console.log(updateCompleted);
+      console.log(checked);
+      return checked;
     } catch (e) {
       console.error(e);
     }
   };
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     console.log("checked", e.target.checked);
-    ChangeCompleted(e.target.id, e.target.checked);
+    const change = await ChangeCompleted(e.target.id, e.target.checked);
+    e.target.checked = change;
   };
 
   // useEffect(() => {
