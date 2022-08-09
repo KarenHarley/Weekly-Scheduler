@@ -56,15 +56,15 @@ const CreateForm = ({ setDay, day }) => {
     e.preventDefault();
 
     if (
-      formState.name == "" ||
-      formState.day == "" ||
-      formState.startingTime == "" ||
-      formState.endingTime == ""
+      formState.name === "" ||
+      formState.day === "" ||
+      formState.startingTime === "" ||
+      formState.endingTime === ""
     ) {
       alert("Task Day, Name, StartingTime, and EndingTime are required.");
       return;
     }
-    if (formState.startingTime == formState.endingTime) {
+    if (formState.startingTime === formState.endingTime) {
       alert("Same start and ending time");
       return;
     }
