@@ -137,6 +137,7 @@
 }
 .create-form textarea {
   padding: 15px;
+  height: 110px;
 }
 .create-form select {
   padding-bottom: 15px;
