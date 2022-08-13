@@ -64,7 +64,6 @@ const typeDefs = gql`
       task: ID!
       startingTime: String!
       endingTime: String!
-      user: User
       quadrant: String
       completed: Boolean
     ): Step
