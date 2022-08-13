@@ -12,6 +12,14 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    steps: async (parent, { task }, context) => {
+      if (context.user) {
+        return Step.find({ user: context.user._id, task: task })
+          .sort({ startingTime: 1 })
+          .populate("task");
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
     user: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id }).populate("tasks");
