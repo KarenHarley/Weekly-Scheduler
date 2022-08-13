@@ -58,6 +58,17 @@ const typeDefs = gql`
       quadrant: String
     ): Task
 
+    addStep(
+      name: String!
+      notes: String
+      task: ID!
+      startingTime: String!
+      endingTime: String!
+      user: User
+      quadrant: String
+      completed: Boolean
+    ): Task
+
     changeCompleted(
      completed: Boolean!
      _id: String!
