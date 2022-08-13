@@ -1,4 +1,4 @@
-const { Task, User } = require("../models");
+const { Task, User,Step } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
@@ -31,6 +31,18 @@ const resolvers = {
         }).populate("user");
 
         //there is a message to tell if it is a full duplicate (exact times) or a half (same starting time) in front end
+        return duplicate;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    duplicateStep: async (parent, args, context) => {
+      //use context for id
+      if (context.user) {
+        const duplicate = await Step.findOne({
+          user: context.user._id,
+          startingTime: args.startingTime,
+        }).populate("user");
+        //add some sort of message to tell if it is a full duplicate (exact times) or a half (same starting time)
         return duplicate;
       }
       throw new AuthenticationError("You need to be logged in!");
