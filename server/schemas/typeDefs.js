@@ -87,6 +87,17 @@ const typeDefs = gql`
       quadrant: String
     ): Task
 
+    updateStep(
+      _id: String!
+      name: String
+      notes: String
+      task: ID!
+      startingTime: String
+      endingTime: String
+      quadrant: String
+      completed: Boolean
+    ): Task
+
     updateUser(username: String, email: String, password: String): User
 
     login(email: String!, password: String!): Auth
