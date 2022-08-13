@@ -41,6 +41,7 @@ const typeDefs = gql`
 
   type Query {
     tasks(selectedDay: String!): [Task]
+    steps(task: String!): [Step]
     user: User
     task(taskId: String!): Task
     duplicate(startingTime: String!, endingTime: String!, day: String!): Task
