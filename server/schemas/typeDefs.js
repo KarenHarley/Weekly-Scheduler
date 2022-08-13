@@ -46,6 +46,7 @@ const typeDefs = gql`
     task(taskId: String!): Task
     step(stepId: String!): Step
     duplicateTask(startingTime: String!, endingTime: String!, day: String!): Task
+    duplicateStep(startingTime: String!, endingTime: String!): Step
   }
 
   type Mutation {
