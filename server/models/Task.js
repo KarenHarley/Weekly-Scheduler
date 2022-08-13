@@ -31,7 +31,7 @@ const tasksSchema = new Schema({
   quadrant: {
     type: String,
   },
-  mini_tasks: [
+  steps: [
     {
       type: Schema.Types.ObjectId,
       ref: "Step",

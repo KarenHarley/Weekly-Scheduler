@@ -16,6 +16,7 @@ const typeDefs = gql`
     user: User
     quadrant: String
     completed: Boolean
+    steps: [Step]
   }
 
   type Step {
