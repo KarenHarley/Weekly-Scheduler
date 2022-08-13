@@ -29,6 +29,9 @@ const resolvers = {
     task: async (parent, { taskId }) => {
       return Task.findOne({ _id: taskId }).populate("user");
     },
+    step: async (parent, { stepId }) => {
+      return Step.findOne({ _id: stepId }).populate("task");
+    },
     duplicateTask: async (parent, args, context) => {
       //use context for id
       if (context.user) {
