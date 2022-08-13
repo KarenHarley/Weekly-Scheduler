@@ -1,4 +1,4 @@
-const { Task, User,Step } = require("../models");
+const { Task, User, Step } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
@@ -83,6 +83,32 @@ const resolvers = {
           }
         );
         return task;
+      }
+      // If user attempts to execute this mutation and isn't logged in, throw an error
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    addStep: async (parent, args, context) => {
+      if (context.user) {
+        //see line 23 of auth.js
+        const step = await Step.create({
+          name: args.name,
+          notes: args.notes,
+          task: args.task,
+          startingTime: args.startingTime,
+          endingTime: args.endingTime,
+          user: context.user._id,
+          quadrant: args.quadrant,
+        });
+        // push the id to user task
+        const thisTask = await Task.findOneAndUpdate(
+          { _id: args.task },
+          { $push: { steps: step._id } },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+        return step;
       }
       // If user attempts to execute this mutation and isn't logged in, throw an error
       throw new AuthenticationError("You need to be logged in!");
