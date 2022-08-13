@@ -18,6 +18,18 @@ const typeDefs = gql`
     completed: Boolean
   }
 
+  type Step {
+    _id: ID!
+    name: String!
+    notes: String
+    task: ID!
+    startingTime: String!
+    endingTime: String!
+    user: User
+    quadrant: String
+    completed: Boolean
+  }
+
   type User {
     _id: ID
     username: String
