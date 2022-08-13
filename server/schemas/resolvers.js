@@ -6,7 +6,6 @@ const resolvers = {
   Query: {
     tasks: async (parent, { selectedDay }, context) => {
       if (context.user) {
-        console.log(context.user);
         return Task.find({ user: context.user._id, day: selectedDay })
           .sort({ startingTime: 1 })
           .populate("user");
@@ -31,11 +30,7 @@ const resolvers = {
           day: args.day,
         }).populate("user");
 
-        if (duplicate) {
-          console.log("Duplicate");
-          console.log(duplicate);
-        }
-        //add some sort of message to tell if it is a full duplicate (exact times) or a half (same starting time)
+        //there is a message to tell if it is a full duplicate (exact times) or a half (same starting time) in front end
         return duplicate;
       }
       throw new AuthenticationError("You need to be logged in!");
@@ -107,7 +102,6 @@ const resolvers = {
       return { token, user };
     },
     updateUser: async (parent, args, context) => {
-      console.log("Hi");
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -115,7 +109,6 @@ const resolvers = {
           // Return the newly updated object instead of the original
           { new: true }
         );
-        console.log(updatedUser);
         return updatedUser;
       }
       throw new AuthenticationError("You need to be logged in!");
@@ -127,8 +120,6 @@ const resolvers = {
         // Return the newly updated object instead of the original
         { new: true }
       );
-      console.log(updatedTask);
-      console.log("HIIIIIIII");
       return updatedTask;
     },
   },
