@@ -96,7 +96,7 @@ const typeDefs = gql`
       endingTime: String
       quadrant: String
       completed: Boolean
-    ): Task
+    ): Step
 
     updateUser(username: String, email: String, password: String): User
 
