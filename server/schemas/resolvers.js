@@ -22,7 +22,7 @@ const resolvers = {
     task: async (parent, { taskId }) => {
       return Task.findOne({ _id: taskId }).populate("user");
     },
-    duplicate: async (parent, args, context) => {
+    duplicateTask: async (parent, args, context) => {
       //use context for id
       if (context.user) {
         const duplicate = await Task.findOne({
@@ -128,7 +128,7 @@ const resolvers = {
         { new: true }
       );
       console.log(updatedTask);
-      console.log("HIIIIIIII")
+      console.log("HIIIIIIII");
       return updatedTask;
     },
   },
