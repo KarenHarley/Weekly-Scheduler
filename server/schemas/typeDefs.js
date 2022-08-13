@@ -67,7 +67,7 @@ const typeDefs = gql`
       user: User
       quadrant: String
       completed: Boolean
-    ): Task
+    ): Step
 
     changeCompleted(
      completed: Boolean!
