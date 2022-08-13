@@ -31,8 +31,8 @@ export const QUERY_TASK = gql`
   }
 `;
 export const QUERY_DUPLICATE = gql`
-  query duplicate($startingTime: String!, $endingTime: String!, $day: String!) {
-    duplicate(startingTime: $startingTime, endingTime: $endingTime, day: $day) {
+  query duplicateTask($startingTime: String!, $endingTime: String!, $day: String!) {
+    duplicateTask(startingTime: $startingTime, endingTime: $endingTime, day: $day) {
       name
       notes
       startingTime
