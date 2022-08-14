@@ -91,7 +91,6 @@ const typeDefs = gql`
       _id: String!
       name: String
       notes: String
-      task: ID!
       startingTime: String
       endingTime: String
       quadrant: String

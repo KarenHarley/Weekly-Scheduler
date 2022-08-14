@@ -126,6 +126,19 @@ const resolvers = {
       console.log(updatedTask);
       return updatedTask;
     },
+    updateStep: async (
+      parent,
+      { _id, name, notes, startingTime, endingTime, quadrant }
+    ) => {
+      const updatedStep = await Step.findOneAndUpdate(
+        { _id: _id },
+        { name, notes, startingTime, endingTime, quadrant },
+        // Return the newly updated object instead of the original
+        { new: true }
+      );
+      console.log(updatedStep);
+      return updatedStep;
+    },
     addUser: async (parent, { username, email, password }) => {
       //when user is created a token is created
       const user = await User.create({ username, email, password }); //c in crud returning an instance
