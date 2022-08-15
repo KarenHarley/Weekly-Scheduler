@@ -66,7 +66,6 @@ const typeDefs = gql`
       startingTime: String!
       endingTime: String!
       quadrant: String
-      completed: Boolean
     ): Step
 
     changeCompleted(
