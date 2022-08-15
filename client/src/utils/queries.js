@@ -17,6 +17,23 @@ export const QUERY_TASKS = gql`
     }
   }
 `;
+export const QUERY_STEPS = gql`
+query steps($task: String!) {
+  steps(task: $task) {
+    _id
+    name
+    notes
+    startingTime
+    endingTime
+    quadrant
+    completed
+    user {
+      username
+      _id
+    }
+  }
+}
+`;
 export const QUERY_TASK = gql`
   query task($taskId: String!) {
     task(taskId: $taskId) {
