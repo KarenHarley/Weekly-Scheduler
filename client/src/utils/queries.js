@@ -64,7 +64,7 @@ export const QUERY_STEP = gql`
     }
   }
 `;
-export const QUERY_DUPLICATE = gql`
+export const QUERY_DUPLICATE_TASK = gql`
   query duplicateTask(
     $startingTime: String!
     $endingTime: String!

@@ -11,7 +11,7 @@ import {
   quadrants,
   createQuadrantOptions,
 } from "../../utils/utils";
-import { QUERY_TASKS, QUERY_DUPLICATE } from "../../utils/queries";
+import { QUERY_TASKS, QUERY_DUPLICATE_TASK  } from "../../utils/queries";
 
 /*
 IMPORTANT!!!!!!!!! FIX SALT ISSUE!!!!!!!
@@ -25,7 +25,7 @@ const CreateForm = ({ setDay, day }) => {
     day: "",
     quadrant: "",
   });
-  const { loading, data, refetch } = useQuery(QUERY_DUPLICATE, {
+  const { loading, data, refetch } = useQuery(QUERY_DUPLICATE_TASK , {
     variables: {
       startingTime: formState.startingTime,
       endingTime: formState.endingTime,
