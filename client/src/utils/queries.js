@@ -23,16 +23,28 @@ export const QUERY_TASK = gql`
       _id
       name
       notes
+      day
       startingTime
       endingTime
       quadrant
       completed
+      steps {
+        _id
+      }
     }
   }
 `;
 export const QUERY_DUPLICATE = gql`
-  query duplicateTask($startingTime: String!, $endingTime: String!, $day: String!) {
-    duplicateTask(startingTime: $startingTime, endingTime: $endingTime, day: $day) {
+  query duplicateTask(
+    $startingTime: String!
+    $endingTime: String!
+    $day: String!
+  ) {
+    duplicateTask(
+      startingTime: $startingTime
+      endingTime: $endingTime
+      day: $day
+    ) {
       name
       notes
       startingTime
