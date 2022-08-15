@@ -58,6 +58,31 @@ export const CREATE_TASK = gql`
   }
 `;
 
+export const CREATE_STEP = gql`
+  mutation addStep(
+    $name: String!
+    $notes: String
+    $task: ID!
+    $startingTime: String!
+    $endingTime: String!
+    $quadrant: String
+  ) {
+    addStep(
+      name: $name
+      notes: $notes
+      task: $task
+      startingTime: $startingTime
+      endingTime: $endingTime
+      quadrant: $quadrant
+    ) {
+      name
+      notes
+      startingTime
+      endingTime
+      quadrant
+    }
+  }
+`;
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -92,14 +117,8 @@ export const UPDATE_USER = gql`
 `;
 
 export const CHANGE_COMPLETED = gql`
-  mutation changeCompleted(
-    $completed: Boolean!
-    $_id: String!
-  ) {
-    changeCompleted(
-      _id: $_id
-      completed: $completed
-    ) {
+  mutation changeCompleted($completed: Boolean!, $_id: String!) {
+    changeCompleted(_id: $_id, completed: $completed) {
       name
       notes
       startingTime
