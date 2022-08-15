@@ -18,21 +18,21 @@ export const QUERY_TASKS = gql`
   }
 `;
 export const QUERY_STEPS = gql`
-query steps($task: String!) {
-  steps(task: $task) {
-    _id
-    name
-    notes
-    startingTime
-    endingTime
-    quadrant
-    completed
-    user {
-      username
+  query steps($task: String!) {
+    steps(task: $task) {
       _id
+      name
+      notes
+      startingTime
+      endingTime
+      quadrant
+      completed
+      user {
+        username
+        _id
+      }
     }
   }
-}
 `;
 export const QUERY_TASK = gql`
   query task($taskId: String!) {
@@ -52,17 +52,17 @@ export const QUERY_TASK = gql`
   }
 `;
 export const QUERY_STEP = gql`
-query step($stepId: String!) {
-  step(stepId: $stepId) {
-    _id
-    name
-    notes
-    startingTime
-    endingTime
-    quadrant
-    completed
+  query step($stepId: String!) {
+    step(stepId: $stepId) {
+      _id
+      name
+      notes
+      startingTime
+      endingTime
+      quadrant
+      completed
+    }
   }
-}
 `;
 export const QUERY_DUPLICATE = gql`
   query duplicateTask(
@@ -87,7 +87,18 @@ export const QUERY_DUPLICATE = gql`
     }
   }
 `;
-
+export const QUERY_DUPLICATE_STEP = gql`
+  query duplicateStep($startingTime: String!, $endingTime: String!) {
+    duplicateStep(startingTime: $startingTime, endingTime: $endingTime) {
+      name
+      notes
+      startingTime
+      endingTime
+      quadrant
+      completed
+    }
+  }
+`;
 export const QUERY_USER = gql`
   query user {
     user {
