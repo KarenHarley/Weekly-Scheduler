@@ -34,6 +34,19 @@ export const QUERY_TASK = gql`
     }
   }
 `;
+export const QUERY_STEP = gql`
+query step($stepId: String!) {
+  step(stepId: $stepId) {
+    _id
+    name
+    notes
+    startingTime
+    endingTime
+    quadrant
+    completed
+  }
+}
+`;
 export const QUERY_DUPLICATE = gql`
   query duplicateTask(
     $startingTime: String!
