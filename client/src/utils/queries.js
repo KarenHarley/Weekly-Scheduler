@@ -47,6 +47,12 @@ export const QUERY_TASK = gql`
       completed
       steps {
         _id
+        name
+        notes
+        startingTime
+        endingTime
+        quadrant
+        completed
       }
     }
   }

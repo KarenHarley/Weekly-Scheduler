@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { QUERY_TASK } from "../utils/queries";
+import { QUERY_TASK, QUERY_STEPS } from "../utils/queries";
 import { useParams } from "react-router-dom";
 import { formatTime } from "../utils/utils";
 import Auth from "../utils/auth";
@@ -14,7 +14,18 @@ const OneTask = () => {
       taskId: params.id,
     },
   });
+
+  // const { loadingData, stepData } = useQuery(QUERY_STEPS, {
+  //   variables: {
+  //     task: params.id,
+  //   },
+  // });
   console.log(data);
+
+  // if (loadingData) {
+  //   console.log(stepData);
+  // }
+
   return (
     <div className="one-task-wrapper">
       {Auth.loggedIn() ? (
