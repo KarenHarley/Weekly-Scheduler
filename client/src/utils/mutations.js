@@ -155,3 +155,16 @@ export const CHANGE_COMPLETED_TASK = gql`
     }
   }
 `;
+
+export const CHANGE_COMPLETED_STEP = gql`
+  mutation changeCompletedStep($completed: Boolean!, $_id: String!) {
+    changeCompletedStep(_id: $_id, completed: $completed) {
+      name
+      notes
+      startingTime
+      endingTime
+      quadrant
+      completed
+    }
+  }
+`;
