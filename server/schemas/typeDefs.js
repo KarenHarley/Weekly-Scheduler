@@ -68,7 +68,7 @@ const typeDefs = gql`
       quadrant: String
     ): Step
 
-    changeCompleted(
+    changeCompletedTask(
      completed: Boolean!
      _id: String!
     ): Task

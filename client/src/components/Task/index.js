@@ -18,7 +18,16 @@ const Task = ({ data }) => {
       } catch (e) {
         console.error(e);
       }
+      return;
     }
+    // try {
+    //   const { updateCompleted } = await changeCompleted({
+    //     variables: { completed: checked, _id: taskId },
+    //   });
+    //   return checked;
+    // } catch (e) {
+    //   console.error(e);
+    // }
   };
   const handleChange = async (e) => {
     const change = await ChangeCompleted(e.target.id, e.target.checked);

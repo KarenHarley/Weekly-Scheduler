@@ -175,7 +175,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    changeCompleted: async (parent, { _id, completed }, context) => {
+    changeCompletedTask: async (parent, { _id, completed }, context) => {
       const updatedTask = await Task.findOneAndUpdate(
         { _id: _id },
         { completed },
