@@ -15,36 +15,42 @@ const OneTask = () => {
     },
   });
 
-  // const { loadingData, stepData } = useQuery(QUERY_STEPS, {
-  //   variables: {
-  //     task: params.id,
-  //   },
-  // });
   console.log(data);
-
-  // if (loadingData) {
-  //   console.log(stepData);
-  // }
 
   return (
     <div className="one-task-wrapper">
       {Auth.loggedIn() ? (
-        <div className="one-task">
+        <div>
           {loading ? (
             <div>Loading...</div>
           ) : (
             <>
-              <p>
-                {data.task.quadrant ? <span>{data.task.quadrant}</span> : <></>}
-                {formatTime(data.task.startingTime)}-
-                {formatTime(data.task.endingTime)}
-              </p>
-              <p>Name: {data.task.name}</p>
-              <div className="notes-div">
-                <h4>Notes:</h4>
-                <p>{data.task.notes}</p>
+              <div className="one-task">
+                <p>
+                  {data.task.quadrant ? (
+                    <span>{data.task.quadrant}</span>
+                  ) : (
+                    <></>
+                  )}
+                  {formatTime(data.task.startingTime)}-
+                  {formatTime(data.task.endingTime)}
+                </p>
+                <p>Name: {data.task.name}</p>
+                <div className="notes-div">
+                  <h4>Notes:</h4>
+                  <p>{data.task.notes}</p>
+                </div>
+                <Link to={`/task/edit/${data.task._id}`}>Edit</Link>
               </div>
-              <Link to={`/task/edit/${data.task._id}`}>Edit</Link>
+              <div className="step-container">
+                {data.task.steps.map((loopingStep, i) => {
+                  return (
+                    <li type="li" id={loopingStep.id} key={loopingStep.id}>
+                      {loopingStep.name}
+                    </li>
+                  );
+                })}
+              </div>
             </>
           )}
         </div>
