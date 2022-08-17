@@ -43,7 +43,7 @@ const OneTask = () => {
                 </div>
                 <Link to={`/task/edit/${data.task._id}`}>Edit</Link>
               </div>
-              {data.task.steps > 0 ? (
+              {data.task.steps != 0 ? (
                 <div className="step-container">
                   <h4>Steps or Smaller tasks to Accomplish this larger task</h4>
                   {data.task.steps.map((loopingStep, i) => {
