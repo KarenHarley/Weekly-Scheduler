@@ -26,6 +26,11 @@ const OneTask = () => {
             <div>Loading...</div>
           ) : (
             <>
+              {data.task.steps != 0 ? (
+                <div className="create-step-form">HI</div>
+              ) : (
+                <></>
+              )}
               <div className="one-task">
                 <p>
                   {data.task.quadrant ? (
