@@ -53,48 +53,53 @@ const CreateForm = ({ setDay, day }) => {
     });
     console.log(data);
   };
-
+const createTaskInDB = () => {
+  if (
+    formState.name === "" ||
+    formState.day === "" ||
+    formState.startingTime === "" ||
+    formState.endingTime === ""
+  ) {
+    alert("Task Day, Name, StartingTime, and EndingTime are required.");
+    return;
+  }
+  if (formState.startingTime === formState.endingTime) {
+    alert("Same start and ending time");
+    return;
+  }
+  if (formState.startingTime > formState.endingTime) {
+    alert("Starting Time can not be later than the ending time");
+    return;
+  }
+  if (!data.duplicate) {
+    try {
+      const taskData = await createTask({
+        variables: { ...formState },
+      });
+      setDay(formState.day);
+      // clear form values
+      setFormState({
+        name: "",
+        notes: "",
+        startingTime: "",
+        endingTime: "",
+        day: "",
+        quadrant: "",
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  } else {
+    alert("This time already has a task");
+  }
+}
+const createStepInDB = () => {
+  console.log("HI")
+}
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
-    if (
-      formState.name === "" ||
-      formState.day === "" ||
-      formState.startingTime === "" ||
-      formState.endingTime === ""
-    ) {
-      alert("Task Day, Name, StartingTime, and EndingTime are required.");
-      return;
-    }
-    if (formState.startingTime === formState.endingTime) {
-      alert("Same start and ending time");
-      return;
-    }
-    if (formState.startingTime > formState.endingTime) {
-      alert("Starting Time can not be later than the ending time");
-      return;
-    }
-    if (!data.duplicate) {
-      try {
-        const taskData = await createTask({
-          variables: { ...formState },
-        });
-        setDay(formState.day);
-        // clear form values
-        setFormState({
-          name: "",
-          notes: "",
-          startingTime: "",
-          endingTime: "",
-          day: "",
-          quadrant: "",
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    } else {
-      alert("This time already has a task");
-    }
+    location.pathname == "/tasks" ? createTaskInDB() : createStepInDB;
+    
   };
   useEffect(() => {
     console.log("Use effect");
