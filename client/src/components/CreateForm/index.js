@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { selectHttpOptionsAndBody, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
@@ -11,12 +12,13 @@ import {
   quadrants,
   createQuadrantOptions,
 } from "../../utils/utils";
-import { QUERY_TASKS, QUERY_DUPLICATE_TASK  } from "../../utils/queries";
+import { QUERY_TASKS, QUERY_DUPLICATE_TASK } from "../../utils/queries";
 
 /*
 IMPORTANT!!!!!!!!! FIX SALT ISSUE!!!!!!!
 */
 const CreateForm = ({ setDay, day }) => {
+  const location = useLocation();
   const [formState, setFormState] = useState({
     name: "",
     notes: "",
@@ -25,7 +27,7 @@ const CreateForm = ({ setDay, day }) => {
     day: "",
     quadrant: "",
   });
-  const { loading, data, refetch } = useQuery(QUERY_DUPLICATE_TASK , {
+  const { loading, data, refetch } = useQuery(QUERY_DUPLICATE_TASK, {
     variables: {
       startingTime: formState.startingTime,
       endingTime: formState.endingTime,
@@ -122,23 +124,27 @@ const CreateForm = ({ setDay, day }) => {
           onChange={handleChange}
           required
         />
-        <select
-          required
-          id="day"
-          name="day"
-          value={formState.day}
-          onChange={handleChange}
-          // defaultValue={"default"}
-        >
-          <option value={"default"}>Select Day</option>
-          {days.map((day) => {
-            return (
-              <option value={day} key={day}>
-                {day}
-              </option>
-            );
-          })}
-        </select>
+        {location.pathname == "/tasks" ? (
+          <select
+            required
+            id="day"
+            name="day"
+            value={formState.day}
+            onChange={handleChange}
+            // defaultValue={"default"}
+          >
+            <option value={"default"}>Select Day</option>
+            {days.map((day) => {
+              return (
+                <option value={day} key={day}>
+                  {day}
+                </option>
+              );
+            })}
+          </select>
+        ) : (
+          <></>
+        )}
         <select
           id="start"
           name="startingTime"
