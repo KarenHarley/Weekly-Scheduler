@@ -184,6 +184,15 @@ const resolvers = {
       );
       return updatedTask;
     },
+    changeCompletedStep: async (parent, { _id, completed }, context) => {
+      const updatedStep = await Step.findOneAndUpdate(
+        { _id: _id },
+        { completed },
+        // Return the newly updated object instead of the original
+        { new: true }
+      );
+      return updatedStep;
+    },
   },
 };
 
