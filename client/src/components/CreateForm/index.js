@@ -12,7 +12,11 @@ import {
   quadrants,
   createQuadrantOptions,
 } from "../../utils/utils";
-import { QUERY_TASKS, QUERY_DUPLICATE_TASK } from "../../utils/queries";
+import {
+  QUERY_TASKS,
+  QUERY_DUPLICATE_TASK,
+  QUERY_DUPLICATE_STEP,
+} from "../../utils/queries";
 
 /*
 IMPORTANT!!!!!!!!! FIX SALT ISSUE!!!!!!!
@@ -27,7 +31,15 @@ const CreateForm = ({ setDay, day }) => {
     day: "",
     quadrant: "",
   });
-  const { loading, data, refetch } = useQuery(QUERY_DUPLICATE_TASK, {
+  //to only use one mutation
+  let QUERY;
+  if (location.pathname == "/tasks") {
+    QUERY = QUERY_DUPLICATE_TASK;
+  } else {
+    QUERY = QUERY_DUPLICATE_STEP;
+  }
+
+  const { loading, data, refetch } = useQuery(QUERY, {
     variables: {
       startingTime: formState.startingTime,
       endingTime: formState.endingTime,
@@ -95,6 +107,44 @@ const CreateForm = ({ setDay, day }) => {
   };
   const createStepInDB = async () => {
     console.log("HI");
+    if (
+      formState.name === "" ||
+      formState.startingTime === "" ||
+      formState.endingTime === ""
+    ) {
+      alert("Task Name, StartingTime, and EndingTime are required.");
+      return;
+    }
+    if (formState.startingTime === formState.endingTime) {
+      alert("Same start and ending time");
+      return;
+    }
+    if (formState.startingTime > formState.endingTime) {
+      alert("Starting Time can not be later than the ending time");
+      return;
+    }
+    if (!data.duplicateStep) {
+      // try {
+      //   const taskData = await createStep({
+      //     variables: { ...formState },
+      //   });
+      //   setDay(formState.day);
+      //   // clear form values
+      //   setFormState({
+      //     name: "",
+      //     notes: "",
+      //     startingTime: "",
+      //     endingTime: "",
+      //     day: "",
+      //     quadrant: "",
+      //   });
+      // } catch (e) {
+      //   console.error(e);
+      // }
+      console.log("No duplicate");
+    } else {
+      alert("This time already has a task");
+    }
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();

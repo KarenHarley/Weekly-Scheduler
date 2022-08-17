@@ -52,7 +52,7 @@ const resolvers = {
         const duplicate = await Step.findOne({
           user: context.user._id,
           startingTime: args.startingTime,
-        }).populate("user");
+        });
         //add some sort of message to tell if it is a full duplicate (exact times) or a half (same starting time)
         return duplicate;
       }

@@ -45,8 +45,12 @@ const typeDefs = gql`
     user: User
     task(taskId: String!): Task
     step(stepId: String!): Step
-    duplicateTask(startingTime: String!, endingTime: String!, day: String!): Task
-    duplicateStep(startingTime: String!, endingTime: String!): Step
+    duplicateTask(
+      startingTime: String!
+      endingTime: String!
+      day: String!
+    ): Task
+    duplicateStep(startingTime: String!, endingTime: String!, day: String): Step
   }
 
   type Mutation {
@@ -68,20 +72,11 @@ const typeDefs = gql`
       quadrant: String
     ): Step
 
-    changeCompletedTask(
-     completed: Boolean!
-     _id: String!
-    ): Task
+    changeCompletedTask(completed: Boolean!, _id: String!): Task
 
-    changeCompletedStep(
-      completed: Boolean!
-      _id: String!
-     ): Step
+    changeCompletedStep(completed: Boolean!, _id: String!): Step
 
-    resetCompleted(
-      day: String!
-    ): [Task] # change all completed to false for that day using the users id in context
-
+    resetCompleted(day: String!): [Task] # change all completed to false for that day using the users id in context
     updateTask(
       name: String
       notes: String
