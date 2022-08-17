@@ -4,7 +4,6 @@ import { QUERY_TASK, QUERY_STEPS } from "../utils/queries";
 import { useParams } from "react-router-dom";
 import { formatTime } from "../utils/utils";
 import Auth from "../utils/auth";
-import Step from "../components/Step";
 import Task from "../components/Task";
 
 const OneTask = () => {
