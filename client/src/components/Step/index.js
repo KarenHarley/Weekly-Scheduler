@@ -8,14 +8,14 @@ const Step = ({ data }) => {
   //     useMutation(CHANGE_COMPLETED);
 
   const ChangeCompleted = async (taskId, checked) => {
-    try {
-      const { updateCompleted } = await changeCompleted({
-        variables: { completed: checked, _id: taskId },
-      });
-      return checked;
-    } catch (e) {
-      console.error(e);
-    }
+    // try {
+    //   const { updateCompleted } = await changeCompleted({
+    //     variables: { completed: checked, _id: taskId },
+    //   });
+    //   return checked;
+    // } catch (e) {
+    //   console.error(e);
+    // }
   };
   const handleChange = async (e) => {
     // const change = await ChangeCompleted(e.target.id, e.target.checked);
@@ -23,7 +23,33 @@ const Step = ({ data }) => {
     console.log("Hi");
   };
 
-  return <div>Hi</div>;
+  return (
+    <div
+      className={
+        data.quadrant ? `${data.quadrant} task-wrapper` : "task-wrapper"
+      }
+    >
+      <p>
+        {" "}
+        <span>
+          <input
+            id={data._id}
+            type="checkbox"
+            checked={data.completed}
+            onChange={handleChange}
+          />
+        </span>
+        {data.quadrant ? <span>{data.quadrant}</span> : <span>Task</span>}
+        <span>
+          {formatTime(data.startingTime)}-{formatTime(data.endingTime)}
+        </span>{" "}
+        <span> Name: {data.name}</span>
+        <span>
+          <Link to={`step/${data._id}`}>See More</Link>
+        </span>
+      </p>
+    </div>
+  );
 };
 
 export default Step;
