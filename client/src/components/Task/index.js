@@ -1,20 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { formatTime } from "../../utils/utils";
 import { useMutation } from "@apollo/client";
 import { useState, useEffect } from "react";
 import { CHANGE_COMPLETED } from "../../utils/mutations";
 const Task = ({ data }) => {
+  const location = useLocation();
   const [changeCompleted, { error, changeCompletedData }] =
     useMutation(CHANGE_COMPLETED);
 
   const ChangeCompleted = async (taskId, checked) => {
-    try {
-      const { updateCompleted } = await changeCompleted({
-        variables: { completed: checked, _id: taskId },
-      });
-      return checked;
-    } catch (e) {
-      console.error(e);
+    if (location.pathname == "/tasks") {
+      try {
+        const { updateCompleted } = await changeCompleted({
+          variables: { completed: checked, _id: taskId },
+        });
+        return checked;
+      } catch (e) {
+        console.error(e);
+      }
     }
   };
   const handleChange = async (e) => {

@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { formatTime } from "../utils/utils";
 import Auth from "../utils/auth";
 import Step from "../components/Step";
+import Task from "../components/Task";
 
 const OneTask = () => {
   const params = useParams();
@@ -47,7 +48,7 @@ const OneTask = () => {
                 {data.task.steps.map((loopingStep, i) => {
                   return (
                     // <li type="li" id={loopingStep.id} key={loopingStep.id}>
-                    <Step data={loopingStep} key={i} />
+                    <Task data={loopingStep} key={i} />
                     // </li>
                   );
                 })}
