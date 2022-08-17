@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_TASK, QUERY_STEPS } from "../utils/queries";
 import { useParams } from "react-router-dom";
 import { formatTime } from "../utils/utils";
+import CreateForm from "../components/CreateForm";
 import Auth from "../utils/auth";
 import Task from "../components/Task";
 
@@ -27,7 +28,9 @@ const OneTask = () => {
           ) : (
             <>
               {data.task.steps != 0 ? (
-                <div className="create-step-form">HI</div>
+                <div className="create-step-form">
+                  <CreateForm />
+                </div>
               ) : (
                 <></>
               )}
