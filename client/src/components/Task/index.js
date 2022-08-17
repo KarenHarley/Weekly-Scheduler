@@ -8,7 +8,7 @@ import {
 } from "../../utils/mutations";
 const Task = ({ data }) => {
   const location = useLocation();
-  const [changeCompleted, { error, changeCompletedData }] = useMutation(
+  const [changeCompletedTask, { error, changeCompletedData }] = useMutation(
     CHANGE_COMPLETED_TASK
   );
   const [changeCompletedStep, { errorStep, changeCompletedStepData }] =
@@ -17,7 +17,7 @@ const Task = ({ data }) => {
   const ChangeCompleted = async (taskId, checked) => {
     if (location.pathname == "/tasks") {
       try {
-        const { updateCompleted } = await changeCompleted({
+        const { updateCompleted } = await changeCompletedTask({
           variables: { completed: checked, _id: taskId },
         });
         return checked;
