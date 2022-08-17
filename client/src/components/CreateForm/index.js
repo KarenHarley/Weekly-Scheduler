@@ -96,9 +96,13 @@ const CreateForm = ({ setDay, day }) => {
   const createStepInDB = async () => {
     console.log("HI");
   };
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
-    location.pathname == "/tasks" ? createTaskInDB() : createStepInDB;
+    // location.pathname == "/tasks" ? createTaskInDB() : createStepInDB;
+    if (location.pathname == "/tasks") {
+      createTaskInDB();
+    }
+    createStepInDB();
   };
   useEffect(() => {
     console.log("Use effect");
