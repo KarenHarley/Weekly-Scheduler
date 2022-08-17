@@ -47,7 +47,11 @@ const Task = ({ data }) => {
         </span>{" "}
         <span> Name: {data.name}</span>
         <span>
-          <Link to={`task/${data._id}`}>See More</Link>
+          {location.pathname == "/tasks" ? (
+            <Link to={`task/${data._id}`}>See More</Link>
+          ) : (
+            <Link to={`/step/${data._id}`}>See More</Link>
+          )}
         </span>
       </p>
     </div>
