@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { selectHttpOptionsAndBody, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
-import { CREATE_TASK } from "../../utils/mutations";
+import { CREATE_TASK, CREATE_STEP } from "../../utils/mutations";
 import {
   times,
   createOptions,
@@ -14,6 +14,7 @@ import {
 } from "../../utils/utils";
 import {
   QUERY_TASKS,
+  QUERY_TASK,
   QUERY_DUPLICATE_TASK,
   QUERY_DUPLICATE_STEP,
 } from "../../utils/queries";
@@ -23,6 +24,7 @@ IMPORTANT!!!!!!!!! FIX SALT ISSUE!!!!!!!
 */
 const CreateForm = ({ setDay, day }) => {
   const location = useLocation();
+  const params = useParams();
   const [formState, setFormState] = useState({
     name: "",
     notes: "",
@@ -56,6 +58,14 @@ const CreateForm = ({ setDay, day }) => {
     ],
   });
 
+  const [createStep, { errorStep }] = useMutation(CREATE_STEP, {
+    refetchQueries: [
+      {
+        query: QUERY_TASK,
+        variables: { taskId: params.id },
+      },
+    ],
+  });
   const handleChange = (e) => {
     const { name, value } = e.target;
 
