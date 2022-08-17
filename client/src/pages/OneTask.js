@@ -43,15 +43,20 @@ const OneTask = () => {
                 </div>
                 <Link to={`/task/edit/${data.task._id}`}>Edit</Link>
               </div>
-              <div className="step-container">
-                {data.task.steps.map((loopingStep, i) => {
-                  return (
-                    // <li type="li" id={loopingStep.id} key={loopingStep.id}>
-                    <Task data={loopingStep} key={i} />
-                    // </li>
-                  );
-                })}
-              </div>
+              {data.task.steps ? (
+                <div className="step-container">
+                  <h4>Steps or Smaller tasks to Accomplish this larger task</h4>
+                  {data.task.steps.map((loopingStep, i) => {
+                    return (
+                      // <li type="li" id={loopingStep.id} key={loopingStep.id}>
+                      <Task data={loopingStep} key={i} />
+                      // </li>
+                    );
+                  })}
+                </div>
+              ) : (
+                <></>
+              )}
             </>
           )}
         </div>
