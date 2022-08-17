@@ -32,6 +32,9 @@
   padding: 20px;
   width: 800px;
 }
+.step-container {
+  margin: 50px 0px;
+}
 .notes-div {
   display: block;
   justify-content: center;

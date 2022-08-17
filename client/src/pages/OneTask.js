@@ -21,7 +21,7 @@ const OneTask = () => {
   return (
     <div className="one-task-wrapper">
       {Auth.loggedIn() ? (
-        <div>
+        <div className="steps-and-task-container">
           {loading ? (
             <div>Loading...</div>
           ) : (
