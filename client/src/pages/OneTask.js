@@ -4,6 +4,7 @@ import { QUERY_TASK, QUERY_STEPS } from "../utils/queries";
 import { useParams } from "react-router-dom";
 import { formatTime } from "../utils/utils";
 import Auth from "../utils/auth";
+import Step from "../components/Step";
 
 const OneTask = () => {
   const params = useParams();
@@ -45,9 +46,9 @@ const OneTask = () => {
               <div className="step-container">
                 {data.task.steps.map((loopingStep, i) => {
                   return (
-                    <li type="li" id={loopingStep.id} key={loopingStep.id}>
-                      {loopingStep.name}
-                    </li>
+                    // <li type="li" id={loopingStep.id} key={loopingStep.id}>
+                    <Step data={loopingStep} key={i} />
+                    // </li>
                   );
                 })}
               </div>
