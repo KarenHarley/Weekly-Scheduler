@@ -140,9 +140,9 @@ export const UPDATE_USER = gql`
   }
 `;
 
-export const CHANGE_COMPLETED = gql`
-  mutation changeCompleted($completed: Boolean!, $_id: String!) {
-    changeCompleted(_id: $_id, completed: $completed) {
+export const CHANGE_COMPLETED_TASK = gql`
+  mutation changeCompletedTask($completed: Boolean!, $_id: String!) {
+    changeCompletedTask(_id: $_id, completed: $completed) {
       name
       notes
       startingTime
