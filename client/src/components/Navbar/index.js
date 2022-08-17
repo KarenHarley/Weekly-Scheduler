@@ -32,6 +32,8 @@ const Navbar = () => {
       case "/account":
         setNavLink("Account");
         return;
+      default:
+        setNavLink("");
     }
   }, [location]);
   return (
