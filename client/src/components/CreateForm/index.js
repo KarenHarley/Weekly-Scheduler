@@ -136,7 +136,14 @@ const CreateForm = ({ setDay, day }) => {
     if (!data.duplicateStep) {
       try {
         const stepData = await createStep({
-          variables: { ...formState },
+          variables: {
+            name: formState.name,
+            notes: formState.notes,
+            task: params.id,
+            startingTime: formState.startingTime,
+            endingTime: formState.endingTime,
+            quadrant: formState.quadrant,
+          },
         });
         // clear form values
         setFormState({
