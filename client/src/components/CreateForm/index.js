@@ -134,23 +134,22 @@ const CreateForm = ({ setDay, day }) => {
       return;
     }
     if (!data.duplicateStep) {
-      // try {
-      //   const taskData = await createStep({
-      //     variables: { ...formState },
-      //   });
-      //   setDay(formState.day);
-      //   // clear form values
-      //   setFormState({
-      //     name: "",
-      //     notes: "",
-      //     startingTime: "",
-      //     endingTime: "",
-      //     day: "",
-      //     quadrant: "",
-      //   });
-      // } catch (e) {
-      //   console.error(e);
-      // }
+      try {
+        const stepData = await createStep({
+          variables: { ...formState },
+        });
+        // clear form values
+        setFormState({
+          name: "",
+          notes: "",
+          startingTime: "",
+          endingTime: "",
+          day: "",
+          quadrant: "",
+        });
+      } catch (e) {
+        console.error(e);
+      }
       console.log("No duplicate");
     } else {
       alert("This time already has a task");
