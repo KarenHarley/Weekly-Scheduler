@@ -12,6 +12,7 @@ import Home from "./pages/Homepage";
 import Tasks from "./pages/Tasks";
 import "./App.css";
 import OneTask from "./pages/OneTask";
+import OneStep from "./pages/OneStep";
 import EditTask from "./pages/EditTask";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -77,6 +78,9 @@ function App() {
             </Route>
             <Route exact path="/account">
               <Account />
+            </Route>
+            <Route exact path="/step/:id">
+              <OneStep />
             </Route>
           </Switch>
           <Footer />
