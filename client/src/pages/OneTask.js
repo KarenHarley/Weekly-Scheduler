@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { QUERY_TASK, QUERY_STEPS } from "../utils/queries";
+import { QUERY_TASK, QUERY_STEP } from "../utils/queries";
 import { useParams } from "react-router-dom";
 import { formatTime } from "../utils/utils";
 import CreateForm from "../components/CreateForm";
@@ -12,13 +12,13 @@ const OneTask = () => {
   const location = useLocation();
   console.log(params.id);
   //to only use one query
-  console.log(location.pathname);
-  // let QUERY;
-  // if (location.pathname == "/tasks") {
-  //   QUERY = QUERY_DUPLICATE_TASK;
-  // } else {
-  //   QUERY = QUERY_DUPLICATE_STEP;
-  // }
+  console.log(location.pathname.split("/")[1]);
+  let QUERY;
+  if (location.pathname.split("/")[1] == "/task") {
+    QUERY = QUERY_TASK;
+  } else {
+    QUERY = QUERY_STEP;
+  }
 
   const { loading, data } = useQuery(QUERY_TASK, {
     variables: {
