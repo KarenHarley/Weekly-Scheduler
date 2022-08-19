@@ -35,8 +35,8 @@ export const QUERY_STEPS = gql`
   }
 `;
 export const QUERY_TASK = gql`
-  query task($taskId: String!) {
-    task(taskId: $taskId) {
+  query task($id: String!) {
+    task(id: $id) {
       _id
       name
       notes
@@ -58,8 +58,8 @@ export const QUERY_TASK = gql`
   }
 `;
 export const QUERY_STEP = gql`
-  query step($stepId: String!) {
-    step(stepId: $stepId) {
+  query step($id: String!) {
+    step(id: $id) {
       _id
       name
       notes
