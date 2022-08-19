@@ -43,8 +43,8 @@ const typeDefs = gql`
     tasks(selectedDay: String!): [Task]
     steps(task: String!): [Step]
     user: User
-    task(taskId: String!): Task
-    step(stepId: String!): Step
+    task(id: String!): Task
+    step(id: String!): Step
     duplicateTask(
       startingTime: String!
       endingTime: String!
