@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_TASK, QUERY_STEPS } from "../utils/queries";
 import { useParams } from "react-router-dom";
@@ -9,7 +9,16 @@ import Task from "../components/Task";
 
 const OneTask = () => {
   const params = useParams();
+  const location = useLocation();
   console.log(params.id);
+  //to only use one query
+  console.log(location.pathname);
+  // let QUERY;
+  // if (location.pathname == "/tasks") {
+  //   QUERY = QUERY_DUPLICATE_TASK;
+  // } else {
+  //   QUERY = QUERY_DUPLICATE_STEP;
+  // }
 
   const { loading, data } = useQuery(QUERY_TASK, {
     variables: {
