@@ -83,9 +83,9 @@ function App() {
             <Route exact path="/step/:id">
               <OneStep />
             </Route>
-            {/* <Route exact path="/step/edit/:id">
+            <Route exact path="/step/edit/:id">
               <EditStep />
-            </Route> */}
+            </Route>
           </Switch>
           <Footer />
         </div>
