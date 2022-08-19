@@ -14,6 +14,7 @@ import "./App.css";
 import OneTask from "./pages/OneTask";
 import OneStep from "./pages/OneStep";
 import EditTask from "./pages/EditTask";
+import EditStep from "./pages/EditStep";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar";
@@ -81,6 +82,9 @@ function App() {
             </Route>
             <Route exact path="/step/:id">
               <OneStep />
+            </Route>
+            <Route exact path="/step/edit/:id">
+              <EditStep />
             </Route>
           </Switch>
           <Footer />
