@@ -17,6 +17,7 @@ const OneTask = () => {
   if (location.pathname.indexOf("task") > 0) {
     QUERY = QUERY_TASK;
   } else {
+    // if (location.pathname.indexOf("step") > 0)
     QUERY = QUERY_STEP;
   }
 
@@ -27,8 +28,10 @@ const OneTask = () => {
   });
 
   console.log(data);
+
   return (
     <div className="one-task-wrapper">
+      {" "}
       {Auth.loggedIn() ? (
         <div className="steps-and-task-container">
           {loading ? (
