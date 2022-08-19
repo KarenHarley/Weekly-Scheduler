@@ -10,24 +10,23 @@ import Task from "../components/Task";
 const OneTask = () => {
   const params = useParams();
   const location = useLocation();
-  console.log(params.id);
   //to only use one query
-  console.log(location.pathname.split("/")[1]);
+  console.log(location.pathname);
+  console.log(location.pathname.indexOf("task"));
   let QUERY;
-  if (location.pathname.split("/")[1] == "/task") {
+  if (location.pathname.indexOf("task") > 0) {
     QUERY = QUERY_TASK;
   } else {
     QUERY = QUERY_STEP;
   }
 
-  const { loading, data } = useQuery(QUERY_TASK, {
+  const { loading, data } = useQuery(QUERY, {
     variables: {
       id: params.id,
     },
   });
 
   console.log(data);
-
   return (
     <div className="one-task-wrapper">
       {Auth.loggedIn() ? (
