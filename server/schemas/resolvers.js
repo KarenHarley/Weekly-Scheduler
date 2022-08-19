@@ -26,11 +26,11 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    task: async (parent, { id }) => {
-      return Task.findOne({ _id: id }).populate("steps");
+    task: async (parent, { taskId }) => {
+      return Task.findOne({ _id: taskId }).populate("steps");
     },
-    step: async (parent, { id }) => {
-      return Step.findOne({ _id: id });
+    step: async (parent, { stepId }) => {
+      return Step.findOne({ _id: stepId });
     },
     duplicateTask: async (parent, args, context) => {
       //use context for id
