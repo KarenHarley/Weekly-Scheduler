@@ -81,7 +81,7 @@ function App() {
               <Account />
             </Route>
             <Route exact path="/step/:id">
-              <OneStep />
+              <OneTask />
             </Route>
             <Route exact path="/step/edit/:id">
               <EditStep />
