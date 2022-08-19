@@ -13,7 +13,7 @@ const OneTask = () => {
 
   const { loading, data } = useQuery(QUERY_TASK, {
     variables: {
-      taskId: params.id,
+      id: params.id,
     },
   });
 
