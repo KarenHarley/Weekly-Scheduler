@@ -71,10 +71,10 @@ const EditStep = () => {
   }, [data, updateData]);
 
   return (
-    <div className="edit-task-container">
-      <h1>Edit task</h1>
+    <div className="edit-task-container step-edit-container">
+      <h1>Edit Step</h1>
       {Auth.loggedIn() ? (
-        <div className="edit-task-wrapper">
+        <div className="edit-task-wrapper step-edit-wrapper">
           {loading ? (
             <div>Loading...</div>
           ) : (
