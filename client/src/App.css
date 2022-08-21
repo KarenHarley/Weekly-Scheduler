@@ -68,13 +68,9 @@
   min-height: 55rem;
 }
 .edit-task-wrapper label {
-  width: 100%;
+  width: 50%;
 }
-.edit-task-wrapper input {
-  width: 100%;
-  font-size: 1.2rem;
-  margin: 0.625rem 0 0.25rem 0.3rem;
-}
+
 .edit-task-wrapper input[type="submit"] {
   /* remove default behavior */
   appearance: none;
@@ -83,7 +79,7 @@
   /* usual styles */
   padding: 10px;
   border: none;
-  background-color: #3f51b5;
+  background-color: #7859b6;
   color: #fff;
   font-weight: 600;
   border-radius: 5px;
