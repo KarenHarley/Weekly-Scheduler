@@ -89,7 +89,6 @@ const EditTask = () => {
 
   return (
     <div className="edit-task-container">
-      <h1>Edit task</h1>
       {Auth.loggedIn() ? (
         <div className="edit-task-wrapper">
           {loading ? (
@@ -97,6 +96,7 @@ const EditTask = () => {
           ) : (
             <div>
               <form onSubmit={handleFormSubmit}>
+                <h1>Edit task</h1>
                 <label>
                   Select Starting Time
                   <select
