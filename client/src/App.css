@@ -67,8 +67,13 @@
 .one-task-wrapper {
   min-height: 55rem;
 }
-.edit-task-wrapper label {
+.edit-task-wrapper {
   width: 50%;
+}
+.edit-task-wrapper label,
+.edit-task-wrapper textarea,
+.edit-task-wrapper input {
+  width: 100%;
 }
 
 .edit-task-wrapper input[type="submit"] {
