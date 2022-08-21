@@ -46,6 +46,23 @@ const EditTask = () => {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+
+    if (
+      formState.name === "" ||
+      formState.startingTime === "" ||
+      formState.endingTime === ""
+    ) {
+      alert("Task Name, StartingTime, and EndingTime are required.");
+      return;
+    }
+    if (formState.startingTime === formState.endingTime) {
+      alert("Same start and ending time");
+      return;
+    }
+    if (formState.startingTime > formState.endingTime) {
+      alert("Starting Time can not be later than the ending time");
+      return;
+    }
     console.log(formState);
 
     try {
