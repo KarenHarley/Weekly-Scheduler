@@ -63,6 +63,10 @@
   color: #7859b6;
 }
 /* Edit Task */
+.edit-task-container {
+  display: flex;
+  justify-content: center;
+}
 .edit-task-container,
 .one-task-wrapper {
   min-height: 55rem;
@@ -75,7 +79,10 @@
 .edit-task-wrapper input {
   width: 100%;
 }
-
+.edit-task-wrapper textarea {
+  height: 100px;
+  overflow: scroll;
+}
 .edit-task-wrapper input[type="submit"] {
   /* remove default behavior */
   appearance: none;
