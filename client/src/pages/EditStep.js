@@ -92,7 +92,7 @@ const EditStep = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <div>
+            <>
               <form onSubmit={handleFormSubmit}>
                 <h1>Edit Step</h1>
                 <label>
@@ -163,7 +163,7 @@ const EditStep = () => {
                 <input type="submit" value="Submit" />
                 <Link to={`/step/${data.step._id}`}>Back to Step</Link>
               </form>
-            </div>
+            </>
           )}
         </div>
       ) : (

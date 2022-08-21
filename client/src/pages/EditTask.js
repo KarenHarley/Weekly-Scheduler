@@ -94,7 +94,7 @@ const EditTask = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <div>
+            <>
               <form onSubmit={handleFormSubmit}>
                 <h1>Edit task</h1>
                 <label>
@@ -165,7 +165,7 @@ const EditTask = () => {
                 <input type="submit" value="Submit" />
                 <Link to={`/task/${data.task._id}`}>Back to Task</Link>
               </form>
-            </div>
+            </>
           )}
         </div>
       ) : (
