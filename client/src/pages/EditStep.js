@@ -145,7 +145,7 @@ const EditStep = () => {
                 </select>
                 <input type="submit" value="Submit" />
               </form>
-              <Link to={`/task/${data.task._id}`}>Back to Task</Link>
+              <Link to={`/task/${data.step._id}`}>Back to Step</Link>
             </div>
           )}
         </div>
