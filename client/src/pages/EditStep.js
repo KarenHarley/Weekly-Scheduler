@@ -162,7 +162,7 @@ const EditStep = () => {
                 </label>
                 <input type="submit" value="Submit" />
               </form>
-              <Link to={`/task/${data.step._id}`}>Back to Step</Link>
+              <Link to={`/step/${data.step._id}`}>Back to Step</Link>
             </div>
           )}
         </div>
