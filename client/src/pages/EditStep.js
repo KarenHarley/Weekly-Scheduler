@@ -161,8 +161,8 @@ const EditStep = () => {
                   </select>
                 </label>
                 <input type="submit" value="Submit" />
+                <Link to={`/step/${data.step._id}`}>Back to Step</Link>
               </form>
-              <Link to={`/step/${data.step._id}`}>Back to Step</Link>
             </div>
           )}
         </div>

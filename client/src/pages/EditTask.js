@@ -163,8 +163,8 @@ const EditTask = () => {
                   </select>
                 </label>
                 <input type="submit" value="Submit" />
+                <Link to={`/task/${data.task._id}`}>Back to Task</Link>
               </form>
-              <Link to={`/task/${data.task._id}`}>Back to Task</Link>
             </div>
           )}
         </div>
