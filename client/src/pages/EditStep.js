@@ -143,21 +143,23 @@ const EditStep = () => {
                     required
                   />
                 </label>
-                <select
-                  id="quadrant"
-                  name="quadrant"
-                  value={formState.quadrant || ""}
-                  onChange={onChange}
-                >
-                  {!formState.quadrant ? (
-                    <option value={"default"}>Select Quadrant</option>
-                  ) : (
-                    <option value={""}>Remove Quadrant</option>
-                  )}
-                  {quadrants.map((quadrant) => {
-                    return createQuadrantOptions(quadrant);
-                  })}
-                </select>
+                <label>
+                  <select
+                    id="quadrant"
+                    name="quadrant"
+                    value={formState.quadrant || ""}
+                    onChange={onChange}
+                  >
+                    {!formState.quadrant ? (
+                      <option value={"default"}>Select Quadrant</option>
+                    ) : (
+                      <option value={""}>Remove Quadrant</option>
+                    )}
+                    {quadrants.map((quadrant) => {
+                      return createQuadrantOptions(quadrant);
+                    })}
+                  </select>
+                </label>
                 <input type="submit" value="Submit" />
               </form>
               <Link to={`/task/${data.step._id}`}>Back to Step</Link>
