@@ -150,9 +150,13 @@ const EditTask = () => {
           )}
         </div>
       ) : (
-        <p>
-          You need to be logged in to see this Task. Please{" "}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+        <p className="login-please">
+          You need to be logged in to edit this task. Please{" "}
+          <span>
+            &nbsp;
+            <Link to="/login">login</Link> or&nbsp;
+            <Link to="/signup">signup.</Link>
+          </span>
         </p>
       )}
     </div>
