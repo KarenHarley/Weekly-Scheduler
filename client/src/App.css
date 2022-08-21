@@ -66,6 +66,7 @@
 .edit-task-container {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .edit-task-container,
 .one-task-wrapper {
@@ -78,6 +79,7 @@
 .edit-task-wrapper textarea,
 .edit-task-wrapper input {
   width: 100%;
+  font-size: 16px;
 }
 .edit-task-wrapper textarea {
   height: 100px;
