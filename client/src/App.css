@@ -74,16 +74,22 @@
 }
 .edit-task-wrapper {
   width: 50%;
+  background-color: #7466a4;
 }
 .edit-task-wrapper label,
 .edit-task-wrapper textarea,
 .edit-task-wrapper input {
-  width: 100%;
+  width: 99%;
   font-size: 16px;
+  padding: 0px 20px;
 }
 .edit-task-wrapper textarea {
   height: 100px;
   overflow: scroll;
+  width: 100%;
+}
+.edit-task-wrapper input {
+  width: 100%;
 }
 .edit-task-wrapper h1 {
   text-align: center;
