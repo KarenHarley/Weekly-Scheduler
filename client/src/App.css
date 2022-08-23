@@ -472,8 +472,25 @@
   width: 100%;
 }
 @media (min-width: 700px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .hamburger-icon-div {
     display: none;
+  }
+  .hide-nav,
+  .navbar-ul {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+  }
+  .navbar-ul li,
+  .hide-nav li {
+    margin: 10px;
+    list-style: none;
   }
   .login-stack-top {
     padding: 55px;

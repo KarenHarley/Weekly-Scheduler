@@ -54,7 +54,7 @@ const Navbar = () => {
           </div>
           <ul
             onClick={selectPage}
-            className={navbarOpen === false ? "hide-nav" : "navbar-ul"}
+            className={navbarOpen === false ? "hide-nav " : "navbar-ul"}
           >
             <li
               className={navLink === "See All Tasks" ? "selected" : "nav-link"}
