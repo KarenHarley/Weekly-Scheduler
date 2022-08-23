@@ -204,6 +204,11 @@
 }
 
 /* Navbar*/
+
+.hamburger-icon-div {
+  background-color: #fff;
+  color: black;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
