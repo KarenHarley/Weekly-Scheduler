@@ -206,12 +206,17 @@
 /* Navbar*/
 
 .hamburger-icon-div {
-  background-color: #fff;
-  color: black;
+  position: absolute;
+  top: 11px;
+  left: 278px;
+  font-size: 20px;
+}
+.hide-nav {
+  display: none;
 }
 .navbar {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
   align-items: center;
   padding: 10px 20px;
   color: white;
@@ -235,7 +240,7 @@
 }
 
 .navbar-ul {
-  display: flex;
+  display: block;
   align-items: center;
   margin: 0px;
 }
@@ -467,6 +472,9 @@
   width: 100%;
 }
 @media (min-width: 700px) {
+  .hamburger-icon-div {
+    display: none;
+  }
   .login-stack-top {
     padding: 55px;
     margin: 39px;

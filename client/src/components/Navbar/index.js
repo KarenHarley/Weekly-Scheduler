@@ -5,6 +5,7 @@ const Navbar = () => {
   const location = useLocation();
   const [navLink, setNavLink] = useState("");
   const [navbarOpen, setNavbarOpen] = useState(false);
+  console.log(navbarOpen);
   const logout = () => {
     setNavLink("");
     Auth.logout();
@@ -13,6 +14,10 @@ const Navbar = () => {
     if (e.target.className === "link") {
       setNavLink(e.target.id);
     }
+  };
+  const toggleMenu = () => {
+    setNavbarOpen((prev) => !prev);
+    console.log(navbarOpen);
   };
   useEffect(() => {
     // If navbar is not used to change page (like if a link is used)
@@ -44,10 +49,13 @@ const Navbar = () => {
           Weekly Shedular
         </Link>
         <div className="link-menu">
-          <div className="hamburger-icon-div">
-            <i class="bx bx-menu"></i>
+          <div className="hamburger-icon-div" onClick={toggleMenu}>
+            <i className="bx bx-menu"></i>
           </div>
-          <ul className="navbar-ul" onClick={selectPage}>
+          <ul
+            onClick={selectPage}
+            className={navbarOpen === false ? "hide-nav" : "navbar-ul"}
+          >
             <li
               className={navLink === "See All Tasks" ? "selected" : "nav-link"}
             >
