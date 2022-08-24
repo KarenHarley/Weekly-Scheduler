@@ -473,6 +473,11 @@
   bottom: 0;
   width: 100%;
 }
+@media (min-width: 425px) {
+  .hamburger-icon-div {
+    left: 89%;
+  }
+}
 @media (min-width: 700px) {
   .navbar {
     display: flex;
