@@ -3,6 +3,10 @@
   margin: 5px;
   padding: 5px;
   color: white;
+  margin: 15px 0px;
+}
+.all-tasks {
+  margin: 20px 10px;
 }
 .task-wrapper a {
   color: white;
@@ -500,6 +504,9 @@
   .task-wrapper .task-name {
     width: 20%;
   }
+  .task-wrapper {
+    margin: 5px;
+  }
   .tasks-wrapper {
     height: 65rem;
   }
@@ -606,7 +613,6 @@
   .all-tasks,
   .no-tasks {
     width: 75%;
-    padding: 20px 10px;
   }
   .create-form-div {
     width: 35%;
