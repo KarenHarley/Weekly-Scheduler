@@ -56,7 +56,13 @@ const Task = ({ data }) => {
             onChange={handleChange}
           />
         </span>
-        {data.quadrant ? <span className="quad">{data.quadrant}</span> : <span className="quad">Task</span>}
+        {data.quadrant ? (
+          <span className="quad">{data.quadrant}</span>
+        ) : (
+          <span className="quad">
+            &nbsp;<i class="bx bx-calendar-edit"></i>
+          </span>
+        )}
         <span>
           {formatTime(data.startingTime)}-{formatTime(data.endingTime)}
         </span>{" "}
