@@ -56,7 +56,7 @@ const Task = ({ data }) => {
             onChange={handleChange}
           />
         </span>
-        {data.quadrant ? <span>{data.quadrant}</span> : <span>Task</span>}
+        {data.quadrant ? <span className="quad">{data.quadrant}</span> : <span className="quad">Task</span>}
         <span>
           {formatTime(data.startingTime)}-{formatTime(data.endingTime)}
         </span>{" "}
