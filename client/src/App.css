@@ -207,6 +207,10 @@
 .navbar-wrapper {
   padding: 8px;
 }
+.link-menu {
+  display: flex;
+  justify-content: center;
+}
 .hamburger-icon-div {
   position: absolute;
   top: 11px;
@@ -245,6 +249,7 @@
   text-align: center;
   align-items: center;
   margin: 0px;
+  padding: 0px;
 }
 
 .navbar-ul li {
