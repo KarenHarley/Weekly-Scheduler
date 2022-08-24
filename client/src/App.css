@@ -214,9 +214,6 @@
 .task-wrapper span {
   display: block;
 }
-.task-wrapper .quad {
-  margin: 0px 10px;
-}
 .create-form {
   padding: 40px;
 }
@@ -497,6 +494,12 @@
   }
 }
 @media (min-width: 700px) {
+  .task-wrapper .quad {
+    /* margin: 0px 10px; */
+  }
+  .task-wrapper .task-name {
+    width: 20%;
+  }
   .tasks-wrapper {
     height: 65rem;
   }

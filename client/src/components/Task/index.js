@@ -66,7 +66,7 @@ const Task = ({ data }) => {
         <span>
           {formatTime(data.startingTime)}-{formatTime(data.endingTime)}
         </span>{" "}
-        <span>{data.name}</span>
+        <span className="task-name">{data.name}</span>
         <span>
           {location.pathname == "/tasks" ? (
             <Link to={`task/${data._id}`}>See More</Link>
