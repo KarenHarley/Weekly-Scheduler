@@ -494,7 +494,9 @@
   }
 }
 @media (min-width: 700px) {
-
+  .long-name {
+    font-size: 15px;
+  }
   .task-wrapper .task-name {
     width: 20%;
   }
