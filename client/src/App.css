@@ -494,9 +494,7 @@
   }
 }
 @media (min-width: 700px) {
-  .task-wrapper .quad {
-    /* margin: 0px 10px; */
-  }
+
   .task-wrapper .task-name {
     width: 20%;
   }

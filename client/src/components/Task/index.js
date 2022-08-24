@@ -57,16 +57,22 @@ const Task = ({ data }) => {
           />
         </span>
         {data.quadrant ? (
-          <span className="quad">{data.quadrant}</span>
+          <span>{data.quadrant}</span>
         ) : (
-          <span className="quad">
+          <span>
             <i class="bx bx-calendar-edit"></i>
           </span>
         )}
         <span>
           {formatTime(data.startingTime)}-{formatTime(data.endingTime)}
         </span>{" "}
-        <span className="task-name">{data.name}</span>
+        <span
+          className={
+            data.name.length > 10 ? `long-name task-name` : "task-name"
+          }
+        >
+          {data.name}
+        </span>
         <span>
           {location.pathname == "/tasks" ? (
             <Link to={`task/${data._id}`}>See More</Link>
