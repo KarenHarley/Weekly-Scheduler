@@ -197,9 +197,7 @@
   align-items: center;
   justify-content: center;
 }
-.tasks-wrapper {
-  height: 65rem;
-}
+
 .navbar-wrapper {
   background-color: #9370db;
   color: white;
@@ -499,6 +497,9 @@
   }
 }
 @media (min-width: 700px) {
+  .tasks-wrapper {
+    height: 65rem;
+  }
   .navbar {
     display: flex;
     justify-content: space-between;
