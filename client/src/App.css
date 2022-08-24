@@ -240,12 +240,13 @@
 .link:hover {
   color: #cec8ef;
 }
-
 .navbar-ul {
-  display: block;
+  display: inline-block;
+  text-align: center;
   align-items: center;
   margin: 0px;
 }
+
 .navbar-ul li {
   margin: 10px;
   list-style: none;
@@ -476,7 +477,10 @@
   .navbar-wrapper {
     padding: 0px;
   }
-
+  .navbar-ul {
+    display: block;
+    align-items: center;
+  }
   .hamburger-icon-div {
     display: none;
   }
