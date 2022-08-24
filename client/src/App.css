@@ -129,6 +129,22 @@
   color: #7c55cb;
 }
 /* ALL tasks */
+
+.select-day-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.select-day-div ul {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 10px;
+  color: white;
+}
+.select-day-div li {
+  margin: 0px 15px;
+}
 .select-day-div {
   background-color: #dcd0ff;
 }
@@ -564,21 +580,10 @@
   .account-form {
     width: 50%;
   }
-  .select-day-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
   .select-day-div ul {
     display: flex;
     justify-content: space-evenly;
-    list-style: none;
-    padding: 0;
-    margin: 10px;
-    color: white;
-  }
-  .select-day-div li {
-    margin: 0px 15px;
   }
 
   .all-tasks-wrapper {
