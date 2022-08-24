@@ -250,6 +250,7 @@
   align-items: center;
   margin: 0px;
   padding: 0px;
+  margin-top: 20px;
 }
 
 .navbar-ul li {
@@ -485,6 +486,7 @@
   .navbar-ul {
     display: block;
     align-items: center;
+    margin-top: 0px;
   }
   .hamburger-icon-div {
     display: none;
