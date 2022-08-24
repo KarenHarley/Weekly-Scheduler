@@ -210,8 +210,9 @@
 .hamburger-icon-div {
   position: absolute;
   top: 11px;
-  left: 278px;
-  font-size: 20px;
+  left: 85%;
+
+  font-size: 30px;
 }
 .hide-nav {
   display: none;
