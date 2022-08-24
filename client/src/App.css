@@ -209,11 +209,12 @@
   margin-top: 15px;
 }
 .task-wrapper p {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   margin: 10px;
   font-size: 20px;
+}
+.task-wrapper span {
+  display: block;
 }
 .task-wrapper .quad {
   margin: 0px 10px;
@@ -504,6 +505,7 @@
     align-items: center;
     font-size: 16px;
   }
+
   .navbar-wrapper {
     padding: 0px;
   }
@@ -582,6 +584,10 @@
 
   .account-form {
     width: 50%;
+  }
+  .task-wrapper p {
+    display: flex;
+    justify-content: space-between;
   }
 
   .select-day-div ul {
