@@ -178,7 +178,11 @@ const CreateForm = ({ setDay, day }) => {
     <div className="create-task-wrapper">
       <form className="create-form">
         <div className="create-task-heading">
-          <h4>Create</h4>
+          {location.pathname == "/tasks" ? (
+            <h4>Create Task</h4>
+          ) : (
+            <h4>Create Step</h4>
+          )}
         </div>
         <input
           type="text"
