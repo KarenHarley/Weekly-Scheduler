@@ -34,7 +34,7 @@
 .one-task {
   background-color: #cdc0f4;
   padding: 20px;
-  width: 800px;
+  width: 263px;
 }
 .step-container {
   margin: 50px 0px;
@@ -496,10 +496,16 @@
   .hamburger-icon-div {
     left: 89%;
   }
+  .one-task {
+    width: 350px;
+  }
 }
 @media (min-width: 700px) {
   .long-name {
     font-size: 15px;
+  }
+  .one-task {
+    width: 650px;
   }
   .task-wrapper .task-name {
     width: 20%;
@@ -624,6 +630,9 @@
 @media (min-width: 1024px) {
   .child-2 {
     padding: 0px 80px;
+  }
+  .one-task {
+    width: 800px;
   }
 }
 @media (min-width: 1440px) {
