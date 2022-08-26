@@ -3,7 +3,7 @@
   margin: 5px;
   padding: 5px;
   color: white;
-  margin: 15px 0px;
+  margin: 15px 10px;
 }
 .all-tasks {
   margin: 20px 10px;
@@ -31,10 +31,13 @@
 }
 
 /* One Task */
+.steps-and-task-container div {
+}
 .one-task {
   background-color: #cdc0f4;
   padding: 20px;
   width: 263px;
+  margin: auto;
 }
 .step-container {
   margin: 50px 0px;
