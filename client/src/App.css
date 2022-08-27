@@ -31,6 +31,9 @@
   color: #7859b6;
   color: white;
 }
+#back-link {
+  position: absolute;
+}
 .one-task #button-show-form {
   background: none;
   color: inherit;
@@ -78,7 +81,7 @@
 .one-task a {
   display: flex;
   justify-content: end;
-  color: #7859b6;
+  color: white;
 }
 
 /* Edit Task */

@@ -48,8 +48,10 @@ const OneStep = () => {
                   <h4>Notes:</h4>
                   <p>{data.step.notes}</p>
                 </div>
+                <Link id="back-link" to={`/task/${data.step.task}`}>
+                  Back
+                </Link>
                 <Link to={`/step/edit/${data.step._id}`}>Edit</Link>
-                <Link to={`/task/${data.step.task}`}>Back</Link>
               </div>
             </>
           )}
