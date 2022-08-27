@@ -10,6 +10,7 @@
 }
 .task-wrapper a {
   color: white;
+  border-bottom: solid 2px;
 }
 
 .error {
@@ -221,6 +222,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #7859b6;
 }
 
 .navbar-wrapper {
