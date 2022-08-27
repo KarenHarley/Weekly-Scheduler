@@ -53,6 +53,13 @@ const OneTask = () => {
                   <h4>Notes:</h4>
                   <p>{data.task.notes}</p>
                 </div>
+                {data.task.steps <= 0 ? (
+                  <button id="button-show-form" onClick={changeAddStep}>
+                    Add Steps
+                  </button>
+                ) : (
+                  <></>
+                )}
                 <Link to={`/task/edit/${data.task._id}`}>Edit</Link>
               </div>
               {data.task.steps != 0 ? (
@@ -66,11 +73,6 @@ const OneTask = () => {
                     );
                   })}
                 </div>
-              ) : (
-                <></>
-              )}
-              {data.task.steps <= 0 ? (
-                <button onClick={changeAddStep}>Add Steps</button>
               ) : (
                 <></>
               )}

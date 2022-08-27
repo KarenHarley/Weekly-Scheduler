@@ -40,6 +40,18 @@
   width: 263px;
   margin: auto;
 }
+.one-task #button-show-form {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  position: absolute;
+  /* top: -20px; */
+  color: #7859b6;
+}
 .step-container {
   margin: 50px 0px;
 }
