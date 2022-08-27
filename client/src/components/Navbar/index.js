@@ -70,6 +70,15 @@ const Navbar = () => {
             </li>
             {Auth.loggedIn() ? (
               <>
+                <li className="nav-link">
+                  <Link
+                    id="create"
+                    style={{ textDecoration: "none" }}
+                    className="link"
+                  >
+                    Create Task
+                  </Link>
+                </li>
                 <li className={navLink === "Account" ? "selected" : "nav-link"}>
                   <Link
                     id="Account"
