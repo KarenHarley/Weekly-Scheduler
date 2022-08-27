@@ -67,6 +67,7 @@ export const QUERY_STEP = gql`
       endingTime
       quadrant
       completed
+      task
     }
   }
 `;
