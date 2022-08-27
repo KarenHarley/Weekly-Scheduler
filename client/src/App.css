@@ -59,6 +59,7 @@
 .notes-div {
   display: block;
   justify-content: center;
+  margin-bottom: 25px;
 }
 .notes-div h4 {
   text-align: center;
@@ -537,12 +538,14 @@
 @media (min-width: 700px) {
   .long-name {
     font-size: 15px;
+    text-align: center;
   }
   .one-task {
     width: 650px;
   }
   .task-wrapper .task-name {
     width: 20%;
+    text-align: center;
   }
   .task-wrapper {
     margin: 5px;
