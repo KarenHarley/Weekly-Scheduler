@@ -31,7 +31,7 @@ const OneTask = () => {
             <div>Loading...</div>
           ) : (
             <>
-              {data.task.steps != 0 || addSteps ? (
+              {addSteps ? (
                 <div className="create-step-form">
                   <CreateForm />
                 </div>
@@ -53,7 +53,7 @@ const OneTask = () => {
                   <h4>Notes:</h4>
                   <p>{data.task.notes}</p>
                 </div>
-                {data.task.steps <= 0 ? (
+                {!addSteps ? (
                   <button id="button-show-form" onClick={changeAddStep}>
                     Add Steps
                   </button>
