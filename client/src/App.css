@@ -39,6 +39,8 @@
   padding: 20px;
   width: 263px;
   margin: auto;
+  color: #7859b6;
+  color: white;
 }
 .one-task #button-show-form {
   background: none;
@@ -71,6 +73,9 @@
   text-align: center;
   font-weight: normal;
   font-size: 17px;
+}
+.notes-div p {
+  overflow: scroll;
 }
 .one-task-wrapper {
   display: flex;
@@ -119,6 +124,7 @@
   display: flex;
   justify-content: start;
   margin: 20px 0px;
+  color: #7859b6;
 }
 
 .edit-task-wrapper h1 {
