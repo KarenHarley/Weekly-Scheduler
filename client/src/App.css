@@ -31,7 +31,8 @@
 }
 
 /* One Task */
-.steps-and-task-container div {
+.steps-and-task-container {
+  width: 90%;
 }
 .one-task {
   background-color: #cdc0f4;
@@ -45,6 +46,10 @@
 .step-container h4 {
   text-align: center;
   font-size: 19px;
+  color: #7859b6;
+  border-bottom: solid 2px;
+  margin: 20px 20px;
+  padding: 5px;
 }
 .notes-div {
   display: block;
@@ -179,7 +184,10 @@
 .selected-day {
   color: #9370db;
 }
-
+.create-form {
+  width: 100%;
+  margin: auto;
+}
 .create-form label {
   width: 100%;
   padding: 0px;
