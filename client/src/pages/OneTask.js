@@ -18,7 +18,9 @@ const OneTask = () => {
       taskId: params.id,
     },
   });
-
+  const changeAddStep = () => {
+    setaddSteps((prev) => !prev);
+  };
   console.log(data);
 
   return (
@@ -67,7 +69,11 @@ const OneTask = () => {
               ) : (
                 <></>
               )}
-              {data.task.steps <= 0 ? <button>Add Steps</button> : <></>}
+              {data.task.steps <= 0 ? (
+                <button onClick={changeAddStep}>Add Steps</button>
+              ) : (
+                <></>
+              )}
             </>
           )}
         </div>
