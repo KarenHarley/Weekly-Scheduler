@@ -11,6 +11,7 @@ import Task from "../components/Task";
 const OneTask = () => {
   const params = useParams();
   console.log(params.id);
+  const [addSteps, setaddSteps] = useState(false);
 
   const { loading, data } = useQuery(QUERY_TASK, {
     variables: {
