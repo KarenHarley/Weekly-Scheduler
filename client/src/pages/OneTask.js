@@ -38,7 +38,13 @@ const OneTask = () => {
               ) : (
                 <></>
               )}
-              <div className="one-task">
+              <div
+                className={
+                  data.task.quadrant
+                    ? `${data.task.quadrant} one-task`
+                    : "one-task"
+                }
+              >
                 <p>
                   {data.task.quadrant ? (
                     <span>{data.task.quadrant}</span>

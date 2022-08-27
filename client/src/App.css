@@ -11,18 +11,7 @@
 .task-wrapper a {
   color: white;
 }
-.Q1 {
-  background-color: #8565c6;
-}
-.Q2 {
-  background-color: #a487dd;
-}
-.Q3 {
-  background-color: #7c55cb;
-}
-.Q4 {
-  background-color: #cdc0f4;
-}
+
 .error {
   display: flex;
   justify-content: center;
@@ -520,6 +509,20 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+/* Quadrents background color */
+.Q1 {
+  background-color: #8565c6;
+}
+.Q2 {
+  background-color: #a487dd;
+}
+.Q3 {
+  background-color: #7c55cb;
+}
+.Q4 {
+  background-color: #cdc0f4;
 }
 @media (min-width: 425px) {
   .hamburger-icon-div {
