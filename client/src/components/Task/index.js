@@ -60,7 +60,7 @@ const Task = ({ data }) => {
           <span>{data.quadrant}</span>
         ) : (
           <span>
-            <i class="bx bx-calendar-edit"></i>
+            <i className="bx bx-calendar-edit"></i>
           </span>
         )}
         <span>
