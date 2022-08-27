@@ -27,7 +27,13 @@ const OneStep = () => {
             <div>Loading...</div>
           ) : (
             <>
-              <div className="one-task">
+              <div
+                className={
+                  data.step.quadrant
+                    ? `${data.step.quadrant} one-task`
+                    : "one-task"
+                }
+              >
                 <p>
                   {data.step.quadrant ? (
                     <span>{data.step.quadrant}</span>
