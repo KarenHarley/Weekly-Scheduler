@@ -67,6 +67,7 @@ const OneTask = () => {
               ) : (
                 <></>
               )}
+              {data.task.steps <= 0 ? <button>Add Steps</button> : <></>}
             </>
           )}
         </div>
