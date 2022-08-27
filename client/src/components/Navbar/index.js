@@ -5,6 +5,7 @@ const Navbar = () => {
   const location = useLocation();
   const [navLink, setNavLink] = useState("");
   const [navbarOpen, setNavbarOpen] = useState(false);
+
   console.log(navbarOpen);
   const logout = () => {
     setNavLink("");
@@ -70,15 +71,19 @@ const Navbar = () => {
             </li>
             {Auth.loggedIn() ? (
               <>
-                <li className="nav-link">
-                  <Link
-                    id="create"
-                    style={{ textDecoration: "none" }}
-                    className="link"
-                  >
-                    Create Task
-                  </Link>
-                </li>
+                {location.pathname == "/tasks" ? (
+                  <li className="nav-link">
+                    <Link
+                      id="create"
+                      style={{ textDecoration: "none" }}
+                      className="link"
+                    >
+                      Create Task
+                    </Link>
+                  </li>
+                ) : (
+                  <></>
+                )}
                 <li className={navLink === "Account" ? "selected" : "nav-link"}>
                   <Link
                     id="Account"
