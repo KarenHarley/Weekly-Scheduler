@@ -59,13 +59,9 @@ const OneTask = () => {
                   <h4>Notes:</h4>
                   <p>{data.task.notes}</p>
                 </div>
-                {!addSteps ? (
-                  <button id="button-show-form" onClick={changeAddStep}>
-                    Add Steps
-                  </button>
-                ) : (
-                  <></>
-                )}
+                <button id="button-show-form" onClick={changeAddStep}>
+                  {!addSteps ? "Add Steps" : "Hide Create Form"}
+                </button>
                 <Link to={`/task/edit/${data.task._id}`}>Edit</Link>
               </div>
               {data.task.steps != 0 ? (
