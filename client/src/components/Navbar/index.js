@@ -7,8 +7,6 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   console.log(navbarOpen);
-  const el = document.querySelector(".create-task-wrapper");
-  console.log(el);
   const logout = () => {
     setNavLink("");
     Auth.logout();
@@ -73,19 +71,6 @@ const Navbar = () => {
             </li>
             {Auth.loggedIn() ? (
               <>
-                {location.pathname == "/tasks" ? (
-                  <li className="nav-link">
-                    <button
-                      id="create"
-                      style={{ textDecoration: "none" }}
-                      className="link"
-                    >
-                      Create Task
-                    </button>
-                  </li>
-                ) : (
-                  <></>
-                )}
                 <li className={navLink === "Account" ? "selected" : "nav-link"}>
                   <Link
                     id="Account"
