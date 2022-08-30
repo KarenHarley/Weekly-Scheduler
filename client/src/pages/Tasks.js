@@ -38,6 +38,15 @@ const Tasks = () => {
               </li>
             );
           })}
+          <li className="nav-link">
+            <button
+              id="create"
+              style={{ textDecoration: "none" }}
+              className="link"
+            >
+              Create Task
+            </button>
+          </li>
         </ul>
       </div>
       {Auth.loggedIn() ? (
