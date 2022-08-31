@@ -165,12 +165,11 @@
   margin: 10px;
   color: white;
 }
+
 .select-day-div li {
   margin: 0px 15px;
 }
-.select-day-div button {
-  
-}
+
 .select-day-div {
   background-color: #dcd0ff;
 }
@@ -179,6 +178,14 @@
   color: #b19cd9;
 }
 .select-day-div {
+}
+.new-section {
+  margin: inherit;
+  padding: 7px 0px;
+  border-top: solid 2px;
+}
+#Sunday {
+  margin-bottom: 10px;
 }
 .create-task-heading,
 .tasks-wrapper h3,
@@ -542,6 +549,22 @@
   }
 }
 @media (min-width: 700px) {
+  .select-day-div li {
+    margin: 0px 10px;
+  }
+  .new-section {
+    margin: none;
+    padding: 0px;
+    border-top: none;
+    border-left: thick double white;
+    margin-left: 6px;
+    padding-left: 15px;
+    /* margin: auto; */
+    margin-bottom: auto;
+  }
+  #Sunday {
+    margin-bottom: 0px;
+  }
   .long-name {
     font-size: 15px;
     text-align: center;
@@ -653,6 +676,7 @@
   .select-day-div ul {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
   }
 
   .all-tasks-wrapper {
@@ -676,6 +700,9 @@
   }
   .one-task {
     width: 800px;
+  }
+  .select-day-div li {
+    margin: 0px 15px;
   }
 }
 @media (min-width: 1440px) {

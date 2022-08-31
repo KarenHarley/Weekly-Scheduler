@@ -42,7 +42,8 @@ const Tasks = () => {
               </li>
             );
           })}
-          <li className="nav-link">
+          {/* <span>||</span> */}
+          <li className="nav-link new-section">
             <button
               onClick={changeShowForm}
               id="create"
