@@ -47,9 +47,9 @@ const Tasks = () => {
               onClick={changeShowForm}
               id="create"
               style={{ textDecoration: "none" }}
-              className="link"
+              className="nav-button"
             >
-              Create Task
+              {!showForm ? "Create Task" : "Hide Create Form"}
             </button>
           </li>
         </ul>

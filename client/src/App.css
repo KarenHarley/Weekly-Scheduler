@@ -168,6 +168,9 @@
 .select-day-div li {
   margin: 0px 15px;
 }
+.select-day-div button {
+  
+}
 .select-day-div {
   background-color: #dcd0ff;
 }
@@ -270,7 +273,8 @@
   color: white;
 }
 .navbar button,
-.footer-wrapper button {
+.footer-wrapper button,
+.select-day-div button {
   background: none;
   color: inherit;
   border: none;
