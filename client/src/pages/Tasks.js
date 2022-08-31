@@ -8,7 +8,7 @@ import CreateForm from "../components/CreateForm";
 import { days } from "../utils/utils";
 const Tasks = () => {
   const [day, setDay] = useState("Monday");
-  const [showForm, setshowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   const { loading, data } = useQuery(QUERY_TASKS, {
     variables: {
@@ -22,6 +22,9 @@ const Tasks = () => {
       console.log(e.target.id);
       setDay(e.target.id);
     }
+  };
+  const changeShowForm = () => {
+    setShowForm((prev) => !prev);
   };
   return (
     <div className="tasks-wrapper">
@@ -41,6 +44,7 @@ const Tasks = () => {
           })}
           <li className="nav-link">
             <button
+              onClick={changeShowForm}
               id="create"
               style={{ textDecoration: "none" }}
               className="link"
