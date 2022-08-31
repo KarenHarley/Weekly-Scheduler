@@ -164,6 +164,7 @@
   padding: 0;
   margin: 10px;
   color: white;
+  align-items: center;
 }
 
 .select-day-div li {
