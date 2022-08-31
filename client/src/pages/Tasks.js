@@ -8,6 +8,7 @@ import CreateForm from "../components/CreateForm";
 import { days } from "../utils/utils";
 const Tasks = () => {
   const [day, setDay] = useState("Monday");
+  const [showForm, setshowForm] = useState(false);
 
   const { loading, data } = useQuery(QUERY_TASKS, {
     variables: {
@@ -66,9 +67,13 @@ const Tasks = () => {
               )}
             </>
           )}
-          <div className="create-form-div">
-            <CreateForm setDay={setDay} day={day} />
-          </div>
+          {showForm ? (
+            <div className="create-form-div">
+              <CreateForm setDay={setDay} day={day} />
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       ) : (
         <div className="login-please">
