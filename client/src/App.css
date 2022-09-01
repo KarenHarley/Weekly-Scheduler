@@ -698,6 +698,10 @@
   }
 }
 @media (min-width: 1024px) {
+  .one-task-and-create-form {
+    display: flex;
+  }
+  
   .all-tasks-wrapper {
     display: flex;
     justify-content: space-evenly;

@@ -32,39 +32,41 @@ const OneTask = () => {
             <div>Loading...</div>
           ) : (
             <>
-              <div
-                className={
-                  data.task.quadrant
-                    ? `${data.task.quadrant} one-task`
-                    : "one-task"
-                }
-              >
-                <p>
-                  {data.task.quadrant ? (
-                    <span>{data.task.quadrant}</span>
-                  ) : (
-                    <></>
-                  )}
-                  {formatTime(data.task.startingTime)}-
-                  {formatTime(data.task.endingTime)}
-                </p>
-                <p>Name: {data.task.name}</p>
-                <div className="notes-div">
-                  <h4>Notes:</h4>
-                  <p>{data.task.notes}</p>
+              <div className="one-task-and-create-form">
+                <div
+                  className={
+                    data.task.quadrant
+                      ? `${data.task.quadrant} one-task`
+                      : "one-task"
+                  }
+                >
+                  <p>
+                    {data.task.quadrant ? (
+                      <span>{data.task.quadrant}</span>
+                    ) : (
+                      <></>
+                    )}
+                    {formatTime(data.task.startingTime)}-
+                    {formatTime(data.task.endingTime)}
+                  </p>
+                  <p>Name: {data.task.name}</p>
+                  <div className="notes-div">
+                    <h4>Notes:</h4>
+                    <p>{data.task.notes}</p>
+                  </div>
+                  <button id="button-show-form" onClick={changeAddStep}>
+                    {!addSteps ? "Add Steps" : "Hide Create Form"}
+                  </button>
+                  <Link to={`/task/edit/${data.task._id}`}>Edit</Link>
                 </div>
-                <button id="button-show-form" onClick={changeAddStep}>
-                  {!addSteps ? "Add Steps" : "Hide Create Form"}
-                </button>
-                <Link to={`/task/edit/${data.task._id}`}>Edit</Link>
+                {addSteps ? (
+                  <div className="create-step-form">
+                    <CreateForm />
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
-              {addSteps ? (
-                <div className="create-step-form">
-                  <CreateForm />
-                </div>
-              ) : (
-                <></>
-              )}
               {data.task.steps != 0 ? (
                 <div className="step-container">
                   <h4>Steps or Smaller tasks to Accomplish this larger task</h4>
