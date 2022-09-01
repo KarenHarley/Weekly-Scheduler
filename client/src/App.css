@@ -91,6 +91,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .edit-task-container,
 .one-task-wrapper {
   min-height: 55rem;
@@ -697,11 +698,10 @@
   }
 }
 @media (min-width: 1024px) {
- 
- .all-tasks-wrapper {
+  .all-tasks-wrapper {
     display: flex;
     justify-content: space-evenly;
-  } 
+  }
   .all-tasks,
   .no-tasks {
     width: 75%;
@@ -750,6 +750,9 @@
   }
   .child-1 {
     margin: 20px 30px 10px;
+  }
+  .create-form {
+    padding: 30px;
   }
 }
 @media (min-width: 2560px) {
