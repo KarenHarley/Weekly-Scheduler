@@ -32,13 +32,6 @@ const OneTask = () => {
             <div>Loading...</div>
           ) : (
             <>
-              {addSteps ? (
-                <div className="create-step-form">
-                  <CreateForm />
-                </div>
-              ) : (
-                <></>
-              )}
               <div
                 className={
                   data.task.quadrant
@@ -65,6 +58,13 @@ const OneTask = () => {
                 </button>
                 <Link to={`/task/edit/${data.task._id}`}>Edit</Link>
               </div>
+              {addSteps ? (
+                <div className="create-step-form">
+                  <CreateForm />
+                </div>
+              ) : (
+                <></>
+              )}
               {data.task.steps != 0 ? (
                 <div className="step-container">
                   <h4>Steps or Smaller tasks to Accomplish this larger task</h4>
