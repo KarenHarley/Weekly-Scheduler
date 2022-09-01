@@ -27,7 +27,10 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     task: async (parent, { taskId }) => {
-      return Task.findOne({ _id: taskId }).populate("steps");
+      return Task.findOne({ _id: taskId }).populate({
+        path: "steps",
+        options: { sort: { startingTime: 1 } },
+      });
     },
     step: async (parent, { stepId }) => {
       return Step.findOne({ _id: stepId });
