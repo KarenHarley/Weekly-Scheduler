@@ -12,7 +12,10 @@
   color: white;
   border-bottom: solid 2px;
 }
-
+.task-wrapper a:hover {
+  color: #c0a0ff;
+  text-decoration: none;
+}
 .error {
   display: flex;
   justify-content: center;
