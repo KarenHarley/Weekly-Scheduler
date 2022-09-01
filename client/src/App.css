@@ -701,7 +701,10 @@
   .one-task-and-create-form {
     display: flex;
   }
-  
+  .one-task-form {
+    width: 50%;
+  }
+
   .all-tasks-wrapper {
     display: flex;
     justify-content: space-evenly;

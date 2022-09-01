@@ -60,7 +60,7 @@ const OneTask = () => {
                   <Link to={`/task/edit/${data.task._id}`}>Edit</Link>
                 </div>
                 {addSteps ? (
-                  <div className="create-step-form">
+                  <div className="create-step-form one-task-form">
                     <CreateForm />
                   </div>
                 ) : (
