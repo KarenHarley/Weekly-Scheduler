@@ -196,7 +196,9 @@
   display: flex;
   justify-content: center;
 }
-
+.create-task-wrapper {
+  padding: 40px;
+}
 .selected {
   border-bottom: solid 2px;
   padding: 2px;
@@ -220,6 +222,7 @@
   margin-top: 15px;
   width: 100%;
   padding: 10px;
+  border: 1px solid #9370db;
 }
 .create-form textarea {
   padding: 15px;
@@ -228,6 +231,8 @@
 .create-form select {
   padding-bottom: 15px;
   padding-top: 15px;
+  color: #9370db;
+  border: 1px solid #9370db;
 }
 .no-tasks {
   display: flex;
@@ -244,6 +249,8 @@
 .create-form input[type="submit"] {
   width: 100%;
   margin-top: 15px;
+  background-color: #a487dd;
+  color: white;
 }
 .task-wrapper p {
   align-items: center;
@@ -254,7 +261,9 @@
   display: block;
 }
 .create-form {
-  padding: 40px;
+  border: solid #9370db;
+  padding: 20px;
+  color: #9370db;
 }
 
 /* Navbar*/
