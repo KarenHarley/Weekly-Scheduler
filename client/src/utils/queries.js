@@ -76,11 +76,13 @@ export const QUERY_DUPLICATE_TASK = gql`
     $startingTime: String!
     $endingTime: String!
     $day: String!
+    $task: String
   ) {
     duplicateTask(
       startingTime: $startingTime
       endingTime: $endingTime
       day: $day
+      task: $task
     ) {
       name
       notes
@@ -98,11 +100,13 @@ export const QUERY_DUPLICATE_STEP = gql`
   query duplicateStep(
     $startingTime: String!
     $endingTime: String!
-    $task: String
+    $day: String
+    $task: String!
   ) {
     duplicateStep(
       startingTime: $startingTime
       endingTime: $endingTime
+      day: $day
       task: $task
     ) {
       name

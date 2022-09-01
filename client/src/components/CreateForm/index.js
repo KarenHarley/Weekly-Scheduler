@@ -46,6 +46,7 @@ const CreateForm = ({ setDay, day }) => {
       startingTime: formState.startingTime,
       endingTime: formState.endingTime,
       day: formState.day,
+      task: params.id,
     },
   });
 
