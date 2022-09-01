@@ -563,6 +563,9 @@
   .select-day-div li {
     margin: 0px 10px;
   }
+  .create-task-wrapper {
+    padding: 20px;
+  }
   .new-section {
     margin: none;
     padding: 0px;
@@ -689,11 +692,16 @@
     justify-content: space-evenly;
     align-items: center;
   }
-
-  .all-tasks-wrapper {
+  .banner-container {
+    height: 600px;
+  }
+}
+@media (min-width: 1024px) {
+ 
+ .all-tasks-wrapper {
     display: flex;
     justify-content: space-evenly;
-  }
+  } 
   .all-tasks,
   .no-tasks {
     width: 75%;
@@ -701,11 +709,7 @@
   .create-form-div {
     width: 35%;
   }
-  .banner-container {
-    height: 600px;
-  }
-}
-@media (min-width: 1024px) {
+
   .child-2 {
     padding: 0px 80px;
   }
