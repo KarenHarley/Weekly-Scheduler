@@ -261,12 +261,19 @@
   margin: 10px;
   font-size: 20px;
 }
+
+.task-wrapper [type="checkbox"]:checked {
+  accent-color: #6642ae;
+
+}
+
 .task-wrapper span {
   display: block;
 }
 .task-wrapper input {
   height: 15px;
   width: 15px;
+  border-radius: 50%;
 }
 .create-form {
   border: solid #9370db;
