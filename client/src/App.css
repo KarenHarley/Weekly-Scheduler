@@ -87,7 +87,10 @@
   justify-content: end;
   color: white;
 }
-
+.one-task a:hover,
+#button-show-form:hover {
+  color: #6642ae;
+}
 /* Edit Task */
 .edit-task-container {
   display: flex;
@@ -264,7 +267,6 @@
 
 .task-wrapper [type="checkbox"]:checked {
   accent-color: #6642ae;
-
 }
 
 .task-wrapper span {
