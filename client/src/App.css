@@ -264,6 +264,10 @@
 .task-wrapper span {
   display: block;
 }
+.task-wrapper input {
+  height: 15px;
+  width: 15px;
+}
 .create-form {
   border: solid #9370db;
   padding: 20px;
