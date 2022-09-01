@@ -54,6 +54,7 @@ const resolvers = {
       if (context.user) {
         const duplicate = await Step.findOne({
           user: context.user._id,
+          task: args.task,
           startingTime: args.startingTime,
         });
         //add some sort of message to tell if it is a full duplicate (exact times) or a half (same starting time)
