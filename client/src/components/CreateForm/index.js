@@ -94,7 +94,7 @@ const CreateForm = ({ setDay, day }) => {
       alert("Starting Time can not be later than the ending time");
       return;
     }
-    if (!data.duplicate) {
+    if (!data.duplicateTask) {
       try {
         const taskData = await createTask({
           variables: { ...formState },
@@ -114,6 +114,7 @@ const CreateForm = ({ setDay, day }) => {
       }
     } else {
       alert("This time already has a task");
+      return;
     }
   };
   const createStepInDB = async () => {
@@ -168,8 +169,9 @@ const CreateForm = ({ setDay, day }) => {
     // location.pathname == "/tasks" ? createTaskInDB() : createStepInDB;
     if (location.pathname == "/tasks") {
       createTaskInDB();
+    } else {
+      createStepInDB();
     }
-    createStepInDB();
   };
   useEffect(() => {
     console.log("Use effect");
