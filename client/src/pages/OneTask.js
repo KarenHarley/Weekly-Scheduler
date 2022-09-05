@@ -50,6 +50,9 @@ const OneTask = () => {
                     {formatTime(data.task.endingTime)}
                   </p>
                   <p className="name-heading">{data.task.name}</p>
+                  <button id="button-show-form" onClick={deleteTask}>
+                    DELETE
+                  </button>
                   {data.task.notes ? (
                     <div className="notes-div">
                       <h4>Notes:</h4>
