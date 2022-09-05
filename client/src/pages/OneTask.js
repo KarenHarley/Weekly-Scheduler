@@ -32,7 +32,19 @@ const OneTask = () => {
     setaddSteps((prev) => !prev);
   };
 
-  const deleteOneTask = () => {};
+  const deleteOneTask = () => {
+    if (confirm("Are you sure you want to delete this task?")) {
+      try {
+        const taskData = await createStep({
+          variables: {
+            taskId: params.id,
+          },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    } 
+  };
   console.log(data);
 
   return (
