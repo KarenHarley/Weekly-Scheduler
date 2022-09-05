@@ -140,7 +140,6 @@ const EditStep = () => {
                     id="notes"
                     value={formState.notes || ""}
                     onChange={onChange}
-                    required
                   />
                 </label>
                 <label>
