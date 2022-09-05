@@ -22,7 +22,7 @@ import {
 /*
 IMPORTANT!!!!!!!!! FIX SALT ISSUE!!!!!!!
 */
-const CreateForm = ({ setDay, day }) => {
+const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
   const location = useLocation();
   const params = useParams();
   const [formState, setFormState] = useState({

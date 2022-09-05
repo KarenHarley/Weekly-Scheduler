@@ -61,7 +61,10 @@ const OneTask = () => {
                 </div>
                 {addSteps ? (
                   <div className="create-step-form one-task-form">
-                    <CreateForm />
+                    <CreateForm
+                      taskStartingTime={data.task.startingTime}
+                      taskEndingTime={data.task.endingTime}
+                    />
                   </div>
                 ) : (
                   <></>
