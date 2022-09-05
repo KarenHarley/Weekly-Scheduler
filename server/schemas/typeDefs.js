@@ -106,6 +106,8 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
 
     addUser(username: String!, email: String!, password: String!): Auth
+
+    removeTask(taskId: String!): Task
   }
 `;
 
