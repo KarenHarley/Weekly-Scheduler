@@ -139,6 +139,10 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
       alert("This mini-task's starting time starts before the parent task");
       return;
     }
+    if (formState.endingTime > taskEndingTime) {
+      alert("This mini-task ends after the parent task time");
+      return;
+    }
     if (!data.duplicateStep) {
       // try {
       //   const stepData = await createStep({
@@ -163,7 +167,8 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
       // } catch (e) {
       //   console.error(e);
       // }
-      console.log(formState.startingTime, taskStartingTime);
+      console.log("task start time", formState.startingTime, taskStartingTime);
+      console.log("task ending time", formState.endingTime, taskEndingTime);
       console.log("No duplicate");
     } else {
       alert("This time already has a task");
