@@ -143,6 +143,12 @@ const resolvers = {
       console.log(updatedStep);
       return updatedStep;
     },
+    removeTask: async (parent, { taskId }, context) => {
+      if (context.user) {
+        return Task.deleteOne({ _id: taskId });
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
     addUser: async (parent, { username, email, password }) => {
       //when user is created a token is created
       const user = await User.create({ username, email, password }); //c in crud returning an instance
