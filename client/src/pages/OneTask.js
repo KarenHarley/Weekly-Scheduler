@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_TASK, QUERY_STEPS } from "../utils/queries";
 import { REMOVE_TASK } from "../utils/mutations";
 import { useParams } from "react-router-dom";
@@ -32,10 +32,10 @@ const OneTask = () => {
     setaddSteps((prev) => !prev);
   };
 
-  const deleteOneTask = () => {
+  const deleteOneTask = async () => {
     if (confirm("Are you sure you want to delete this task?")) {
       try {
-        const taskData = await createStep({
+        const taskData = await deleteOneTask({
           variables: {
             taskId: params.id,
           },
@@ -43,7 +43,7 @@ const OneTask = () => {
       } catch (e) {
         console.error(e);
       }
-    } 
+    }
   };
   console.log(data);
 
