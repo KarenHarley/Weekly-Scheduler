@@ -140,6 +140,19 @@ export const UPDATE_USER = gql`
   }
 `;
 
+export const REMOVE_TASK = gql`
+  mutation removeTask($taskId: String!) {
+    removeTask(taskId: $taskId) {
+      _id
+      name
+      notes
+      startingTime
+      endingTime
+      quadrant
+      completed
+    }
+  }
+`; 
 export const CHANGE_COMPLETED_TASK = gql`
   mutation changeCompletedTask($completed: Boolean!, $_id: String!) {
     changeCompletedTask(_id: $_id, completed: $completed) {
