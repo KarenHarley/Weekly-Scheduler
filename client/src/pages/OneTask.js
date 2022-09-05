@@ -49,11 +49,16 @@ const OneTask = () => {
                     {formatTime(data.task.startingTime)}-
                     {formatTime(data.task.endingTime)}
                   </p>
-                  <p>Name: {data.task.name}</p>
-                  <div className="notes-div">
-                    <h4>Notes:</h4>
-                    <p>{data.task.notes}</p>
-                  </div>
+                  <p className="name-heading">{data.task.name}</p>
+                  {data.task.notes ? (
+                    <div className="notes-div">
+                      <h4>Notes:</h4>
+                      <p>{data.task.notes}</p>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+
                   <div className="edit-or-show-form-div">
                     <button id="button-show-form" onClick={changeAddStep}>
                       {!addSteps ? "Add Mini-Tasks" : "Hide Create Form"}
