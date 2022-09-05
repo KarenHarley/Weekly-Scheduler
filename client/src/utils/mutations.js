@@ -29,29 +29,29 @@ export const UPDATE_TASK = gql`
   }
 `;
 export const UPDATE_STEP = gql`
-mutation updateStep(
-  $name: String!
-  $notes: String
-  $startingTime: String!
-  $endingTime: String!
-  $quadrant: String
-   $_id: String!
-) {
-  updateStep(
-    name: $name
-    notes: $notes
-    startingTime: $startingTime
-    endingTime: $endingTime
-    quadrant: $quadrant
-    _id: $_id
+  mutation updateStep(
+    $name: String!
+    $notes: String
+    $startingTime: String!
+    $endingTime: String!
+    $quadrant: String
+    $_id: String!
   ) {
-    name
-    notes
-    startingTime
-    endingTime
-    quadrant
+    updateStep(
+      name: $name
+      notes: $notes
+      startingTime: $startingTime
+      endingTime: $endingTime
+      quadrant: $quadrant
+      _id: $_id
+    ) {
+      name
+      notes
+      startingTime
+      endingTime
+      quadrant
+    }
   }
-}
 `;
 export const CREATE_TASK = gql`
   mutation addTask(
@@ -143,7 +143,6 @@ export const UPDATE_USER = gql`
 export const REMOVE_TASK = gql`
   mutation removeTask($taskId: String!) {
     removeTask(taskId: $taskId) {
-      _id
       name
       notes
       startingTime
@@ -152,7 +151,7 @@ export const REMOVE_TASK = gql`
       completed
     }
   }
-`; 
+`;
 export const CHANGE_COMPLETED_TASK = gql`
   mutation changeCompletedTask($completed: Boolean!, $_id: String!) {
     changeCompletedTask(_id: $_id, completed: $completed) {

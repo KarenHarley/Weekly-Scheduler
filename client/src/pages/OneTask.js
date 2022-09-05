@@ -33,16 +33,14 @@ const OneTask = () => {
   };
 
   const deleteOneTask = async () => {
-    if (confirm("Are you sure you want to delete this task?")) {
-      try {
-        const taskData = await deleteOneTask({
-          variables: {
-            taskId: params.id,
-          },
-        });
-      } catch (e) {
-        console.error(e);
-      }
+    try {
+      const taskData = await deleteTask({
+        variables: {
+          taskId: params.id,
+        },
+      });
+    } catch (e) {
+      console.error(e);
     }
   };
   console.log(data);
@@ -73,7 +71,17 @@ const OneTask = () => {
                     {formatTime(data.task.endingTime)}
                   </p>
                   <p className="name-heading">{data.task.name}</p>
-                  <button id="button-show-form" onClick={deleteOneTask}>
+                  <button
+                    id="button-show-form"
+                    onClick={() => {
+                      const confirmBox = window.confirm(
+                        "Do you really want to delete this task?"
+                      );
+                      if (confirmBox === true) {
+                        deleteOneTask();
+                      }
+                    }}
+                  >
                     DELETE
                   </button>
                   {data.task.notes ? (
