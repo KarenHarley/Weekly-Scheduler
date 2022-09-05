@@ -145,7 +145,14 @@ const resolvers = {
     },
     removeTask: async (parent, { taskId }, context) => {
       if (context.user) {
-        return Task.deleteOne({ _id: taskId });
+        const deleteTask = await Task.deleteOne({ _id: taskId });
+
+        const updateUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { tasks: taskId } },
+          { new: true }
+        );
+        return { deleteTask, updateUser };
       }
       throw new AuthenticationError("You need to be logged in!");
     },
