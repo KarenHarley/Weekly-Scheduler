@@ -63,7 +63,7 @@
 .notes-div {
   display: block;
   justify-content: center;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 .notes-div h4 {
   text-align: center;
@@ -81,6 +81,7 @@
 .one-task p {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 .one-task a {
   display: flex;
