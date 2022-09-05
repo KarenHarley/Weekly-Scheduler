@@ -143,12 +143,7 @@ export const UPDATE_USER = gql`
 export const REMOVE_TASK = gql`
   mutation removeTask($taskId: String!) {
     removeTask(taskId: $taskId) {
-      name
-      notes
-      startingTime
-      endingTime
-      quadrant
-      completed
+      username
     }
   }
 `;
