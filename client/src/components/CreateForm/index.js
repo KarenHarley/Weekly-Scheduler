@@ -144,32 +144,29 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
       return;
     }
     if (!data.duplicateStep) {
-      // try {
-      //   const stepData = await createStep({
-      //     variables: {
-      //       name: formState.name,
-      //       notes: formState.notes,
-      //       task: params.id,
-      //       startingTime: formState.startingTime,
-      //       endingTime: formState.endingTime,
-      //       quadrant: formState.quadrant,
-      //     },
-      //   });
-      //   // clear form values
-      //   setFormState({
-      //     name: "",
-      //     notes: "",
-      //     startingTime: "",
-      //     endingTime: "",
-      //     day: "",
-      //     quadrant: "",
-      //   });
-      // } catch (e) {
-      //   console.error(e);
-      // }
-      console.log("task start time", formState.startingTime, taskStartingTime);
-      console.log("task ending time", formState.endingTime, taskEndingTime);
-      console.log("No duplicate");
+      try {
+        const stepData = await createStep({
+          variables: {
+            name: formState.name,
+            notes: formState.notes,
+            task: params.id,
+            startingTime: formState.startingTime,
+            endingTime: formState.endingTime,
+            quadrant: formState.quadrant,
+          },
+        });
+        // clear form values
+        setFormState({
+          name: "",
+          notes: "",
+          startingTime: "",
+          endingTime: "",
+          day: "",
+          quadrant: "",
+        });
+      } catch (e) {
+        console.error(e);
+      }
     } else {
       alert("This time already has a task");
     }
