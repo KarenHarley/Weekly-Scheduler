@@ -95,7 +95,10 @@ const EditTask = () => {
             <div>Loading...</div>
           ) : (
             <>
-              <form className="create-form edit-task-form" onSubmit={handleFormSubmit}>
+              <form
+                className="create-form edit-task-form"
+                onSubmit={handleFormSubmit}
+              >
                 <h1>Edit task</h1>
                 <label>
                   Select Starting Time
@@ -142,7 +145,6 @@ const EditTask = () => {
                     id="notes"
                     value={formState.notes || ""}
                     onChange={onChange}
-                    required
                   />
                 </label>
                 <label>
