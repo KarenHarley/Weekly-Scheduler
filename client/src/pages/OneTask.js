@@ -13,14 +13,7 @@ const OneTask = () => {
   const params = useParams();
   console.log(params.id);
   const [addSteps, setaddSteps] = useState(false);
-  const [deleteTask, { errorTask }] = useMutation(REMOVE_TASK, {
-    refetchQueries: [
-      {
-        query: QUERY_TASK,
-        variables: { taskId: params.id },
-      },
-    ],
-  });
+  const [deleteTask, { errorTask }] = useMutation(REMOVE_TASK);
 
   const { loading, data } = useQuery(QUERY_TASK, {
     variables: {
