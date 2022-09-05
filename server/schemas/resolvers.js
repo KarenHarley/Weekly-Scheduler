@@ -152,7 +152,7 @@ const resolvers = {
           { $pull: { tasks: taskId } },
           { new: true }
         );
-        return { deleteTask, updateUser };
+        return updateUser;
       }
       throw new AuthenticationError("You need to be logged in!");
     },
