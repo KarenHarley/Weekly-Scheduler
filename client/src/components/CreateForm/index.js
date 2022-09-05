@@ -135,30 +135,35 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
       alert("Starting Time can not be later than the ending time");
       return;
     }
+    if (taskStartingTime > formState.startingTime) {
+      alert("This mini-task's starting time starts before the parent task");
+      return;
+    }
     if (!data.duplicateStep) {
-      try {
-        const stepData = await createStep({
-          variables: {
-            name: formState.name,
-            notes: formState.notes,
-            task: params.id,
-            startingTime: formState.startingTime,
-            endingTime: formState.endingTime,
-            quadrant: formState.quadrant,
-          },
-        });
-        // clear form values
-        setFormState({
-          name: "",
-          notes: "",
-          startingTime: "",
-          endingTime: "",
-          day: "",
-          quadrant: "",
-        });
-      } catch (e) {
-        console.error(e);
-      }
+      // try {
+      //   const stepData = await createStep({
+      //     variables: {
+      //       name: formState.name,
+      //       notes: formState.notes,
+      //       task: params.id,
+      //       startingTime: formState.startingTime,
+      //       endingTime: formState.endingTime,
+      //       quadrant: formState.quadrant,
+      //     },
+      //   });
+      //   // clear form values
+      //   setFormState({
+      //     name: "",
+      //     notes: "",
+      //     startingTime: "",
+      //     endingTime: "",
+      //     day: "",
+      //     quadrant: "",
+      //   });
+      // } catch (e) {
+      //   console.error(e);
+      // }
+      console.log(formState.startingTime, taskStartingTime);
       console.log("No duplicate");
     } else {
       alert("This time already has a task");
