@@ -71,7 +71,18 @@ const Task = ({ data, day }) => {
     >
       <p>
         {" "}
-        <span className="delete-task" id={data._id} onClick={deleteOneTask}>
+        <span
+          className="delete-task"
+          id={data._id}
+          onClick={() => {
+            const confirmBox = window.confirm(
+              "Do you really want to delete this task?"
+            );
+            if (confirmBox === true) {
+              deleteOneTask();
+            }
+          }}
+        >
           X
         </span>
         <span>
