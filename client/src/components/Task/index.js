@@ -48,6 +48,9 @@ const Task = ({ data }) => {
     >
       <p>
         {" "}
+        <span className="delete-task" id={data._id}>
+          X
+        </span>
         <span>
           <input
             id={data._id}
