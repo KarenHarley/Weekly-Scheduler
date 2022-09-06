@@ -64,7 +64,7 @@ const Tasks = () => {
               {tasks.length >= 1 ? (
                 <div className="all-tasks">
                   {tasks.map((task, i) => {
-                    return <Task data={task} key={i} />;
+                    return <Task data={task} key={i} day={day} />;
                   })}
                 </div>
               ) : (

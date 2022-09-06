@@ -8,15 +8,23 @@ import {
   REMOVE_TASK,
 } from "../../utils/mutations";
 import { QUERY_TASKS } from "../../utils/queries";
-const Task = ({ data }) => {
+const Task = ({ data, day }) => {
+  console.log(day);
   const location = useLocation();
   const [changeCompletedTask, { error, changeCompletedData }] = useMutation(
     CHANGE_COMPLETED_TASK
   );
   const [changeCompletedStep, { errorStep, changeCompletedStepData }] =
     useMutation(CHANGE_COMPLETED_STEP);
+  const [deleteTask, { errorTask }] = useMutation(REMOVE_TASK, {
+    refetchQueries: [
+      {
+        query: QUERY_TASKS,
+        variables: { selectedDay: day },
+      },
+    ],
+  });
 
-  const [deleteTask, { errorTask }] = useMutation(REMOVE_TASK);
   const ChangeCompleted = async (taskId, checked) => {
     if (location.pathname == "/tasks") {
       try {
@@ -50,8 +58,6 @@ const Task = ({ data }) => {
           taskId: e.target.id,
         },
       });
-      // window.location.replace("/tasks");
-      // //create mutation in all tasks (see notes)
     } catch (e) {
       console.error(e);
     }
