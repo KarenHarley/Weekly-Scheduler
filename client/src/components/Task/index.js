@@ -39,6 +39,7 @@ const Task = ({ data }) => {
     const change = await ChangeCompleted(e.target.id, e.target.checked);
     e.target.checked = change;
   };
+  const deleteOneTask = async (e) => [];
 
   return (
     <div
@@ -48,7 +49,7 @@ const Task = ({ data }) => {
     >
       <p>
         {" "}
-        <span className="delete-task" id={data._id}>
+        <span className="delete-task" id={data._id} onClick={deleteOneTask}>
           X
         </span>
         <span>
