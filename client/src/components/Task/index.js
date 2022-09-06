@@ -51,6 +51,12 @@ const Task = ({ data, day }) => {
     e.target.checked = change;
   };
   const deleteOneTask = async (e) => {
+    const confirmBox = window.confirm(
+      "Do you really want to delete this task?"
+    );
+    if (confirmBox === false) {
+      return;
+    }
     console.log(e.target.id);
     try {
       const taskData = await deleteTask({
@@ -71,18 +77,7 @@ const Task = ({ data, day }) => {
     >
       <p>
         {" "}
-        <span
-          className="delete-task"
-          id={data._id}
-          onClick={() => {
-            const confirmBox = window.confirm(
-              "Do you really want to delete this task?"
-            );
-            if (confirmBox === true) {
-              deleteOneTask();
-            }
-          }}
-        >
+        <span className="delete-task" id={data._id} onClick={deleteOneTask}>
           X
         </span>
         <span>
