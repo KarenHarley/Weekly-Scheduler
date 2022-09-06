@@ -7,6 +7,7 @@ import {
   CHANGE_COMPLETED_STEP,
   REMOVE_TASK,
 } from "../../utils/mutations";
+import { QUERY_TASKS } from "../../utils/queries";
 const Task = ({ data }) => {
   const location = useLocation();
   const [changeCompletedTask, { error, changeCompletedData }] = useMutation(
@@ -43,6 +44,17 @@ const Task = ({ data }) => {
   };
   const deleteOneTask = async (e) => {
     console.log(e.target.id);
+    try {
+      const taskData = await deleteTask({
+        variables: {
+          taskId: e.target.id,
+        },
+      });
+      // window.location.replace("/tasks");
+      // //create mutation in all tasks (see notes)
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
