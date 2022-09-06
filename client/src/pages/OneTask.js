@@ -32,6 +32,8 @@ const OneTask = () => {
           taskId: params.id,
         },
       });
+      window.location.replace("/tasks");
+      //create mutation in all tasks (see notes)
     } catch (e) {
       console.error(e);
     }
