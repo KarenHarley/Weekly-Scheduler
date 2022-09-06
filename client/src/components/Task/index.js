@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import {
   CHANGE_COMPLETED_TASK,
   CHANGE_COMPLETED_STEP,
+  REMOVE_TASK,
 } from "../../utils/mutations";
 const Task = ({ data }) => {
   const location = useLocation();
@@ -14,6 +15,7 @@ const Task = ({ data }) => {
   const [changeCompletedStep, { errorStep, changeCompletedStepData }] =
     useMutation(CHANGE_COMPLETED_STEP);
 
+  const [deleteTask, { errorTask }] = useMutation(REMOVE_TASK);
   const ChangeCompleted = async (taskId, checked) => {
     if (location.pathname == "/tasks") {
       try {
@@ -39,7 +41,9 @@ const Task = ({ data }) => {
     const change = await ChangeCompleted(e.target.id, e.target.checked);
     e.target.checked = change;
   };
-  const deleteOneTask = async (e) => [];
+  const deleteOneTask = async (e) => {
+    console.log(e.target.id);
+  };
 
   return (
     <div
