@@ -109,7 +109,7 @@ const typeDefs = gql`
 
     removeTask(taskId: String!): User
 
-    removeAllTask(selectedDay: String!): User
+    removeAllTasks(selectedDay: String!): User
   }
 `;
 

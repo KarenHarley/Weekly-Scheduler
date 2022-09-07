@@ -152,6 +152,7 @@ const resolvers = {
           { $pull: { tasks: taskId } },
           { new: true }
         );
+        //TODO: remove steps too!!!!!!!!!!!!!
         return updateUser;
       }
       throw new AuthenticationError("You need to be logged in!");
@@ -209,6 +210,37 @@ const resolvers = {
         { new: true }
       );
       return updatedStep;
+    },
+    removeAllTasks: async (parent, { selectedDay }, context) => {
+      // if (context.user) {
+      const tasksArr = await Task.find({
+        user: "62fa6eb7cc228f02f68e21a7",
+        day: selectedDay,
+      });
+      let foundIds = tasksArr.map((task) => task._id);
+
+      console.log(foundIds);
+      const deleteTask = await Task.deleteMany({
+        day: selectedDay,
+        user: context.user._id,
+      });
+      // //finish functionaltiy
+      foundIds = ["62fa6ec6cc228f02f68e21c5", "62fd661231bdbb53637a78d3"];
+      const updateUser = await User.findOneAndUpdate(
+        { _id: "62fa6eb7cc228f02f68e21a7" },
+        {
+          $pull: {
+            tasks: {
+              $in: ["62fa6ec6cc228f02f68e21c5", "62fd661231bdbb53637a78d3"],
+            },
+          },
+        },
+        { new: true }
+      );
+      
+      return updateUser;
+      //}
+      // throw new AuthenticationError("You need to be logged in!");
     },
   },
 };
