@@ -153,6 +153,7 @@ const resolvers = {
           { new: true }
         );
         //TODO: remove steps too!!!!!!!!!!!!!
+        const deleteStep = await Step.deleteOne({ task: taskId });
         return updateUser;
       }
       throw new AuthenticationError("You need to be logged in!");
@@ -237,7 +238,7 @@ const resolvers = {
         },
         { new: true }
       );
-      
+
       return updateUser;
       //}
       // throw new AuthenticationError("You need to be logged in!");
