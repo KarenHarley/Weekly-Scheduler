@@ -152,8 +152,7 @@ const resolvers = {
           { $pull: { tasks: taskId } },
           { new: true }
         );
-        //TODO: remove steps too!!!!!!!!!!!!!
-        const deleteStep = await Step.deleteOne({ task: taskId });
+        const deleteStep = await Step.deleteMany({ task: taskId });
         return updateUser;
       }
       throw new AuthenticationError("You need to be logged in!");
