@@ -224,7 +224,7 @@ const resolvers = {
         day: selectedDay,
         user: context.user._id,
       });
-      // //finish functionaltiy
+      // //finish functionaltiy and delete all steps
       foundIds = ["62fa6ec6cc228f02f68e21c5", "62fd661231bdbb53637a78d3"];
       const updateUser = await User.findOneAndUpdate(
         { _id: "62fa6eb7cc228f02f68e21a7" },

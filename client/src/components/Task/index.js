@@ -9,13 +9,15 @@ import {
 } from "../../utils/mutations";
 import { QUERY_TASKS } from "../../utils/queries";
 const Task = ({ data, day }) => {
-  console.log(day);
   const location = useLocation();
+  // mutation to use checkbox for tasks
   const [changeCompletedTask, { error, changeCompletedData }] = useMutation(
     CHANGE_COMPLETED_TASK
   );
+  //mutation to use checkbox for steps
   const [changeCompletedStep, { errorStep, changeCompletedStepData }] =
     useMutation(CHANGE_COMPLETED_STEP);
+    //mutation to delete a task and refetch
   const [deleteTask, { errorTask }] = useMutation(REMOVE_TASK, {
     refetchQueries: [
       {
@@ -24,7 +26,7 @@ const Task = ({ data, day }) => {
       },
     ],
   });
-
+ //function to use mutation that changes checkbox value for task and step based on pathname
   const ChangeCompleted = async (taskId, checked) => {
     if (location.pathname == "/tasks") {
       try {
@@ -46,10 +48,12 @@ const Task = ({ data, day }) => {
       console.error(e);
     }
   };
+  //function to change checkbox value in state
   const handleChange = async (e) => {
     const change = await ChangeCompleted(e.target.id, e.target.checked);
     e.target.checked = change;
   };
+  //function to delete one task
   const deleteOneTask = async (e) => {
     const confirmBox = window.confirm(
       "Do you really want to delete this task?"
