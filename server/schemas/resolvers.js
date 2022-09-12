@@ -217,27 +217,28 @@ const resolvers = {
         user: "62fa6eb7cc228f02f68e21a7",
         day: selectedDay,
       });
+
       let foundIds = tasksArr.map((task) => task._id);
 
-      console.log(foundIds);
       const deleteTask = await Task.deleteMany({
         day: selectedDay,
-        user: context.user._id,
+        user: "62fa6eb7cc228f02f68e21a7",
       });
+
       // //finish functionaltiy and delete all steps
-      foundIds = ["62fa6ec6cc228f02f68e21c5", "62fd661231bdbb53637a78d3"];
+
       const updateUser = await User.findOneAndUpdate(
         { _id: "62fa6eb7cc228f02f68e21a7" },
         {
           $pull: {
             tasks: {
-              $in: ["62fa6ec6cc228f02f68e21c5", "62fd661231bdbb53637a78d3"],
+              $in: foundIds,
             },
           },
         },
-        { new: true }
+        { multi: true }
       );
-
+      console.log("update user", updateUser);
       return updateUser;
       //}
       // throw new AuthenticationError("You need to be logged in!");
