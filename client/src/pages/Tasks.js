@@ -1,4 +1,4 @@
-import { useQuery,useMutation } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_TASKS } from "../utils/queries";
 import { REMOVE_ALL_TASKS } from "../utils/mutations";
 import { Link } from "react-router-dom";
@@ -27,16 +27,24 @@ const Tasks = () => {
   const changeShowForm = () => {
     setShowForm((prev) => !prev);
   };
-  const deleteAllTasks = () => {
-
-  }
+  const deleteAllTasks = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await deleteAll({
+        variables: { selectedDay: day },
+      });
+      console.log(data);
+    } catch (e) {
+      console.error(e);
+    }
+  };
   return (
     <div className="tasks-wrapper">
       <div className="select-day-div">
         <ul onClick={selectDay}>
           <li className="nav-link pre-new-section ">
             <button
-               onClick={deleteAllTasks}
+              onClick={deleteAllTasks}
               id="delete"
               style={{ textDecoration: "none" }}
               className="nav-button"
