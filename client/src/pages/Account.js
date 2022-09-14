@@ -60,11 +60,11 @@ const Account = () => {
     }
   }, [data, updateData]); //add update data
   return (
-    <div className="account-form-div">
+    <div className="account-form-div create-task-wrapper">
       {loading ? (
         <div>Loading...</div>
       ) : (
-        <form className="account-form">
+        <form className="account-form create-form">
           <h4 className="acount-heading">Account</h4>
           <input
             type="text"
