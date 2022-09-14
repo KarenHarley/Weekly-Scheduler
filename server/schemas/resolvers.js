@@ -226,7 +226,10 @@ const resolvers = {
       });
 
       // //finish functionaltiy and delete all steps
-
+      const deleteSteps = await Step.deleteMany({
+        day: selectedDay,
+        user: "62fa6eb7cc228f02f68e21a7",
+      });
       const updateUser = await User.findOneAndUpdate(
         { _id: "62fa6eb7cc228f02f68e21a7" },
         {
