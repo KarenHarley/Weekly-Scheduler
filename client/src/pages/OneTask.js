@@ -65,20 +65,23 @@ const OneTask = () => {
                     {formatTime(data.task.startingTime)}-
                     {formatTime(data.task.endingTime)}
                   </p>
-                  <p className="name-heading">{data.task.name}</p>
-                  <button
-                    id="button-show-form"
-                    onClick={() => {
-                      const confirmBox = window.confirm(
-                        "Do you really want to delete this task?"
-                      );
-                      if (confirmBox === true) {
-                        deleteOneTask();
-                      }
-                    }}
-                  >
-                    DELETE
-                  </button>
+                  <p className="name-heading">
+                    {data.task.name}{" "}
+                    <button
+                      id="button-show-form"
+                      onClick={() => {
+                        const confirmBox = window.confirm(
+                          "Do you really want to delete this task?"
+                        );
+                        if (confirmBox === true) {
+                          deleteOneTask();
+                        }
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </p>
+
                   {data.task.notes ? (
                     <div className="notes-div">
                       <h4>Notes:</h4>
