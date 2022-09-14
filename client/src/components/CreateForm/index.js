@@ -173,7 +173,6 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // location.pathname == "/tasks" ? createTaskInDB() : createStepInDB;
     if (location.pathname == "/tasks") {
       createTaskInDB();
     } else {
@@ -191,7 +190,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
           {location.pathname == "/tasks" ? (
             <h4>Create Task</h4>
           ) : (
-            <h4>Create Step</h4>
+            <h4>Create Mini-Tasks</h4>
           )}
         </div>
         <input
@@ -219,7 +218,6 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
             name="day"
             value={formState.day}
             onChange={handleChange}
-            // defaultValue={"default"}
           >
             <option value={"default"}>Select Day</option>
             {days.map((day) => {
@@ -238,7 +236,6 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
           name="startingTime"
           value={formState.startingTime}
           onChange={handleChange}
-          // defaultValue={"default"}
         >
           <option value={"default"}>Select Starting Time</option>
           {times.map((time) => {
@@ -250,7 +247,6 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
           name="endingTime"
           value={formState.endingTime}
           onChange={handleChange}
-          // defaultValue={"default"}
         >
           <option value={"default"}>Select Ending Time</option>
           {times.map((time) => {
@@ -262,7 +258,6 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
           name="quadrant"
           value={formState.quadrant}
           onChange={handleChange}
-          // defaultValue={"default"}
         >
           <option value={"default"}>Select Quadrant (optional)</option>
           {quadrants.map((quadrant) => {
