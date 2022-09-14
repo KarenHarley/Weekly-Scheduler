@@ -41,13 +41,13 @@ userSchema.pre("save", async function (next) {
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
+userSchema.pre("findOneAndUpdate", async function () {
+  //this is the obj
+  //_update has the new info returned
+  //.password is the new password
+  this._update.password = await bcrypt.hash(this._update.password, 10);
+});
 
-// userSchema.pre("findOneAndUpdate", async function () {
-//   const userToUpdate = await this.model.findOne(this.getFilter()); //returns the current query filter (returns the current user obj)
-//   if (userToUpdate.password !== this._update.password) {
-//     this._update.password = await bcrypt.hash(this._update.password, 10);
-//   }
-// });
 userSchema.plugin(uniqueValidator, { message: "{PATH} must be unique" });
 const User = model("User", userSchema);
 
