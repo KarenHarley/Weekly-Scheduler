@@ -147,6 +147,13 @@ export const REMOVE_TASK = gql`
     }
   }
 `;
+export const REMOVE_ALL_TASKS = gql`
+mutation removeAllTasks($selectedDay: String!) {
+  removeAllTasks(selectedDay: $selectedDay) {
+   username
+  }
+}
+`;
 export const CHANGE_COMPLETED_TASK = gql`
   mutation changeCompletedTask($completed: Boolean!, $_id: String!) {
     changeCompletedTask(_id: $_id, completed: $completed) {
