@@ -34,8 +34,7 @@ const Tasks = () => {
   const changeShowForm = () => {
     setShowForm((prev) => !prev);
   };
-  const deleteAllTasks = async (e) => {
-    e.preventDefault();
+  const deleteAllTasks = async () => {
     try {
       const { data } = await deleteAll({
         variables: { selectedDay: day },
