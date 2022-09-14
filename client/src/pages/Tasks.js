@@ -10,7 +10,14 @@ import { days } from "../utils/utils";
 const Tasks = () => {
   const [day, setDay] = useState("Monday");
   const [showForm, setShowForm] = useState(false);
-  const [deleteAll, { error, DeleteData }] = useMutation(REMOVE_ALL_TASKS);
+  const [deleteAll, { error, DeleteData }] = useMutation(REMOVE_ALL_TASKS, {
+    refetchQueries: [
+      {
+        query: QUERY_TASKS,
+        variables: { selectedDay: day },
+      },
+    ],
+  });
   const { loading, data } = useQuery(QUERY_TASKS, {
     variables: {
       selectedDay: day,
