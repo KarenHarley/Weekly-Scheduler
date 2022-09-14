@@ -30,6 +30,16 @@ const Tasks = () => {
     <div className="tasks-wrapper">
       <div className="select-day-div">
         <ul onClick={selectDay}>
+          <li className="nav-link new-section">
+            <button
+              // onClick={deleteAllTasks}
+              id="delete"
+              style={{ textDecoration: "none" }}
+              className="nav-button"
+            >
+              Delete All {day} Tasks
+            </button>
+          </li>
           {days.map((loopingDay, i) => {
             return (
               <li
