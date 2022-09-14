@@ -17,7 +17,7 @@ const Task = ({ data, day }) => {
   //mutation to use checkbox for steps
   const [changeCompletedStep, { errorStep, changeCompletedStepData }] =
     useMutation(CHANGE_COMPLETED_STEP);
-    //mutation to delete a task and refetch
+  //mutation to delete a task and refetch
   const [deleteTask, { errorTask }] = useMutation(REMOVE_TASK, {
     refetchQueries: [
       {
@@ -26,7 +26,7 @@ const Task = ({ data, day }) => {
       },
     ],
   });
- //function to use mutation that changes checkbox value for task and step based on pathname
+  //function to use mutation that changes checkbox value for task and step based on pathname
   const ChangeCompleted = async (taskId, checked) => {
     if (location.pathname == "/tasks") {
       try {
@@ -81,9 +81,6 @@ const Task = ({ data, day }) => {
     >
       <p>
         {" "}
-        <span className="delete-task" id={data._id} onClick={deleteOneTask}>
-          X
-        </span>
         <span>
           <input
             id={data._id}
@@ -115,6 +112,9 @@ const Task = ({ data, day }) => {
           ) : (
             <Link to={`/step/${data._id}`}>See More</Link>
           )}
+        </span>
+        <span className="delete-task" id={data._id} onClick={deleteOneTask}>
+          X
         </span>
       </p>
     </div>

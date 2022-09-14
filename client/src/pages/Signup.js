@@ -31,7 +31,6 @@ const Signup = (props) => {
       window.location.replace("/tasks");
     } catch (e) {
       console.error(e);
-      // alert("This email was already found in the database");
     }
 
     // clear form values
@@ -50,8 +49,8 @@ const Signup = (props) => {
         <div className="welcome-div">
           <h1>Welcome</h1>
           <p>
-            It's great to have you here. Let's accomplish a lot today!
-            Create the tasks and let us handle the rest, we have your back.
+            It's great to have you here. Let's accomplish a lot today! Create
+            the tasks and let us handle the rest, we have your back.
           </p>
         </div>
         <div className="signup-banner login-banner login-stack-top">
