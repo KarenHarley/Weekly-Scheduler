@@ -51,7 +51,14 @@ const Tasks = () => {
         <ul onClick={selectDay}>
           <li className="nav-link pre-new-section ">
             <button
-              onClick={deleteAllTasks}
+              onClick={() => {
+                const confirmBox = window.confirm(
+                  `Do you really want to delete ALL the ${day} tasks?`
+                );
+                if (confirmBox === true) {
+                  deleteAllTasks();
+                }
+              }}
               id="delete"
               style={{ textDecoration: "none" }}
               className="nav-button"
