@@ -37,7 +37,7 @@ const Tasks = () => {
               style={{ textDecoration: "none" }}
               className="nav-button"
             >
-              Delete All {day} Tasks
+              Delete All
             </button>
           </li>
           {days.map((loopingDay, i) => {

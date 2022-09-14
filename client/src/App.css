@@ -610,10 +610,18 @@
   }
   .pre-new-section {
     border-right: thick double white;
+    border-bottom: none;
     border-left: none;
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-right: 6px;
+    padding-right: 15px;
   }
   #Sunday {
     margin-bottom: 0px;
+  }
+  #Monday {
+    margin-top: 0px;
   }
   .long-name {
     font-size: 15px;
