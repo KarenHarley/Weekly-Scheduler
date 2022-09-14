@@ -35,9 +35,7 @@
   color: #7859b6;
   color: white;
 }
-#back-link {
-  position: absolute;
-}
+
 .one-task #button-show-form {
   background: none;
   color: inherit;
@@ -90,7 +88,8 @@
   border: solid 2px;
   padding: 3px;
 }
-.edit-or-show-form-div {
+.edit-or-show-form-div,
+.edit-or-back {
   display: flex;
   justify-content: space-between;
   align-items: center;
