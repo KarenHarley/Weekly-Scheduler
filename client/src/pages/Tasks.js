@@ -30,7 +30,7 @@ const Tasks = () => {
     <div className="tasks-wrapper">
       <div className="select-day-div">
         <ul onClick={selectDay}>
-          <li className="nav-link new-section">
+          <li className="nav-link pre-new-section new-section">
             <button
               // onClick={deleteAllTasks}
               id="delete"

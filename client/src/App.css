@@ -200,6 +200,13 @@
   padding: 7px 0px;
   border-top: solid 2px;
 }
+.pre-new-section {
+  border-top: none;
+  border-bottom: solid 2px;
+}
+#Monday {
+  margin-top: 10px;
+}
 #Sunday {
   margin-bottom: 10px;
 }
@@ -600,6 +607,10 @@
     padding-left: 15px;
     /* margin: auto; */
     margin-bottom: auto;
+  }
+  .pre-new-section {
+    border-right: thick double white;
+    border-left: none;
   }
   #Sunday {
     margin-bottom: 0px;
