@@ -26,13 +26,16 @@ const Tasks = () => {
   const changeShowForm = () => {
     setShowForm((prev) => !prev);
   };
+  const deleteAllTasks = () => {
+    
+  }
   return (
     <div className="tasks-wrapper">
       <div className="select-day-div">
         <ul onClick={selectDay}>
           <li className="nav-link pre-new-section ">
             <button
-              // onClick={deleteAllTasks}
+               onClick={deleteAllTasks}
               id="delete"
               style={{ textDecoration: "none" }}
               className="nav-button"
