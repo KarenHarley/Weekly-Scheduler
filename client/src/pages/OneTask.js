@@ -111,13 +111,9 @@ const OneTask = () => {
               </div>
               {data.task.steps != 0 ? (
                 <div className="step-container">
-                  <h4>Steps or Smaller tasks to Accomplish this larger task</h4>
+                  <h4>Mini-Tasks to Accomplish this larger task</h4>
                   {data.task.steps.map((loopingStep, i) => {
-                    return (
-                      // <li type="li" id={loopingStep.id} key={loopingStep.id}>
-                      <Task data={loopingStep} key={i} />
-                      // </li>
-                    );
+                    return <Task data={loopingStep} key={i} />;
                   })}
                 </div>
               ) : (
