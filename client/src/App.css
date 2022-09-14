@@ -201,7 +201,8 @@
   border-top: solid 2px;
 }
 .pre-new-section {
-  border-top: none;
+  margin: inherit;
+  padding: 7px 0px;
   border-bottom: solid 2px;
 }
 #Monday {
@@ -609,13 +610,13 @@
     margin-bottom: auto;
   }
   .pre-new-section {
+    margin: none;
+    padding: 0px;
     border-right: thick double white;
     border-bottom: none;
-    border-left: none;
-    margin-left: 0px;
-    padding-left: 0px;
     margin-right: 6px;
     padding-right: 15px;
+    margin-bottom: auto;
   }
   #Sunday {
     margin-bottom: 0px;
