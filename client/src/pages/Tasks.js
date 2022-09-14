@@ -1,5 +1,6 @@
-import { useQuery } from "@apollo/client";
+import { useQuery,useMutation } from "@apollo/client";
 import { QUERY_TASKS } from "../utils/queries";
+import { REMOVE_ALL_TASKS } from "../utils/mutations";
 import { Link } from "react-router-dom";
 import Task from "../components/Task";
 import Auth from "../utils/auth";
@@ -9,7 +10,7 @@ import { days } from "../utils/utils";
 const Tasks = () => {
   const [day, setDay] = useState("Monday");
   const [showForm, setShowForm] = useState(false);
-
+  const [deleteAll, { error, DeleteData }] = useMutation(REMOVE_ALL_TASKS);
   const { loading, data } = useQuery(QUERY_TASKS, {
     variables: {
       selectedDay: day,
@@ -27,7 +28,7 @@ const Tasks = () => {
     setShowForm((prev) => !prev);
   };
   const deleteAllTasks = () => {
-    
+
   }
   return (
     <div className="tasks-wrapper">
