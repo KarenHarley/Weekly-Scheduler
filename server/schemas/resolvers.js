@@ -212,39 +212,39 @@ const resolvers = {
       return updatedStep;
     },
     removeAllTasks: async (parent, { selectedDay }, context) => {
-      // if (context.user) {
-      const tasksArr = await Task.find({
-        user: "62fa6eb7cc228f02f68e21a7",
-        day: selectedDay,
-      });
-
-      let foundIds = tasksArr.map((task) => task._id);
-
-      const deleteTask = await Task.deleteMany({
-        day: selectedDay,
-        user: "62fa6eb7cc228f02f68e21a7",
-      });
-
-      // //finish functionaltiy and delete all steps
-      const deleteSteps = await Step.deleteMany({
-        day: selectedDay,
-        user: "62fa6eb7cc228f02f68e21a7",
-      });
-      const updateUser = await User.findOneAndUpdate(
-        { _id: "62fa6eb7cc228f02f68e21a7" },
-        {
-          $pull: {
-            tasks: {
-              $in: foundIds,
+      if (context.user) {
+        //find all of the tasks to later pull them from user obj
+        const tasksArr = await Task.find({
+          user: context.user._id,
+          day: selectedDay,
+        });
+        //get just the ids
+        let foundIds = tasksArr.map((task) => task._id);
+        // delete all the tasks from that day
+        const deleteTask = await Task.deleteMany({
+          day: selectedDay,
+          user: context.user._id,
+        });
+        //delete all the steps for that day
+        const deleteSteps = await Step.deleteMany({
+          day: selectedDay,
+          user: context.user._id,
+        });
+        //remove all of the tasks from that user
+        const updateUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          {
+            $pull: {
+              tasks: {
+                $in: foundIds,
+              },
             },
           },
-        },
-        { multi: true }
-      );
-      console.log("update user", updateUser);
-      return updateUser;
-      //}
-      // throw new AuthenticationError("You need to be logged in!");
+          { multi: true }
+        );
+        return updateUser;
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
 };
