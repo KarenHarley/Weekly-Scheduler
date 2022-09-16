@@ -22,6 +22,21 @@ export const createOptions = (time) => {
     optionValue = Number(time.split(":")[0]) + 12.5;
     optionKey = Number(time.split(":")[0]) + 12.5;
   }
+
+  //if the string has "15" set the value and key to 1.2 in "1:15 am"
+  if (
+    time.split(" ")[0].split(":")[1] === "15" &&
+    time.split(" ")[1] === "am"
+  ) {
+    optionValue = Number(time.split(":")[0]) + 0.2;
+    optionKey = Number(time.split(":")[0]) + 0.2;
+  } else if (
+    time.split(" ")[0].split(":")[1] === "15" &&
+    time.split(" ")[1] === "pm"
+  ) {
+    optionValue = Number(time.split(":")[0]) + 12.2;
+    optionKey = Number(time.split(":")[0]) + 12.2;
+  }
   return (
     <option value={optionValue} key={optionKey}>
       {time}
@@ -68,9 +83,9 @@ export const days = [
 // include this in the key values
 export const times = [
   "1:00 am",
-  "1:15 am",
+  "1:15 am", //1.2
   "1:30 am",
-  "1:45 am",
+  "1:45 am", //1.7
   "2:00 am",
   "2:15 am",
   "2:30 am",
