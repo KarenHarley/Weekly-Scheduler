@@ -2,11 +2,13 @@ export const createOptions = (time) => {
   //set value to 1 in "1:00 am"
   let optionValue = time.split(":")[0];
   let optionKey = time.split(":")[0];
+
   //if the string has "pm" set value to 13 in  "1 pm"
   if (time.split(" ")[1] === "pm") {
     optionValue = Number(time.split(":")[0]) + 12;
     optionKey = Number(time.split(":")[0]) + 12;
   }
+
   // if the string has "30" set the value and key to 1.5 in "1 am"
   if (
     time.split(" ")[0].split(":")[1] === "30" &&
@@ -31,6 +33,7 @@ export const createOptions = (time) => {
     optionValue = Number(time.split(":")[0]) + 0.2;
     optionKey = Number(time.split(":")[0]) + 0.2;
   } else if (
+    //if the string has "15" set the value and key to 1.2 in "1:15 pm"
     time.split(" ")[0].split(":")[1] === "15" &&
     time.split(" ")[1] === "pm"
   ) {
@@ -46,6 +49,7 @@ export const createOptions = (time) => {
     optionValue = Number(time.split(":")[0]) + 0.7;
     optionKey = Number(time.split(":")[0]) + 0.7;
   } else if (
+    //if the string has "45" set the value and key to 1.7 in "1:45 pm"
     time.split(" ")[0].split(":")[1] === "45" &&
     time.split(" ")[1] === "pm"
   ) {
@@ -95,12 +99,11 @@ export const days = [
   "Saturday",
   "Sunday",
 ];
-// include this in the key values
 export const times = [
   "1:00 am",
-  "1:15 am", //1.2
+  "1:15 am", 
   "1:30 am",
-  "1:45 am", //1.7
+  "1:45 am", 
   "2:00 am",
   "2:15 am",
   "2:30 am",
