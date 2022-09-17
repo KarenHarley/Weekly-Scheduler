@@ -37,6 +37,21 @@ export const createOptions = (time) => {
     optionValue = Number(time.split(":")[0]) + 12.2;
     optionKey = Number(time.split(":")[0]) + 12.2;
   }
+
+  //if the string has "45" set the value and key to 1.7 in "1:45 am"
+  if (
+    time.split(" ")[0].split(":")[1] === "45" &&
+    time.split(" ")[1] === "am"
+  ) {
+    optionValue = Number(time.split(":")[0]) + 0.7;
+    optionKey = Number(time.split(":")[0]) + 0.7;
+  } else if (
+    time.split(" ")[0].split(":")[1] === "45" &&
+    time.split(" ")[1] === "pm"
+  ) {
+    optionValue = Number(time.split(":")[0]) + 12.7;
+    optionKey = Number(time.split(":")[0]) + 12.7;
+  }
   return (
     <option value={optionValue} key={optionKey}>
       {time}
