@@ -107,7 +107,7 @@
 
 .edit-task-container,
 .one-task-wrapper {
-  min-height: 55rem;
+  min-height: 90vh;
 }
 .edit-task-wrapper {
   width: 50%;
