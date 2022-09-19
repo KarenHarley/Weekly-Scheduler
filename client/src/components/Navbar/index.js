@@ -6,7 +6,6 @@ const Navbar = () => {
   const [navLink, setNavLink] = useState("");
   const [navbarOpen, setNavbarOpen] = useState(false);
 
-  console.log(navbarOpen);
   const logout = () => {
     setNavLink("");
     Auth.logout();
@@ -66,7 +65,9 @@ const Navbar = () => {
                 style={{ textDecoration: "none" }}
                 className="link"
               >
-                See All Tasks
+                {window.location.href.split("/")[3] == "task"
+                  ? "Back to All Taskss"
+                  : "See All Tasks"}
               </Link>
             </li>
             {Auth.loggedIn() ? (
