@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USER } from "../utils/queries";
 import { UPDATE_USER } from "../utils/mutations";
+
 import Auth from "../utils/auth";
 const Account = () => {
   const [formState, setFormState] = useState({
@@ -62,7 +63,7 @@ const Account = () => {
   return (
     <div className="account-form-div create-task-wrapper">
       {loading ? (
-        <div>Loading...</div>
+        <img src={"./Pics/loading-gif.gif"} alt="loading..." />
       ) : (
         <form className="account-form create-form">
           <h4 className="acount-heading">Account</h4>
