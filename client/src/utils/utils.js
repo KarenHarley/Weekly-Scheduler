@@ -82,11 +82,14 @@ export const formatTime = (time) => {
   if (time.split(".")[1] === "5" && parseInt(time) <= 12) {
     return `${time.split(".")[0]}:30 am`;
   }
-
+  // if there is a .2 and it is less than 12
   if (time.split(".")[1] === "2" && parseInt(time) <= 12) {
     return `${time.split(".")[0]}:15 am`;
   }
-
+  // if there is a .7 and it is less than 12
+  if (time.split(".")[1] === "7" && parseInt(time) <= 12) {
+    return `${time.split(".")[0]}:45 am`;
+  }
   if (time.indexOf(".") === -1 && parseInt(time) > 12) {
     return `${parseInt(time) - 12}:00 pm`;
   }
