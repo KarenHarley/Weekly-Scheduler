@@ -638,7 +638,7 @@
     margin: 5px;
   }
   .tasks-wrapper {
-    height: 65rem;
+    min-height: 65rem;
   }
   .navbar {
     display: flex;
