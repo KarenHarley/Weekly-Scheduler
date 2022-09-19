@@ -12,3 +12,8 @@ This application to helps organize your weekly schedule and tasks. It has the op
 
 ![homepage](mediaPics/homepage.png)
 
+### Login
+
+![login page](mediaPics/login-page.png)
+
+
