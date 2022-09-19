@@ -75,33 +75,37 @@ export const createQuadrantOptions = (quadrant) => {
 export const formatTime = (time) => {
   console.log(time);
   console.log(time.indexOf("."));
-
+  // if it does not have a .2,.5 or .7 and it is less than 12 ( in the am) return :00
   if (time.indexOf(".") === -1 && parseInt(time) <= 12) {
     return `${time}:00 am`;
   }
+  // if it has a .5 and it is less than 12 ( in the am) return :30
   if (time.split(".")[1] === "5" && parseInt(time) <= 12) {
     return `${time.split(".")[0]}:30 am`;
   }
-  // if there is a .2 and it is less than 12
+  // if there is a .2 and it is less than 12 (in the am) return a : 15
   if (time.split(".")[1] === "2" && parseInt(time) <= 12) {
     return `${time.split(".")[0]}:15 am`;
   }
-  // if there is a .7 and it is less than 12
+  // if there is a .7 and it is less than 12 (in the am) return a : 45
   if (time.split(".")[1] === "7" && parseInt(time) <= 12) {
     return `${time.split(".")[0]}:45 am`;
   }
+  // if it does not have a .2,.5 or .7 and it is greater than 12 ( in the afternoon (pm)) return :00
   if (time.indexOf(".") === -1 && parseInt(time) > 12) {
     return `${parseInt(time) - 12}:00 pm`;
   }
+  // if it has a .5 and it is greater than 12 ( in the afternoon (pm)) return :30
   if (time.split(".")[1] === "5" && time > 12) {
     let splitString = time.split(".")[0];
     return `${parseInt(splitString) - 12}:30 pm`;
   }
-
+  // if it has a .2 and it is greater than 12 ( in the afternoon (pm)) return :15
   if (time.split(".")[1] === "2" && time > 12) {
     let splitString = time.split(".")[0];
     return `${parseInt(splitString) - 12}:15 pm`;
   }
+  // if it has a .7 and it is greater than 12 ( in the afternoon (pm)) return :45
   if (time.split(".")[1] === "7" && time > 12) {
     let splitString = time.split(".")[0];
     return `${parseInt(splitString) - 12}:45 pm`;
