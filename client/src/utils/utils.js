@@ -73,11 +73,18 @@ export const createQuadrantOptions = (quadrant) => {
   );
 };
 export const formatTime = (time) => {
+  console.log(time);
+  console.log(time.indexOf("."));
+
   if (time.indexOf(".") === -1 && parseInt(time) <= 12) {
     return `${time}:00 am`;
   }
   if (time.split(".")[1] === "5" && parseInt(time) <= 12) {
     return `${time.split(".")[0]}:30 am`;
+  }
+
+  if (time.split(".")[1] === "2" && parseInt(time) <= 12) {
+    return `${time.split(".")[0]}:15 am`;
   }
 
   if (time.indexOf(".") === -1 && parseInt(time) > 12) {
@@ -101,9 +108,9 @@ export const days = [
 ];
 export const times = [
   "1:00 am",
-  "1:15 am", 
+  "1:15 am",
   "1:30 am",
-  "1:45 am", 
+  "1:45 am",
   "2:00 am",
   "2:15 am",
   "2:30 am",
