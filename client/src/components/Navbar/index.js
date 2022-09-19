@@ -11,13 +11,14 @@ const Navbar = () => {
     Auth.logout();
   };
   const selectPage = (e) => {
+    //when user clicks on a navbar link the state is changed
     if (e.target.className === "link") {
       setNavLink(e.target.id);
     }
   };
   const toggleMenu = () => {
+    //open and close navbar
     setNavbarOpen((prev) => !prev);
-    console.log(navbarOpen);
   };
   useEffect(() => {
     // If navbar is not used to change page (like if a link is used)
@@ -66,7 +67,7 @@ const Navbar = () => {
                 className="link"
               >
                 {window.location.href.split("/")[3] == "task"
-                  ? "Back to All Taskss"
+                  ? "Back to All Tasks"
                   : "See All Tasks"}
               </Link>
             </li>
