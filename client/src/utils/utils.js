@@ -102,6 +102,10 @@ export const formatTime = (time) => {
     let splitString = time.split(".")[0];
     return `${parseInt(splitString) - 12}:15 pm`;
   }
+  if (time.split(".")[1] === "7" && time > 12) {
+    let splitString = time.split(".")[0];
+    return `${parseInt(splitString) - 12}:45 pm`;
+  }
 };
 
 export const days = [
