@@ -92,7 +92,7 @@ const Tasks = () => {
       {Auth.loggedIn() ? (
         <div className="all-tasks-wrapper">
           {loading ? (
-            <div>Loading...</div>
+            <img src={"./Pics/loading-gif.gif"} alt="loading..." />
           ) : (
             <>
               {tasks.length >= 1 ? (
