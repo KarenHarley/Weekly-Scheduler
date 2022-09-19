@@ -8,3 +8,7 @@ This application to helps organize your weekly schedule and tasks. It has the op
 - Covey Time Management Matrix for task identification.
 - Easy to user interface
 
+### Homepage
+
+![homepage](mediaPics/homepage.png)
+
