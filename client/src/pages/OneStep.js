@@ -24,7 +24,7 @@ const OneStep = () => {
       {Auth.loggedIn() ? (
         <div className="steps-and-task-container">
           {loading ? (
-            <div>Loading...</div>
+           <img src={"./Pics/loading-gif.gif"} alt="loading..." />
           ) : (
             <>
               <div

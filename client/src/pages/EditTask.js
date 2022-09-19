@@ -92,7 +92,7 @@ const EditTask = () => {
       {Auth.loggedIn() ? (
         <div className="edit-task-wrapper">
           {loading ? (
-            <div>Loading...</div>
+            <img src={"./Pics/loading-gif.gif"} alt="loading..." />
           ) : (
             <>
               <form
