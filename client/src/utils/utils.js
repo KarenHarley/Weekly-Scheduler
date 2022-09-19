@@ -93,10 +93,14 @@ export const formatTime = (time) => {
   if (time.indexOf(".") === -1 && parseInt(time) > 12) {
     return `${parseInt(time) - 12}:00 pm`;
   }
-
-  if (time.split(".")[1] === 5 && time > 12) {
+  if (time.split(".")[1] === "5" && time > 12) {
     let splitString = time.split(".")[0];
     return `${parseInt(splitString) - 12}:30 pm`;
+  }
+
+  if (time.split(".")[1] === "2" && time > 12) {
+    let splitString = time.split(".")[0];
+    return `${parseInt(splitString) - 12}:15 pm`;
   }
 };
 
