@@ -47,7 +47,7 @@ const Navbar = () => {
     <div className="navbar-wrapper">
       <div className="navbar">
         <Link className="link" to="/">
-          Weekly Shedular
+          Weekly Scheduler
         </Link>
         <div className="link-menu">
           <div className="hamburger-icon-div" onClick={toggleMenu}>
