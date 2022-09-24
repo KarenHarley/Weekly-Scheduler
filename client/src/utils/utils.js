@@ -72,6 +72,11 @@ export const createQuadrantOptions = (quadrant) => {
     </option>
   );
 };
+export const shortenTimesArray = (startingTime,endingTime) => {
+
+}
+
+
 export const formatTime = (time) => {
   console.log(time);
   console.log(time.indexOf("."));
@@ -216,6 +221,7 @@ export const times = [
   "11:45 pm",
   "12:00 pm",
 ];
+
 
 export const quadrants = [
   "Q1: Important/Urgent",
