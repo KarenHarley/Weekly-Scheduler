@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/weekly-shedular', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/weekly-schedular', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
