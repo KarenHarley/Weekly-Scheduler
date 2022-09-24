@@ -72,10 +72,6 @@ export const createQuadrantOptions = (quadrant) => {
     </option>
   );
 };
-export const shortenTimesArray = (startingTime,endingTime) => {
-
-}
-
 
 export const formatTime = (time) => {
   console.log(time);
@@ -115,6 +111,16 @@ export const formatTime = (time) => {
     let splitString = time.split(".")[0];
     return `${parseInt(splitString) - 12}:45 pm`;
   }
+};
+
+export const shortenTimesArray = (startingTime, endingTime, timesArray) => {
+  const end = formatTime(endingTime);
+  const start = formatTime(startingTime);
+
+  timesArray.filter((time) => {
+    console.log(time.split(".")[0]);
+    // time.split;
+  });
 };
 
 export const days = [
@@ -221,7 +227,6 @@ export const times = [
   "11:45 pm",
   "12:00 pm",
 ];
-
 
 export const quadrants = [
   "Q1: Important/Urgent",

@@ -11,6 +11,7 @@ import {
   days,
   quadrants,
   createQuadrantOptions,
+  shortenTimesArray,
 } from "../../utils/utils";
 import {
   QUERY_TASKS,
@@ -238,7 +239,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
           onChange={handleChange}
         >
           <option value={"default"}>Select Starting Time</option>
-          {times.map((time) => {
+          {shortenTimesArray(times).map((time) => {
             return createOptions(time);
           })}
         </select>
