@@ -113,14 +113,17 @@ export const formatTime = (time) => {
   }
 };
 
+export const unformatTime = (time) => {};
 export const shortenTimesArray = (startingTime, endingTime, timesArray) => {
   const end = formatTime(endingTime);
   const start = formatTime(startingTime);
 
-  timesArray.filter((time) => {
-    console.log(time.split(".")[0]);
-    // time.split;
+  const newArr = timesArray.filter((time) => {
+    // return (
+    // );
   });
+  console.log(newArr);
+  return newArr;
 };
 
 export const days = [
