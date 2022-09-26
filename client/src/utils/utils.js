@@ -122,7 +122,9 @@ const unformatTime = (time) => {
     console.log("HI");
     return time.split(":")[0];
   }
-
+  if (time.split(":")[0] <= 12 && time.split(":")[1] === "15 am") {
+    return time.split(":")[0] + ".2";
+  }
 };
 export const shortenTimesArray = (startingTime, endingTime, timesArray) => {
   const end = formatTime(endingTime);
