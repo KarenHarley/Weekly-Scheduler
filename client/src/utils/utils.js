@@ -128,6 +128,9 @@ const unformatTime = (time) => {
   if (time.split(":")[0] <= 12 && time.split(":")[1] === "30 am") {
     return time.split(":")[0] + ".5";
   }
+  if (time.split(":")[0] <= 12 && time.split(":")[1] === "45 am") {
+    return time.split(":")[0] + ".7";
+  }
 };
 export const shortenTimesArray = (startingTime, endingTime, timesArray) => {
   const end = formatTime(endingTime);
