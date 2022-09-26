@@ -90,7 +90,13 @@ const EditStep = () => {
       {Auth.loggedIn() ? (
         <div className="edit-task-wrapper step-edit-wrapper create-task-wrapper">
           {loading ? (
-            <img src={"./Pics/loading-gif.gif"} alt="loading..." />
+            <div className="loading-div">
+              <img
+                className="loading"
+                src={"./Pics/loading-gif.gif"}
+                alt="loading..."
+              />
+            </div>
           ) : (
             <>
               <form className="create-form" onSubmit={handleFormSubmit}>
