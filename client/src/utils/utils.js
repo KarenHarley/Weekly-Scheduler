@@ -113,8 +113,16 @@ export const formatTime = (time) => {
   }
 };
 
-export const unformatTime = (time) => {
-  
+const unformatTime = (time) => {
+  console.log(time.split(":"));
+  console.log(time.split(":")[1]);
+  console.log(time.split(" ")[1]);
+  //if eg number ("12") is less then 23 and there is no number after : also its in the am
+  if (time.split(":")[0] <= 12 && time.split(":")[1] === "00 am") {
+    console.log("HI");
+    return time.split(":")[0];
+  }
+
 };
 export const shortenTimesArray = (startingTime, endingTime, timesArray) => {
   const end = formatTime(endingTime);
