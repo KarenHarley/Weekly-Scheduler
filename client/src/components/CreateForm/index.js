@@ -239,11 +239,9 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
           onChange={handleChange}
         >
           <option value={"default"}>Select Starting Time</option>
-          {shortenTimesArray(taskStartingTime, taskEndingTime, times).map(
-            (time) => {
-              return createOptions(time);
-            }
-          )}
+          {times.map((time) => {
+            return createOptions(time);
+          })}
         </select>
         <select
           id="end"
