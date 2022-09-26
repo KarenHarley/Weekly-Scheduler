@@ -113,7 +113,9 @@ export const formatTime = (time) => {
   }
 };
 
-export const unformatTime = (time) => {};
+export const unformatTime = (time) => {
+  
+};
 export const shortenTimesArray = (startingTime, endingTime, timesArray) => {
   const end = formatTime(endingTime);
   const start = formatTime(startingTime);
