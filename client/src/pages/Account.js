@@ -63,7 +63,13 @@ const Account = () => {
   return (
     <div className="account-form-div create-task-wrapper">
       {loading ? (
-        <img src={"./Pics/loading-gif.gif"} alt="loading..." />
+        <div className="loading-div">
+        <img
+          className="loading"
+          src={"./Pics/loading-gif.gif"}
+          alt="loading..."
+        />
+      </div>
       ) : (
         <form className="account-form create-form">
           <h4 className="acount-heading">Account</h4>
