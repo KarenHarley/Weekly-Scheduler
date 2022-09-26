@@ -45,7 +45,13 @@ const OneTask = () => {
       {Auth.loggedIn() ? (
         <div className="steps-and-task-container">
           {loading ? (
-            <img src={"./Pics/loading-gif.gif"} alt="loading..." />
+            <div className="loading-div">
+              <img
+                className="loading"
+                src={"./Pics/loading-gif.gif"}
+                alt="loading..."
+              />
+            </div>
           ) : (
             <>
               <div className="one-task-and-create-form">
