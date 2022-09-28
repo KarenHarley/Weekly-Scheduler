@@ -27,7 +27,12 @@ This application to helps organize your weekly schedule and tasks. It has the op
 
 <br/>
 
-#### Website URL
+### Website URL
 
 https://weekly-schedular.herokuapp.com/
 
+
+
+#### License
+
+The license used for this project: MIT
