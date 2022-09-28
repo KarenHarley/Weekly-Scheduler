@@ -1,6 +1,5 @@
 [![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](https://github.com/DAVFoundation/captain-n3m0/blob/master/LICENSE)
 
-
 # Weekly Scheduler
 
 ### Description
@@ -25,6 +24,20 @@ This application to helps organize your weekly schedule and tasks. It has the op
 - Covey Time Management Matrix for task identification.
 - Easy to user interface
 
+### Usage
+
+After entering into the website, you can do the following.
+
+1. Login or Signup
+
+2. See all tasks by day of the week
+
+3. Add a task and even mini-tasks to the users saved tasks.
+
+4. See a specific task including all mini-tasks for that parent task.
+
+5. See a selected mini-tasks
+
 ### Homepage
 
 ![homepage](mediaPics/homepage.png)
@@ -47,12 +60,9 @@ This application to helps organize your weekly schedule and tasks. It has the op
 
 https://weekly-schedular.herokuapp.com/
 
-
-
 #### License
 
 The license used for this project: MIT
-
 
 #### Contribute
 
