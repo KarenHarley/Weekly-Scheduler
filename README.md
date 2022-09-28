@@ -9,6 +9,7 @@ This application to helps organize your weekly schedule and tasks. It has the op
 
 ## Table of Contents
 
+- [Features](#features)
 - [Usage](#usage)
 - [License](#license)
 - [How to Contribute](#contribute)
