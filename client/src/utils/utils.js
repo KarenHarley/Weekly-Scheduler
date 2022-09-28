@@ -114,28 +114,35 @@ export const formatTime = (time) => {
 };
 
 const unformatTime = (time) => {
-  //if eg number ("12") is less then 23 and there is no number after : also its in the am
+  //if eg number ("12") is less then 12 and there is no number after : also its in the am
   if (time.split(":")[0] <= 12 && time.split(":")[1] === "00 am") {
     return time.split(":")[0];
   }
+  //if eg number ("12") is less then 12 and there is "15" after : also its in the am
   if (time.split(":")[0] <= 12 && time.split(":")[1] === "15 am") {
     return time.split(":")[0] + ".2";
   }
+  //if eg number ("12") is less then 12 and there is "30" after : also its in the am
   if (time.split(":")[0] <= 12 && time.split(":")[1] === "30 am") {
     return time.split(":")[0] + ".5";
   }
+  //if eg number ("12") is less then 12 and there is "45" after : also its in the am
   if (time.split(":")[0] <= 12 && time.split(":")[1] === "45 am") {
     return time.split(":")[0] + ".7";
   }
+  //if eg number ("12") is less then 12 and there is "00" after : also its in the pm
   if (time.split(":")[0] <= 12 && time.split(":")[1] === "00 pm") {
     return parseInt(time.split(":")[0]) + 12;
   }
+  //if eg number ("12") is less then 12 and there is "15" after : also its in the pm
   if (time.split(":")[0] <= 12 && time.split(":")[1] === "15 pm") {
     return parseInt(time.split(":")[0]) + 12.2;
   }
+  //if eg number ("12") is less then 12 and there is "30" after : also its in the pm
   if (time.split(":")[0] <= 12 && time.split(":")[1] === "30 pm") {
     return parseInt(time.split(":")[0]) + 12.5;
   }
+  //if eg number ("12") is less then 12 and there is "45" after : also its in the pm
   if (time.split(":")[0] <= 12 && time.split(":")[1] === "45 pm") {
     return parseInt(time.split(":")[0]) + 12.7;
   }
