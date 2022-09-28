@@ -148,14 +148,10 @@ const unformatTime = (time) => {
   }
 };
 export const shortenTimesArray = (startingTime, endingTime, timesArray) => {
-  const end = formatTime(endingTime);
-  const start = formatTime(startingTime);
-
   const newArr = timesArray.filter((time) => {
-    // return (
-    // );
+    const unformatedNumber = unformatTime(time);
+    return unformatedNumber >= startingTime && unformatedNumber <= endingTime;
   });
-  console.log(newArr);
   return newArr;
 };
 
