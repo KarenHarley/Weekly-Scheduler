@@ -148,9 +148,11 @@ const unformatTime = (time) => {
   }
 };
 export const shortenTimesArray = (startingTime, endingTime, timesArray) => {
+  //filter through the times array and unformat the number then compare it to the start and end
   const newArr = timesArray.filter((time) => {
-    const unformatedNumber = unformatTime(time);
-    return unformatedNumber >= startingTime && unformatedNumber <= endingTime;
+    return (
+      unformatTime(time) >= startingTime && unformatTime(time) <= endingTime
+    );
   });
   return newArr;
 };
