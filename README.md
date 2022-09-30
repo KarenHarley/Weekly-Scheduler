@@ -22,7 +22,7 @@ This application to helps organize your weekly schedule and tasks. It has the op
 - Tasks Displayed with checkboxes.
 - Tasks can have Mini-tasks (smaller tasks needed to accomplish the bigger parent task).
 - Covey Time Management Matrix for task identification.
-- Easy to user interface
+- Easy to use interface
 
 ### Usage
 
