@@ -75,7 +75,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
       ...formState,
       [name]: value,
     });
-    console.log(data);
+
   };
   const createTaskInDB = async () => {
     if (
@@ -119,7 +119,6 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
     }
   };
   const createStepInDB = async () => {
-    console.log("HI");
     if (
       formState.name === "" ||
       formState.startingTime === "" ||
@@ -181,7 +180,6 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
     }
   };
   useEffect(() => {
-    console.log("Use effect");
     refetch();
   }, [formState]);
   return (
