@@ -58,7 +58,7 @@ After entering into the website, you can do the following.
 
 ### Website URL
 
-https://weekly-schedular.herokuapp.com/
+`https://weekly-schedular.herokuapp.com/`
 
 #### License
 
@@ -72,5 +72,5 @@ If you would like to contribute please contact me.
 
 To reach me please contact me in the email address below!
 
-- GitHub: https://github.com/KarenHarley
+- GitHub: `https://github.com/KarenHarley`
 - Email: karenharley88@gmail.com
