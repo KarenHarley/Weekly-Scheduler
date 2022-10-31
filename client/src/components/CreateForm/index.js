@@ -34,7 +34,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
   });
   //to only use one mutation
   let QUERY;
-  if (location.pathname == "/tasks") {
+  if (location.pathname === "/tasks") {
     QUERY = QUERY_DUPLICATE_TASK;
   } else {
     QUERY = QUERY_DUPLICATE_STEP;
@@ -171,7 +171,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (location.pathname == "/tasks") {
+    if (location.pathname === "/tasks") {
       createTaskInDB();
     } else {
       createStepInDB();
@@ -184,7 +184,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
     <div className="create-task-wrapper">
       <form className="create-form">
         <div className="create-task-heading">
-          {location.pathname == "/tasks" ? (
+          {location.pathname === "/tasks" ? (
             <h4>Create Task</h4>
           ) : (
             <h4>Create Mini-Tasks</h4>
@@ -208,7 +208,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
           onChange={handleChange}
           required
         />
-        {location.pathname == "/tasks" ? (
+        {location.pathname === "/tasks" ? (
           <select
             required
             id="day"
@@ -235,7 +235,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
           onChange={handleChange}
         >
           <option value={"default"}>Select Starting Time</option>
-          {location.pathname == "/tasks"
+          {location.pathname === "/tasks"
             ? times.map((time) => {
                 return createOptions(time);
               })
@@ -252,7 +252,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
           onChange={handleChange}
         >
           <option value={"default"}>Select Ending Time</option>
-          {location.pathname == "/tasks"
+          {location.pathname === "/tasks"
             ? times.map((time) => {
                 return createOptions(time);
               })
