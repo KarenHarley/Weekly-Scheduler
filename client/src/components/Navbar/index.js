@@ -1,4 +1,4 @@
-import { Link, useParams, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Auth from "../../utils/auth";
 import { useState, useEffect } from "react";
 const Navbar = () => {
@@ -66,7 +66,7 @@ const Navbar = () => {
                 style={{ textDecoration: "none" }}
                 className="link"
               >
-                {window.location.href.split("/")[3] == "task"
+                {window.location.href.split("/")[3] === "task"
                   ? "Back to All Tasks"
                   : "See All Tasks"}
               </Link>
