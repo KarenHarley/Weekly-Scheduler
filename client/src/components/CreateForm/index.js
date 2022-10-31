@@ -40,7 +40,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
     QUERY = QUERY_DUPLICATE_STEP;
   }
 
-  const { loading, data, refetch } = useQuery(QUERY, {
+  const { data, refetch } = useQuery(QUERY, {
     variables: {
       startingTime: formState.startingTime,
       endingTime: formState.endingTime,
@@ -58,7 +58,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
     ],
   });
 
-  const [createStep, { errorStep }] = useMutation(CREATE_STEP, {
+  const [createStep] = useMutation(CREATE_STEP, {
     refetchQueries: [
       {
         query: QUERY_TASK,
@@ -95,7 +95,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
     }
     if (!data.duplicateTask) {
       try {
-        const taskData = await createTask({
+        await createTask({
           variables: { ...formState },
         });
         setDay(formState.day);
@@ -143,7 +143,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
     }
     if (!data.duplicateStep) {
       try {
-        const stepData = await createStep({
+         await createStep({
           variables: {
             name: formState.name,
             notes: formState.notes,
