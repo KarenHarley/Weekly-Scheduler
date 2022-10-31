@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import { selectHttpOptionsAndBody, useQuery } from "@apollo/client";
-import { Link } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 import { useMutation } from "@apollo/client";
-import Auth from "../../utils/auth";
 import { CREATE_TASK, CREATE_STEP } from "../../utils/mutations";
 import {
   times,
