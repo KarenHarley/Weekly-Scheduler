@@ -135,7 +135,7 @@
 }
 .edit-task-wrapper a {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   margin: 20px 0px;
   color: #7859b6;
 }
@@ -503,7 +503,7 @@
 }
 .plan h4 {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   /* margin: 21px; */
   margin-right: 20px;
 }
