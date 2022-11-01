@@ -6,7 +6,7 @@ import Auth from "../utils/auth";
 const Login = (props) => {
   console.log("Hi");
   const [formState, setFormState] = useState({ email: "", password: "" });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -42,7 +42,7 @@ const Login = (props) => {
     <div className="login-form-div">
       <div className="login-banner-container">
         <div className="banner">
-          <img src="./Pics/login-pic.jpg"></img>
+          <img src="./Pics/login-pic.jpg" alt="planner"></img>
         </div>
         <div className="welcome-div">
           <h1>Welcome Back</h1>
