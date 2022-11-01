@@ -10,14 +10,11 @@ import { QUERY_TASKS } from "../../utils/queries";
 const Task = ({ data, day }) => {
   const location = useLocation();
   // mutation to use checkbox for tasks
-  const [changeCompletedTask, { error, changeCompletedData }] = useMutation(
-    CHANGE_COMPLETED_TASK
-  );
+  const [changeCompletedTask] = useMutation(CHANGE_COMPLETED_TASK);
   //mutation to use checkbox for steps
-  const [changeCompletedStep, { errorStep, changeCompletedStepData }] =
-    useMutation(CHANGE_COMPLETED_STEP);
+  const [changeCompletedStep] = useMutation(CHANGE_COMPLETED_STEP);
   //mutation to delete a task and refetch
-  const [deleteTask, { errorTask }] = useMutation(REMOVE_TASK, {
+  const [deleteTask] = useMutation(REMOVE_TASK, {
     refetchQueries: [
       {
         query: QUERY_TASKS,
