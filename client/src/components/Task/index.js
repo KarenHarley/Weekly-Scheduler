@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { formatTime } from "../../utils/utils";
 import { useMutation } from "@apollo/client";
-import { useState, useEffect } from "react";
 import {
   CHANGE_COMPLETED_TASK,
   CHANGE_COMPLETED_STEP,
