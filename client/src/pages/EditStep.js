@@ -166,6 +166,7 @@ const EditStep = () => {
                   </select>
                 </label>
                 <input type="submit" value="Submit" />
+                {error && <div className="error">Something went wrong...</div>}
                 <Link to={`/step/${data.step._id}`}>Back to Step</Link>
               </form>
             </>

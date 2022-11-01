@@ -171,6 +171,7 @@ const EditTask = () => {
                   </select>
                 </label>
                 <input type="submit" value="Submit" />
+                {error && <div className="error">Something went wrong...</div>}
                 <Link to={`/task/${data.task._id}`}>Back to Task</Link>
               </form>
             </>
