@@ -59,7 +59,7 @@ const Task = ({ data, day }) => {
     }
     console.log(e.target.id);
     try {
-      const taskData = await deleteTask({
+      await deleteTask({
         variables: {
           taskId: e.target.id,
         },
