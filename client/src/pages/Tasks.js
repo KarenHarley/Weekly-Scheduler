@@ -4,13 +4,13 @@ import { REMOVE_ALL_TASKS } from "../utils/mutations";
 import { Link } from "react-router-dom";
 import Task from "../components/Task";
 import Auth from "../utils/auth";
-import { useState} from "react";
+import { useState } from "react";
 import CreateForm from "../components/CreateForm";
 import { days } from "../utils/utils";
 const Tasks = () => {
   const [day, setDay] = useState("Monday");
   const [showForm, setShowForm] = useState(false);
-  const [deleteAll, { error, DeleteData }] = useMutation(REMOVE_ALL_TASKS, {
+  const [deleteAll] = useMutation(REMOVE_ALL_TASKS, {
     refetchQueries: [
       {
         query: QUERY_TASKS,
