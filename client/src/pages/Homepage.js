@@ -1,4 +1,3 @@
-
 const Homepage = () => {
   return (
     <div className="homepage-wrapper">
@@ -7,7 +6,7 @@ const Homepage = () => {
       </div>
       <div className="banner-container">
         <div className="banner">
-          <img src="./Pics/banner.jpg"></img>
+          <img src="./Pics/banner.jpg" alt="calendar"></img>
         </div>
         <div className="banner stack-top"></div>
       </div>
