@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
-import { QUERY_TASK, QUERY_STEPS } from "../utils/queries";
+import { QUERY_TASK } from "../utils/queries";
 import { REMOVE_TASK } from "../utils/mutations";
 import { useParams } from "react-router-dom";
 import { formatTime } from "../utils/utils";
@@ -13,7 +13,7 @@ const OneTask = () => {
   const params = useParams();
   console.log(params.id);
   const [addSteps, setaddSteps] = useState(false);
-  const [deleteTask, { errorTask }] = useMutation(REMOVE_TASK);
+  const [deleteTask] = useMutation(REMOVE_TASK);
 
   const { loading, data } = useQuery(QUERY_TASK, {
     variables: {
@@ -27,7 +27,7 @@ const OneTask = () => {
 
   const deleteOneTask = async () => {
     try {
-      const taskData = await deleteTask({
+      await deleteTask({
         variables: {
           taskId: params.id,
         },
