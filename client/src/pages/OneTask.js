@@ -115,7 +115,7 @@ const OneTask = () => {
                   <></>
                 )}
               </div>
-              {data.task.steps !== 0 ? (
+              {data.task.steps.length > 0 ? (
                 <div className="step-container">
                   <h4>Mini-Tasks to Accomplish this larger task</h4>
                   {data.task.steps.map((loopingStep, i) => {
