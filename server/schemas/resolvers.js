@@ -157,6 +157,20 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    removeStep: async (parent, { stepId, taskId }, context) => {
+      if (context.user) {
+        const deleteStep = await Step.deleteOne({ _id: taskId });
+
+        const updateTask = await Task.findOneAndUpdate(
+          { _id: taskId },
+          { $pull: { steps: stepId } },
+          { new: true }
+        );
+
+        return updateUser;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
     addUser: async (parent, { username, email, password }) => {
       //when user is created a token is created
       const user = await User.create({ username, email, password }); //c in crud returning an instance
