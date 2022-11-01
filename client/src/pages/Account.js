@@ -15,7 +15,7 @@ const Account = () => {
   const { loading, data, refetch } = useQuery(QUERY_USER);
   console.log(data);
 
-  const [update, { error, updateData }] = useMutation(UPDATE_USER, {
+  const [update, { updateData }] = useMutation(UPDATE_USER, {
     refetchQueries: [
       {
         query: QUERY_USER,
@@ -36,7 +36,7 @@ const Account = () => {
     console.log(formState);
 
     try {
-      const { data } = await update({
+      await update({
         variables: { ...formState },
       });
       // window.location.replace("/tasks");
