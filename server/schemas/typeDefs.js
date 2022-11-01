@@ -108,7 +108,9 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
 
     removeTask(taskId: String!): User
-    
+
+    removeStep(stepId: String!): User
+
     removeAllTasks(selectedDay: String!): User
   }
 `;
