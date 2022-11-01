@@ -24,7 +24,7 @@ const Task = ({ data, day }) => {
   });
   //function to use mutation that changes checkbox value for task and step based on pathname
   const ChangeCompleted = async (taskId, checked) => {
-    if (location.pathname == "/tasks") {
+    if (location.pathname === "/tasks") {
       try {
         const { updateCompleted } = await changeCompletedTask({
           variables: { completed: checked, _id: taskId },
@@ -103,7 +103,7 @@ const Task = ({ data, day }) => {
           {data.name}
         </span>
         <span>
-          {location.pathname == "/tasks" ? (
+          {location.pathname === "/tasks" ? (
             <Link to={`task/${data._id}`}>See More</Link>
           ) : (
             <Link to={`/step/${data._id}`}>See More</Link>
