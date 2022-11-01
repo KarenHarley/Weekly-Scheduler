@@ -8,7 +8,7 @@ const Signup = (props) => {
     password: "",
     username: "",
   });
-  const [signup, { error, data }] = useMutation(ADD_USER);
+  const [signup, { error}] = useMutation(ADD_USER);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,7 +26,6 @@ const Signup = (props) => {
       const { data } = await signup({
         variables: { ...formState },
       });
-      console.log(data);
       Auth.login(data.addUser.token);
       window.location.replace("/tasks");
     } catch (e) {
@@ -44,7 +43,7 @@ const Signup = (props) => {
     <div className="signup-form-div">
       <div className="signup-banner-container login-banner-container">
         <div className="banner">
-          <img src="./Pics/sign-up-pic.jpg"></img>
+          <img src="./Pics/sign-up-pic.jpg" alt="planner"></img>
         </div>
         <div className="welcome-div">
           <h1>Welcome</h1>
