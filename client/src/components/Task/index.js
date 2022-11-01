@@ -26,7 +26,7 @@ const Task = ({ data, day }) => {
   const ChangeCompleted = async (taskId, checked) => {
     if (location.pathname === "/tasks") {
       try {
-        const { updateCompleted } = await changeCompletedTask({
+        await changeCompletedTask({
           variables: { completed: checked, _id: taskId },
         });
         return checked;
@@ -36,7 +36,7 @@ const Task = ({ data, day }) => {
       return;
     }
     try {
-      const { updateCompleted } = await changeCompletedStep({
+      await changeCompletedStep({
         variables: { completed: checked, _id: taskId },
       });
       return checked;
