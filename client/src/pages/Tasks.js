@@ -4,7 +4,7 @@ import { REMOVE_ALL_TASKS } from "../utils/mutations";
 import { Link } from "react-router-dom";
 import Task from "../components/Task";
 import Auth from "../utils/auth";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import CreateForm from "../components/CreateForm";
 import { days } from "../utils/utils";
 const Tasks = () => {
