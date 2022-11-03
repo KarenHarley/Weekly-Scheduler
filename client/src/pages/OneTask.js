@@ -130,7 +130,7 @@ const OneTask = () => {
         </div>
       ) : (
         <p className="login-please">
-          You need to be logged in to see this Task. Please{" "}
+          You need to be logged in to see this task. Please{" "}
           <span>
             &nbsp;
             <Link to="/login">login</Link> or&nbsp;

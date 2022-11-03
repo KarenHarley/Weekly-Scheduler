@@ -65,7 +65,7 @@ const OneStep = () => {
         </div>
       ) : (
         <p className="login-please">
-          You need to be logged in to see this Step. Please{" "}
+          You need to be logged in to see this step. Please{" "}
           <span>
             &nbsp;
             <Link to="/login">login</Link> or&nbsp;

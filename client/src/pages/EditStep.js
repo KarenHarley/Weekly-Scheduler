@@ -174,7 +174,7 @@ const EditStep = () => {
         </div>
       ) : (
         <p className="login-please">
-          You need to be logged in to edit this Step. Please{" "}
+          You need to be logged in to edit this step. Please{" "}
           <span>
             &nbsp;
             <Link to="/login">login</Link> or&nbsp;
