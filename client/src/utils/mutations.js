@@ -151,7 +151,8 @@ export const REMOVE_TASK = gql`
 export const REMOVE_STEP = gql`
   mutation removeStep($stepId: String!,$taskId: String!) {
     removeStep(stepId: $stepId,taskId: $taskId) {
-      username
+      _id
+      name
     }
   }
 `;
