@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_TASK } from "../utils/queries";
-import { REMOVE_TASK} from "../utils/mutations";
+import { REMOVE_TASK } from "../utils/mutations";
 import { useParams } from "react-router-dom";
 import { formatTime } from "../utils/utils";
 import CreateForm from "../components/CreateForm";
@@ -38,7 +38,7 @@ const OneTask = () => {
       console.error(e);
     }
   };
-  
+
   console.log(data);
 
   return (
@@ -49,7 +49,7 @@ const OneTask = () => {
             <div className="loading-div">
               <img
                 className="loading"
-                src={"./Pics/loading-gif.gif"}
+                src={"../Pics/loading-gif.gif"}
                 alt="loading..."
               />
             </div>
