@@ -48,7 +48,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
       task: params.id,
     },
   });
-
+  console.log(data);
   const [createTask, { error }] = useMutation(CREATE_TASK, {
     refetchQueries: [
       {
@@ -73,7 +73,6 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
       ...formState,
       [name]: value,
     });
-
   };
   const createTaskInDB = async () => {
     if (
@@ -143,7 +142,7 @@ const CreateForm = ({ setDay, day, taskStartingTime, taskEndingTime }) => {
     }
     if (!data.duplicateStep) {
       try {
-         await createStep({
+        await createStep({
           variables: {
             name: formState.name,
             notes: formState.notes,
