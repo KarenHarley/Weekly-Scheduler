@@ -109,7 +109,7 @@ const typeDefs = gql`
 
     removeTask(taskId: String!): User
 
-    removeStep(stepId: String!,taskId: String!): User
+    removeStep(stepId: String!,taskId: String!): Task
 
     removeAllTasks(selectedDay: String!): User
   }

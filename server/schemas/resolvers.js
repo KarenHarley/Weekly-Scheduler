@@ -167,7 +167,7 @@ const resolvers = {
           { new: true }
         );
 
-        return updateUser;
+        return updateTask;
       }
       throw new AuthenticationError("You need to be logged in!");
     },
