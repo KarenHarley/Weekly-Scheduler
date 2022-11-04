@@ -1,11 +1,11 @@
-import { Link, useLocation ,useParams} from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { formatTime } from "../../utils/utils";
 import { useMutation } from "@apollo/client";
 import {
   CHANGE_COMPLETED_TASK,
   CHANGE_COMPLETED_STEP,
   REMOVE_TASK,
-  REMOVE_STEP
+  REMOVE_STEP,
 } from "../../utils/mutations";
 import { QUERY_TASKS } from "../../utils/queries";
 const Task = ({ data, day }) => {
@@ -63,15 +63,27 @@ const Task = ({ data, day }) => {
       return;
     }
     console.log(e.target.id);
-
-    try {
-      await deleteTask({
-        variables: {
-          taskId: e.target.id,
-        },
-      });
-    } catch (e) {
-      console.error(e);
+    if (location.pathname === "tasks") {
+      try {
+        await deleteTask({
+          variables: {
+            taskId: e.target.id,
+          },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    } else {
+      try {
+        await deleteStep({
+          variables: {
+            stepId: e.target.id,
+            taskId: params.id,
+          },
+        });
+      } catch (e) {
+        console.error(e);
+      }
     }
   };
 
