@@ -5,6 +5,7 @@ import {
   CHANGE_COMPLETED_TASK,
   CHANGE_COMPLETED_STEP,
   REMOVE_TASK,
+  REMOVE_STEP
 } from "../../utils/mutations";
 import { QUERY_TASKS } from "../../utils/queries";
 const Task = ({ data, day }) => {
@@ -22,6 +23,8 @@ const Task = ({ data, day }) => {
       },
     ],
   });
+  //mutation to delete a step
+  const [deleteStep] = useMutation(REMOVE_STEP);
   //function to use mutation that changes checkbox value for task and step based on pathname
   const ChangeCompleted = async (taskId, checked) => {
     if (location.pathname === "/tasks") {
