@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { formatTime } from "../utils/utils";
 import Auth from "../utils/auth";
 
-
 const OneStep = () => {
   const params = useParams();
   console.log(params.id);
@@ -26,7 +25,7 @@ const OneStep = () => {
             <div className="loading-div">
               <img
                 className="loading"
-                src={"./Pics/loading-gif.gif"}
+                src={"../Pics/loading-gif.gif"}
                 alt="loading..."
               />
             </div>
