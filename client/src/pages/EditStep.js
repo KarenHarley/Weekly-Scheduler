@@ -93,7 +93,7 @@ const EditStep = () => {
             <div className="loading-div">
               <img
                 className="loading"
-                src={"./Pics/loading-gif.gif"}
+                src={"/../Pics/loading-gif.gif"}
                 alt="loading..."
               />
             </div>
