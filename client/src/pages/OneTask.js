@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_TASK } from "../utils/queries";
-import { REMOVE_TASK, REMOVE_STEP } from "../utils/mutations";
+import { REMOVE_TASK} from "../utils/mutations";
 import { useParams } from "react-router-dom";
 import { formatTime } from "../utils/utils";
 import CreateForm from "../components/CreateForm";
@@ -14,7 +14,6 @@ const OneTask = () => {
   console.log(params.id);
   const [addSteps, setaddSteps] = useState(false);
   const [deleteTask] = useMutation(REMOVE_TASK);
-  const [deleteStep] = useMutation(REMOVE_STEP);
 
   const { loading, data } = useQuery(QUERY_TASK, {
     variables: {
@@ -39,6 +38,7 @@ const OneTask = () => {
       console.error(e);
     }
   };
+  
   console.log(data);
 
   return (
