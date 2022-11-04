@@ -7,7 +7,7 @@ import {
   REMOVE_TASK,
   REMOVE_STEP,
 } from "../../utils/mutations";
-import { QUERY_TASKS } from "../../utils/queries";
+import { QUERY_TASKS, QUERY_TASK } from "../../utils/queries";
 const Task = ({ data, day }) => {
   const params = useParams();
   console.log(params.id);
@@ -26,7 +26,14 @@ const Task = ({ data, day }) => {
     ],
   });
   //mutation to delete a step
-  const [deleteStep] = useMutation(REMOVE_STEP);
+  const [deleteStep] = useMutation(REMOVE_STEP, {
+    refetchQueries: [
+      {
+        query: QUERY_TASK,
+        variables: { taskId: params.id },
+      },
+    ],
+  });
   //function to use mutation that changes checkbox value for task and step based on pathname
   const ChangeCompleted = async (taskId, checked) => {
     if (location.pathname === "/tasks") {
