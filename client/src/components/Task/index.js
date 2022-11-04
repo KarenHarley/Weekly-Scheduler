@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation ,useParams} from "react-router-dom";
 import { formatTime } from "../../utils/utils";
 import { useMutation } from "@apollo/client";
 import {
@@ -9,6 +9,8 @@ import {
 } from "../../utils/mutations";
 import { QUERY_TASKS } from "../../utils/queries";
 const Task = ({ data, day }) => {
+  const params = useParams();
+  console.log(params.id);
   const location = useLocation();
   // mutation to use checkbox for tasks
   const [changeCompletedTask] = useMutation(CHANGE_COMPLETED_TASK);
@@ -61,6 +63,7 @@ const Task = ({ data, day }) => {
       return;
     }
     console.log(e.target.id);
+
     try {
       await deleteTask({
         variables: {
