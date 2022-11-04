@@ -147,6 +147,15 @@ export const REMOVE_TASK = gql`
     }
   }
 `;
+
+export const REMOVE_STEP = gql`
+  mutation removeStep($stepId: String!,$taskId: String!) {
+    removeStep(stepId: $stepId,taskId: $taskId) {
+      username
+    }
+  }
+`;
+
 export const REMOVE_ALL_TASKS = gql`
 mutation removeAllTasks($selectedDay: String!) {
   removeAllTasks(selectedDay: $selectedDay) {
