@@ -301,7 +301,7 @@
 .create-form {
   border: solid #9370db;
   padding: 20px;
-  color: #9370db;
+  color: #8168b4;
 }
 
 /* Navbar*/
@@ -515,7 +515,7 @@
 
 /* Footer */
 .footer-wrapper {
-  background-color: #9370db;
+  background-color: #8a73b3;
   /* height: 180px; */
   display: block;
   justify-content: center;
