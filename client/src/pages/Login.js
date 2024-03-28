@@ -26,8 +26,8 @@ const Login = (props) => {
       });
 
       Auth.login(data.login.token);
-      //   window.location.replace("/lista_contacto");
       console.log(Auth.getProfile());
+      window.location.replace("/tasks");
     } catch (e) {
       console.error(e);
     }
