@@ -40,7 +40,7 @@ After entering into the website, you can do the following.
 
 ### Homepage
 
-![homepage](mediaPics/homepage.png)
+![homepage]()
 
 ### Login
 
