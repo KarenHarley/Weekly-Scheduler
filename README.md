@@ -48,7 +48,7 @@ After entering into the website, you can do the following.
 
 ### Sign up
 
-![sign up page](mediaPics/signup.png)
+![sign up page](mediaPics/signup-page.png)
 
 ### All Tasks Page
 
