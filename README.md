@@ -52,7 +52,7 @@ After entering into the website, you can do the following.
 
 ### All Tasks Page
 
-![all pages](mediaPics/all-tasks-with-tasks.png)
+![all tasks page](mediaPics/all-tasks-with-tasks.png)
 
 <br/>
 
