@@ -52,6 +52,8 @@ After entering into the website, you can do the following.
 
 ### All Tasks Page
 
+![all tasks page with no tasks](mediaPics/no-tasks-page.png)
+
 ![all tasks page](mediaPics/all-tasks-with-tasks.png)
 
 <br/>
