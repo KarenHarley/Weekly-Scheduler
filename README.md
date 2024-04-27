@@ -60,6 +60,8 @@ After entering into the website, you can do the following.
 
 <br/>
 
+### Mini-Tasks
+
 ### Website URL
 
 `https://weekly-schedular.herokuapp.com/`
