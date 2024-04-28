@@ -62,6 +62,8 @@ After entering into the website, you can do the following.
 
 ### Mini-Tasks
 
+![mini tasks](mediaPics/mini-tasks.png)
+
 ### Website URL
 
 `https://weekly-schedular.herokuapp.com/`
