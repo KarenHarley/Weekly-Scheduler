@@ -4,7 +4,7 @@
 
 ### Description
 
-This application to helps organize your weekly schedule and tasks. It has the option to create a task for a certain amount of time (hour(s) or 30 min) with notes for additional information and even the option to create smaller mini-tasks within a larger one. All of these tasks are seperated by day of the week and are stored in a database to ensure the user can access them in any device. It also has a checked property that allows use to know which is completed. In addition, this application uses the four quadrants of the Covey Time Management Matrix to help with identifying a tasks importance, to further help increase poductivity.
+This application is designed to help organize your weekly schedule and tasks efficiently. It allows you to create tasks for specific time intervals (hours or 30-minute blocks) and add notes for additional details. You can also break down larger tasks into smaller, manageable sub-tasks. Tasks are organized by day of the week and stored in a database, enabling access across multiple devices. The application features a completion check function to track progress. Additionally, it incorporates the Covey Time Management Matrix, categorizing tasks by importance and urgency to enhance productivity.
 
 ## Table of Contents
 
