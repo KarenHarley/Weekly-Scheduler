@@ -14,9 +14,6 @@ This application is designed to help organize your weekly schedule and tasks eff
 - [How to Contribute](#contribute)
 - [Questions](#questions)
 
-<br/>
-<br/>
-
 ### Features:
 
 - Tasks Displayed with checkboxes.
