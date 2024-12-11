@@ -78,4 +78,4 @@ If you would like to contribute please contact me.
 To reach me please contact me in the email address below!
 
 - GitHub: `https://github.com/KarenHarley`
-- Email: karenharley88@gmail.com
+- Email: `karenharley88@gmail.com`
