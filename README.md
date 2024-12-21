@@ -47,15 +47,13 @@ After entering into the website, you can do the following.
 
 ![sign up page](mediaPics/signup-page.png)
 
-## All Tasks Page
+## All Tasks
 
 ![all tasks page with no tasks](mediaPics/no-tasks-page.png)
 
 ## Create Form
 
 ![create form](mediaPics/create-form.png)
-
-<br/>
 
 ## Mini-Tasks
 
